@@ -1,0 +1,39 @@
+@import '../.././../variables.css';
+
+.piContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  text-align: center;
+  padding: 20px;
+  background-color: var(--second-bg-color);
+  border: 1px solid var(--second-util-color);
+  border-radius: 7px;
+  height: calc(100vh - 40px);
+}
+
+.piPersonal {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+.myName {
+  flex: 1;
+}
+
+.piImg {
+  width: 105px;
+  height: auto;
+  border-radius: 7px;
+}
+
+.piSocials {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+

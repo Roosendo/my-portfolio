@@ -1,10 +1,11 @@
 import { createRoot } from 'react-dom/client'
+import { PersonalInfo } from './components/PersonalInfo'
 
 const root = createRoot(document.getElementById('app'))
 root.render(
   <>
     <div className='container'>
-      <h3>React App</h3>
+      <PersonalInfo />
       <div className='content'>
         <h1>React App</h1>
         <p>React App</p>

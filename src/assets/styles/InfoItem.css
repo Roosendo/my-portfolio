@@ -1,0 +1,28 @@
+@import '../../../variables.css';
+
+.personal-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.personal-info:hover {
+  color: var(--second-util-color);
+}
+
+.icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icon img {
+  width: 24px;
+  height: 24px;
+  margin-right: 10px;
+}
+
+.text a {
+  color: inherit;
+  text-decoration: none;
+}
