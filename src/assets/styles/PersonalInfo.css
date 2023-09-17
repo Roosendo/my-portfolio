@@ -1,5 +1,3 @@
-@import '../.././../variables.css';
-
 .piContainer {
   display: flex;
   flex-direction: column;

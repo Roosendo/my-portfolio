@@ -1,5 +1,3 @@
-@import '../../../variables.css';
-
 .personal-info {
   display: flex;
   flex-direction: row;
