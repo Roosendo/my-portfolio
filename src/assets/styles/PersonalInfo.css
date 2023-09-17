@@ -16,6 +16,7 @@
 .piPersonal {
   display: flex;
   flex-direction: column;
+  width: 115px;
   gap: 10px;
   margin-top: 15px;
 }
@@ -25,7 +26,7 @@
 }
 
 .piImg {
-  width: 105px;
+  width: 100%;
   height: auto;
   border-radius: 7px;
 }
