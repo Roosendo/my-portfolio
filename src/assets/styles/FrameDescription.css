@@ -1,0 +1,29 @@
+.frame-description__imgs {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+}
+
+.frame-description__img {
+  max-width: 45px;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+.frame-description__img:hover {
+  transform: scale(1.02);
+}
+
+.frame-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  padding: 20px;
+  gap: 10px;
+  background-color: var(--second-bg-color);
+  border: 1px solid var(--second-util-color);
+  border-radius: 7px;
+  max-height: calc(50vh - 20px);
+  max-width: 200px;
+}

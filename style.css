@@ -12,27 +12,45 @@ body {
   font-family: system-ui;
   font-size: 16px;
   line-height: 1.5;
-  overflow: hidden;
 }
 
 .container {
   display: grid;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: flex-start;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
   grid-gap: 20px;
-  padding: 20px;
 }
 
-@media (max-width: 600px) {
+@media screen and (min-width: 700px) {
   .container {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 4fr; /* main ocupa el 20% */
   }
 }
 
 .content {
-  flex: 4;
+  display: flex;
+  place-items: start center;
+  width: 100%;
+  padding: 20px;
+  color: var(--main-util-color);
+  gap: 20px;
+}
+
+@media screen and (min-width: 768px) {
+  .content {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content {
+    display: block;
+    margin-top: 20px;
+  }
+}
+
+.main {
+  flex: 1; /* main ocupa el 20% */
   padding: 20px;
   color: var(--main-util-color);
 }
