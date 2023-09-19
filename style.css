@@ -44,8 +44,8 @@ body {
 
 @media screen and (max-width: 767px) {
   .content {
-    display: block;
-    margin-top: 20px;
+    display: grid;
+    place-items: start center;
   }
 }
 
