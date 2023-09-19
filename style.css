@@ -6,6 +6,19 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--third-util-color);
+  border-radius: 5px;
+}
+
 body {
   background-color: var(--main-bg-color);
   color: var(--main-util-color);

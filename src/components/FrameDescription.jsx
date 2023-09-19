@@ -22,9 +22,11 @@ export const FrameDescription = (props) => {
 
   return (
     <div className='frame-description'>
-      <h2 className='frame-description__title'>{title}</h2>
-      <p className='frame-description__body'>{body}</p>
-      {hasImgs && renderImgs()}
+      <div>
+        <h2 className='frame-description__title'>{title}</h2>
+        <p className='frame-description__body'>{body}</p>
+        {hasImgs && renderImgs()}
+      </div>
     </div>
   )
 }

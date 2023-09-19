@@ -2,6 +2,8 @@
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  place-items: start center;
+  margin-top: 5px;
 }
 
 .frame-description__img {
@@ -18,15 +20,16 @@
 .frame-description {
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
   gap: 10px;
   background-color: var(--second-bg-color);
   border: 1px solid var(--second-util-color);
   border-radius: 7px;
-  max-height: calc(80vh - 20px);
+  max-height: calc(50vh - 25px);
   width: calc(80% - 20px);
+  overflow-y: auto;
 }
 
 @media screen and (max-width: 767px) {
