@@ -1,6 +1,6 @@
 import { createRoot } from 'react-dom/client'
-import { PersonalInfo } from './components/PersonalInfo'
-import { PivotFD } from './components/PivotFD'
+import { PersonalInfo } from './src/components/PersonalInfo'
+import { PivotFD } from './src/components/PivotFD'
 
 const root = createRoot(document.getElementById('app'))
 root.render(
