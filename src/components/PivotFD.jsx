@@ -13,6 +13,7 @@ export const PivotFD = () => {
         title='Education'
         body='I earned an Associate Degree in Software Development Engineering from ITCA Fepade San Miguel, which provided me with a strong foundation. However, my passion for learning drove me to expand my knowledge independently. I began by studying GitHub repositories to understand how experienced developers worked, and I also explored various programming YouTube channels. One channel that stood out was Midudev, whose free courses helped me learn everything from JavaScript fundamentals to building RESTful APIs with frameworks like Express. My education combines formal technical studies with self-guided online courses, enhancing my understanding of software development.'
         hasImgs={false}
+        hasModal={false}
       />
       <FrameDescription
         title='Skills'
@@ -24,6 +25,7 @@ export const PivotFD = () => {
 
         Fluent in both English and Spanish, I prioritize effective communication and collaboration. I&apos;m committed to continuous learning and thrive in a team-oriented environment.'
         hasImgs={false}
+        hasModal={false}
       />
       <FrameDescription
         title='Softwares'
@@ -32,11 +34,13 @@ export const PivotFD = () => {
         imgs={[
           Vscode, Git, GitHub, Pnpm, Trello, Postman
         ]}
+        hasModal={false}
       />
       <FrameDescription
         title='My projects'
         body='These are some of my most prominent projects. Feel free to explore them, whether through their screenshots, websites, or GitHub repositories. Enjoy your journey!'
         hasImgs={false}
+        hasModal
       />
     </>
   )
