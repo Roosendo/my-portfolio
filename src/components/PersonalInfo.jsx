@@ -5,6 +5,7 @@ import Email from '../assets/icons/email.svg'
 import GitHub from '../assets/icons/github.svg'
 import Linkedin from '../assets/icons/linkedin.svg'
 import Instagram from '../assets/icons/instagram.svg'
+import Twitter from '../assets/icons/twitter.svg'
 
 export const PersonalInfo = () => {
   return (
@@ -18,6 +19,7 @@ export const PersonalInfo = () => {
         <InfoItem icon={GitHub} text='@Roosendo' url='https://github.com/Roosendo' mailto={false} />
         <InfoItem icon={Linkedin} text='Rosendo Garcia' url='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' mailto={false} />
         <InfoItem icon={Instagram} text='rosendonbhd' url='https://www.instagram.com/rosendonbhd/' mailto={false} />
+        <InfoItem icon={Twitter} text='@rooos_endo' url='https://twitter.com/rooos_endo' mailto={false} />
       </section>
     </div>
   )
