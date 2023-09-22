@@ -11,24 +11,18 @@ export const PivotFD = () => {
     <>
       <FrameDescription
         title='Education'
-        body='Associate Degree in Software Development Engineering
-
-        While the academic curriculum at ITCA Fepade San Miguel provided me with a solid foundation, I was driven to expand my knowledge further. I delved into self-directed learning, initially by cloning GitHub repositories to understand how experienced developers worked. Though challenging, this hands-on experience was invaluable.
-
-        Subsequently, I explored numerous programming channels on YouTube, with one in particular catching my eye - Midudev. I embarked on a journey of learning through Midudev&apos;s free courses, covering everything from the fundamentals of JavaScript to building RESTful APIs with frameworks like Express.
-
-        My education is a blend of formal technical studies and self-guided online courses, which has enriched my understanding of software development.'
+        body='I earned an Associate Degree in Software Development Engineering from ITCA Fepade San Miguel, which provided me with a strong foundation. However, my passion for learning drove me to expand my knowledge independently. I began by studying GitHub repositories to understand how experienced developers worked, and I also explored various programming YouTube channels. One channel that stood out was Midudev, whose free courses helped me learn everything from JavaScript fundamentals to building RESTful APIs with frameworks like Express. My education combines formal technical studies with self-guided online courses, enhancing my understanding of software development.'
         hasImgs={false}
       />
       <FrameDescription
         title='Skills'
-        body='I excel in JavaScript and PHP development, with expertise in React and Node.js frameworks. I manage databases like MariaDB and MongoDB and am proficient in Git and GitHub for version control.
+        body='I excel in JavaScript and PHP development, specializing in React and Node.js frameworks. I&apos;m proficient with databases like MariaDB and MongoDB and skilled in Git and GitHub for version control.
 
-        I work efficiently with tools like Visual Studio Code and PNPM and maintain code quality using ESLint with StandardJS. Deployment is a breeze with Vercel.
+        I work efficiently with tools such as Visual Studio Code and PNPM and uphold code quality using ESLint with StandardJS. Deployment is seamless with Vercel.
 
-        I&apos;m skilled in project management using Trello and follow Scrum methodologies for teamwork. My HTML5 and CSS3 skills ensure responsive design.
+        My project management abilities are demonstrated through the use of Trello, and I follow Scrum methodologies for effective teamwork. I ensure responsive design with my HTML5 and CSS3 skills.
 
-        Fluent in English and Spanish, I offer effective communication and collaboration. I value continuous learning and teamwork.'
+        Fluent in both English and Spanish, I prioritize effective communication and collaboration. I&apos;m committed to continuous learning and thrive in a team-oriented environment.'
         hasImgs={false}
       />
       <FrameDescription
@@ -41,7 +35,7 @@ export const PivotFD = () => {
       />
       <FrameDescription
         title='My projects'
-        body='To be continued... (i just need to finish this website)'
+        body='These are some of my most prominent projects. Feel free to explore them, whether through their screenshots, websites, or GitHub repositories. Enjoy your journey!'
         hasImgs={false}
       />
     </>
