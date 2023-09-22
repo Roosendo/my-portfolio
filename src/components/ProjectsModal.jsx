@@ -22,7 +22,7 @@ export default function ProjectsModal (props) {
 
   return (
     <>
-      <button onClick={openModal} className='main-button'>View Project</button>
+      <button onClick={openModal} className='main-button'>View Projects</button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='modal' ariaHideApp={false}>
         <h2>{title}</h2>
         <p>{body}</p>

@@ -32,7 +32,7 @@
   overflow-y: auto;
 }
 
-.frame-description div {
+.frame-description > :not(.frame-description__imgs){
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
