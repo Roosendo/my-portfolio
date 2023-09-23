@@ -75,4 +75,5 @@
   background-color: var(--main-bg-color);
   color: var(--second-util-color);
   border-radius: 7px;
+  margin-bottom: 15px;
 }
