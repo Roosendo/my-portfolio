@@ -29,7 +29,7 @@ export default function ProjectsModal () {
           imgs={[Api1, Api2]}
           hasPrjt
           projectLink='https://pokemon-api-iota.vercel.app/'
-          githubUrl='https://github.com/alejandrolgarcia/fetching-pokemons'
+          githubUrl='https://github.com/Roosendo/pokemon-api'
         />
         <PivotModal
           title='PHP CRUD with Administrative Roles and Secure Sessions'
