@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import Modal from 'react-modal'
 import PivotModal from './PivotModal'
-import Yo from '../assets/imgs/yo.webp'
+import Php1 from '../assets/imgs/crud1.webp'
+import Php2 from '../assets/imgs/crud2.webp'
+import Api1 from '../assets/imgs/api1.webp'
+import Api2 from '../assets/imgs/api2.webp'
 import '../assets/styles/ProjectsModal.css'
 
 export default function ProjectsModal () {
@@ -20,22 +23,21 @@ export default function ProjectsModal () {
       <button onClick={openModal} className='main-button'>View Projects</button>
       <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='modal' ariaHideApp={false}>
         <PivotModal
-          title='Fetching pokemos, api'
-          body='This project is a web app that fetches pokemons from an api and displays them in a grid.'
+          title='Pokémon Explorer: Async API Consumption and Dynamic Filtering'
+          body='Dive into the world of Pokémon with my interactive JavaScript project! Using async/await, this application fetches Pokémon data from the API, allowing you to control the number of Pokémon retrieved to avoid overloading the API. While fetching data, a sleek progress bar keeps you informed. Once the retrieval is complete, you can filter Pokémon by type, name, or both, providing a versatile way to explore your favorite Pokémon. Experience the magic of Pokémon with this user-friendly, pure JavaScript project.'
           hasImgs
-          imgs={[Yo, Yo]}
+          imgs={[Api1, Api2]}
           hasPrjt
-          projectLink='https://fetching-pokemons.vercel.app/'
+          projectLink='https://pokemon-api-iota.vercel.app/'
           githubUrl='https://github.com/alejandrolgarcia/fetching-pokemons'
         />
         <PivotModal
-          title='Pokedex, api'
-          body='This project is a web app that fetches pokemons from an api and displays them in a grid.'
+          title='PHP CRUD with Administrative Roles and Secure Sessions'
+          body='Explore my comprehensive PHP-based CRUD project with an integrated database, designed for efficient personnel management. This dynamic system not only features robust administrative roles but also incorporates secure sessions to ensure that only registered users can access the application. Additionally, it offers the flexibility to print user profiles, with role-dependent permissions, granting administrators control over which profiles they can print. Elevate your personnel management capabilities with this powerful, user-friendly solution.'
           hasImgs
-          imgs={[Yo, Yo]}
-          hasPrjt
-          projectLink='https://pokedex-alejandrolgarcia.vercel.app/'
-          githubUrl='https://github.com'
+          imgs={[Php1, Php2]}
+          hasPrjt={false}
+          githubUrl='https://github.com/Roosendo/crud-php'
         />
         <button onClick={closeModal}>Close</button>
       </Modal>

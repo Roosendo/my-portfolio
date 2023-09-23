@@ -30,7 +30,7 @@
 }
 
 .modal img {
-  width: calc(70% - 20px);
+  width: calc(80% - 20px);
   height: auto;
   margin-bottom: 20px;
   border-radius: 7px;
