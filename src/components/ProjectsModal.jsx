@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import Modal from 'react-modal'
-import PivotModal from './PivotModal'
+import { PivotModal } from './PivotModal'
 import Php1 from '../assets/imgs/crud1.webp'
 import Php2 from '../assets/imgs/crud2.webp'
 import Api1 from '../assets/imgs/api1.webp'

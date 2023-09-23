@@ -1,4 +1,6 @@
-export default function PivotModal (props) {
+import PropTypes from 'prop-types'
+
+export const PivotModal = (props) => {
   const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = props
 
   const linkPrjt = () => {
@@ -20,4 +22,14 @@ export default function PivotModal (props) {
       </div>
     </section>
   )
+}
+
+PivotModal.propTypes = {
+  title: PropTypes.string.isRequired,
+  body: PropTypes.string.isRequired,
+  hasImgs: PropTypes.bool.isRequired,
+  imgs: PropTypes.arrayOf(PropTypes.string),
+  hasPrjt: PropTypes.bool.isRequired,
+  projectLink: PropTypes.string,
+  githubUrl: PropTypes.string.isRequired
 }
