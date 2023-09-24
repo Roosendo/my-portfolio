@@ -21,7 +21,15 @@ export default function ProjectsModal () {
   return (
     <>
       <button onClick={openModal} className='main-button'>View Projects</button>
-      <Modal isOpen={modalIsOpen} onRequestClose={closeModal} className='modal' ariaHideApp={false}>
+      <Modal
+        isOpen={modalIsOpen}
+        onRequestClose={closeModal}
+        className='modal'
+        ariaHideApp={false}
+        style={{
+          overlay: { backgroundColor: 'rgba(100, 100, 100, 0.75)' }
+        }}
+      >
         <PivotModal
           title='Pokémon Explorer: Async API Consumption and Dynamic Filtering'
           body='Dive into the world of Pokémon with my interactive JavaScript project! Using async/await, this application fetches Pokémon data from the API, allowing you to control the number of Pokémon retrieved to avoid overloading the API. While fetching data, a sleek progress bar keeps you informed. Once the retrieval is complete, you can filter Pokémon by type, name, or both, providing a versatile way to explore your favorite Pokémon. Experience the magic of Pokémon with this user-friendly, pure JavaScript project.'
