@@ -5,6 +5,8 @@ import Php1 from '../assets/imgs/crud1.webp'
 import Php2 from '../assets/imgs/crud2.webp'
 import Api1 from '../assets/imgs/api1.webp'
 import Api2 from '../assets/imgs/api2.webp'
+import FS1 from '../assets/imgs/fullstack1.webp'
+import FS2 from '../assets/imgs/fullstack2.webp'
 import '../assets/styles/ProjectsModal.css'
 
 export default function ProjectsModal () {
@@ -46,6 +48,14 @@ export default function ProjectsModal () {
           imgs={[Php1, Php2]}
           hasPrjt={false}
           githubUrl='https://github.com/Roosendo/crud-php'
+        />
+        <PivotModal
+          title='FullStack Resource Management Solution'
+          body='Discover our Fullstack Resource Management System, powered by Express for the API and MySQL for seamless database connectivity. This project offers an intuitive user interface, built with vanilla JavaScript, ensuring efficient resource allocation, tracking, and reporting. With local storage for user sessions and technologies like Express, Knex, CORS, and MySQL2, it streamlines resource management, enhancing productivity and user experience. Explore the future of resource management today. Made it collaboratively with classmates.'
+          hasImgs
+          imgs={[FS1, FS2]}
+          hasPrjt={false}
+          githubUrl='https://github.com/Roosendo/proyecto-final'
         />
         <button onClick={closeModal}>Close</button>
       </Modal>
