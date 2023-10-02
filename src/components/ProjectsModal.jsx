@@ -57,6 +57,8 @@ export default function ProjectsModal () {
           hasPrjt={false}
           githubUrl='https://github.com/Roosendo/proyecto-final'
         />
+        <hr />
+        <p className='incoming'>And more incoming ...</p>
         <button onClick={closeModal}>Close</button>
       </Modal>
     </>

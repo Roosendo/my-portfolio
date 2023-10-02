@@ -46,6 +46,11 @@
   margin-bottom: 15px;
 }
 
+.modal .incoming {
+  text-align: center;
+  margin-top: 7px;
+}
+
 .modal button, .main-button {
   background-color: var(--second-util-color);
   color: var(--main-bg-color);
