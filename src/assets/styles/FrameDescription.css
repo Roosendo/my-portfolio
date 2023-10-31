@@ -22,14 +22,23 @@
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
+  margin-bottom: 50px;
   padding: 20px;
   gap: 10px;
   background-color: var(--second-bg-color);
   border: 1px solid var(--second-util-color);
   border-radius: 7px;
-  max-height: calc(50vh - 25px);
-  width: calc(80% - 20px);
+  height: auto;
+  width: calc(60vw - 20px);
   overflow-y: auto;
+  opacity: 0.5;
+  transform: scale(0.9);
+  transition: transform 0.3s ease;
+}
+
+.frame-description.center {
+  opacity: 1;
+  transform: scale(1);
 }
 
 .frame-description div > :not(.frame-description__imgs){
@@ -42,5 +51,7 @@
   .frame-description {
     display: block;
     margin-bottom: 10px;
+    width: calc(80vw - 20px);
+    max-height: calc(70vh - 25px);
   }
 }

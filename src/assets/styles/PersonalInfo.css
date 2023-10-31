@@ -9,6 +9,13 @@
   border: 1px solid var(--second-util-color);
   border-radius: 7px;
   height: calc(100vh - 40px);
+  width: calc(50vw - 40px);
+}
+
+@media screen and (max-width: 767px) {
+  .piContainer {
+    width: calc(90vw - 40px);
+  }
 }
 
 .piPersonal {

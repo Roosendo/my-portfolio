@@ -3,7 +3,7 @@ import ProjectsModal from './ProjectsModal'
 import '../assets/styles/FrameDescription.css'
 
 export const FrameDescription = (props) => {
-  const { title, body, hasImgs, imgs, hasModal } = props
+  const { title, body, hasImgs, imgs, hasModal, isCenter } = props
 
   const renderImgs = () => {
     return (
@@ -23,7 +23,7 @@ export const FrameDescription = (props) => {
   }
 
   return (
-    <div className='frame-description'>
+    <div className={`frame-description${isCenter ? ' center' : ''}`}>
       <div>
         <h2 className='frame-description__title'>{title}</h2>
         <p className='frame-description__body'>{body}</p>
