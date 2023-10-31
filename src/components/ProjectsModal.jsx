@@ -55,7 +55,7 @@ export default function ProjectsModal () {
           hasImgs
           imgs={[FS1, FS2]}
           hasPrjt={false}
-          githubUrl='https://github.com/Roosendo/proyecto-final'
+          githubUrl='https://github.com/PaolaPaz1/proyecto-final-main'
         />
         <hr />
         <p className='incoming'>And more incoming ...</p>
