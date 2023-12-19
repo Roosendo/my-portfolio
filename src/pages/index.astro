@@ -1,0 +1,66 @@
+---
+import Layout from '../layouts/layout.astro'
+import PersonalInfo from '../components/personalInfo.astro'
+import PivotFD from '../components/pivotFD.astro'
+import Footer from '../components/footer.astro'
+---
+<Layout>
+  <div class="container">
+    <div class="main">
+      <PersonalInfo />
+    </div>
+    <div class=content}>
+      <PivotFD />
+    </div>
+    <Footer />
+  </div>
+</Layout>
+
+<style>
+  .container {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 20px;
+    place-items: center;
+  }
+
+  .content {
+    display: flex;
+    place-items: start center;
+    width: 100%;
+    padding: 15px;
+    color: var(--main-util-color);
+    gap: 15px;
+  }
+
+  @media screen and (min-width: 768px) {
+    .container {
+      grid-template-columns: 1fr;
+    }
+
+    .content {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+  }
+
+  @media screen and (max-width: 767px) {
+    .content {
+      display: grid;
+      place-items: start center;
+    }
+  }
+
+  @keyframes reveal {
+    from {
+      opacity: 0;
+      translate: 0 100px;
+      scale: 0.5;
+    }
+    to {
+      opacity: 1;
+      translate: 0 0;
+      scale: 1;
+    }
+  }
+</style>

@@ -1,0 +1,44 @@
+---
+const { icon, text, url, mailto } = Astro.props
+const alt = `Icono de ${text}`
+const link = mailto ? `mailto:${url}` : url
+---
+
+<div class='personal-info'>
+  <div class='icon'>
+    <img src={icon} alt={alt} />
+  </div>
+  <div class='text'>
+    <a href={link} target='blank'>{text}</a>
+  </div>
+</div>
+
+<style>
+  .personal-info {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .personal-info:hover {
+    color: var(--second-util-color);
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .icon img {
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+  }
+
+  .text a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+</style>

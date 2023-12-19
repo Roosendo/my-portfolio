@@ -1,0 +1,17 @@
+---
+const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = Astro.props
+---
+
+<section>
+  <h2>{title}</h2>
+  <p>{body}</p>
+  <div class='modalImgs'>
+    {hasImgs && imgs.map((img, index) => {
+      return `<img src=${img} alt='Screenshot ${index + 1}' />`
+    })}
+  </div>
+  <div class='modalAnchor'>
+    {hasPrjt && `<a href=${projectLink} target='blank'>See project</a>`}
+    <a href={githubUrl} target='blank'>See GitHub</a>
+  </div>
+</section>

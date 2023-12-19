@@ -1,0 +1,87 @@
+---
+import ProjectsModal from './ProjectsModal.astro'
+
+const { title, body, hasImgs, imgs, hasModal} = Astro.props
+
+const renderImgs = () => {
+  return `
+    <div class='frame-description__imgs'>
+      ${imgs.map((img, index) => {
+        return `
+          <img
+            key=${index}
+            src=${img}
+            alt=${title}
+            class='frame-description__img'
+          />
+        `
+      })}
+    </div>
+  `
+}
+---
+
+<div class="frame-description">
+  <div>
+    <h2 class='frame-description__title'>{title}</h2>
+    <p class='frame-description__body'>{body}</p>
+    {hasImgs && renderImgs()}
+    {hasModal && <ProjectsModal />}
+  </div>
+</div>
+
+<style>
+  .frame-description__imgs {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    place-items: start center;
+    margin-top: 5px;
+  }
+
+  .frame-description__img {
+    max-width: 50px;
+    height: auto;
+    transition: transform 0.2s ease;
+    border-radius: 7px;
+  }
+
+  .frame-description__img:hover {
+    transform: scale(1.02);
+  }
+
+  .frame-description {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 75px;
+    padding: 20px;
+    gap: 10px;
+    background-color: var(--second-bg-color);
+    border: 1px solid var(--second-util-color);
+    border-radius: 7px;
+    height: auto;
+    width: calc(60vw - 20px);
+    overflow-y: auto;
+    opacity: 0.5;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+
+  .frame-description div > :not(.frame-description__imgs){
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+  }
+
+  @media screen and (max-width: 767px) {
+    .frame-description {
+      display: block;
+      margin-bottom: 10px;
+      width: calc(80vw - 20px);
+      max-height: calc(70vh - 25px);
+    }
+  }
+
+</style>

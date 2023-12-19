@@ -1,0 +1,72 @@
+---
+import InfoItem from './InfoItem.astro'
+import Yo from '../assets/imgs/yo.webp'
+import Email from '../assets/icons/email.svg'
+import GitHub from '../assets/icons/github.svg'
+import Linkedin from '../assets/icons/linkedin.svg'
+import Instagram from '../assets/icons/instagram.svg'
+import Twitter from '../assets/icons/twitter.svg'
+
+---
+
+<div class='piContainer'>
+  <section class='piPersonal'>
+    <img src={Yo.src} alt='It should be me' class='piImg' />
+    <p class='myName'>Rosendo Garcia</p>
+  </section>
+  <section class='piSocials'>
+    <InfoItem icon={Email.src} text='rosendo.garcia73@outlook.com' url='rosendo.garcia73@outlook.com' mailto />
+    <InfoItem icon={GitHub.src} text='@Roosendo' url='https://github.com/Roosendo' mailto={false} />
+    <InfoItem icon={Linkedin.src} text='Rosendo Garcia' url='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' mailto={false} />
+    <InfoItem icon={Instagram.src} text='rosendonbhd' url='https://www.instagram.com/rosendonbhd/' mailto={false} />
+    <InfoItem icon={Twitter.src} text='@rooos_endo' url='https://twitter.com/rooos_endo' mailto={false} />
+  </section>
+</div>
+
+<style>
+  .piContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    background-color: var(--second-bg-color);
+    border: 1px solid var(--second-util-color);
+    border-radius: 7px;
+    height: calc(100vh - 40px);
+    width: calc(50vw - 40px);
+  }
+
+  @media screen and (max-width: 767px) {
+    .piContainer {
+      width: calc(90vw - 40px);
+    }
+  }
+
+  .piPersonal {
+    display: flex;
+    flex-direction: column;
+    width: 115px;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+  .myName {
+    flex: 1;
+  }
+
+  .piImg {
+    width: 100%;
+    height: auto;
+    border-radius: 7px;
+  }
+
+  .piSocials {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 15px;
+  }
+
+</style>

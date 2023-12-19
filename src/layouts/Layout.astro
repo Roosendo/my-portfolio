@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+		<meta charset="UTF-8" />
+		<meta name="description" content="Astro description" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/x-icon" href="/portfolio.ico" />
+		<meta name="generator" content={Astro.generator} />
+		<title>Rosendo Garcia | Portfolio</title>
+	</head>
+  <body>
+    <slot />
+  </body>
+</html>
+<style is:global>
+  :root {
+  --main-bg-color: #4b4642;
+  --second-bg-color: #3f3f3f;
+  --third-bg-color: #a5a5a5;
+  --main-util-color: #dcd5cd;
+  --second-util-color: #9baecc;
+  --third-util-color: #5b6b7a;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background-color: var(--third-util-color);
+    border-radius: 5px;
+  }
+
+  body {
+    background-color: var(--main-bg-color);
+    color: var(--main-util-color);
+    font-family: system-ui;
+    font-size: 16px;
+    line-height: 1.5;
+  }
+
+  .main {
+    flex: 1;
+    padding: 20px;
+    color: var(--main-util-color);
+    position: sticky;
+  }
+
+  .visible {
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  .hidden {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+  }
+
+</style>

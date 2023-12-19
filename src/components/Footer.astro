@@ -1,0 +1,35 @@
+---
+const year = new Date().getFullYear()
+---
+
+<footer class='footer'>
+  <p>&copy; {year} Rosendo Garcia. All rights reserved.</p>
+  <div>
+    <a href='https://twitter.com/rooos_endo' target='_blank'>Twitter</a>
+    <a href='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' target='_blank'>LinkedIn</a>
+    <a href='https://github.com/Roosendo' target='_blank'>GitHub</a>
+  </div>
+</footer>
+
+<style>
+  .footer {
+  background-color: var(--main-bg-color);
+  padding: 20px 0;
+  color: var(--second-util-color);
+  text-align: center;
+  margin-top: 70px;
+  }
+
+  .footer a {
+    color: var(--main-util-color);
+    margin: 0 10px;
+    text-decoration: none;
+    transition: color 0.3s;
+
+  }
+
+  .footer a:hover {
+    color: var(--second-util-color);
+  }
+
+</style>
