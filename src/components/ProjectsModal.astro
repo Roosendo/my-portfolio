@@ -1,4 +1,5 @@
 ---
+import ModalContainer from './ModalContainer.jsx'
 import PivotModal from './PivotModal.astro'
 import Php1 from '../assets/imgs/crud1.webp'
 import Php2 from '../assets/imgs/crud2.webp'
@@ -6,33 +7,14 @@ import Api1 from '../assets/imgs/api1.webp'
 import Api2 from '../assets/imgs/api2.webp'
 import FS1 from '../assets/imgs/fullstack1.webp'
 import FS2 from '../assets/imgs/fullstack2.webp'
-
-  const modalIsOpen = false
-
-  const openModal = () => {
-    !modalIsOpen
-  }
-
-  const closeModal = () => {
-    !modalIsOpen
-  }
 ---
 
-<button onclick=openModal class='main-button'>View Projects</button>
-<Modal
-  isOpen={modalIsOpen}
-  onRequestClose={closeModal}
-  className='modal'
-  ariaHideApp={false}
-  style={{
-    overlay: { backgroundColor: 'rgba(100, 100, 100, 0.75)' }
-  }}
->
+<ModalContainer client:visible>
   <PivotModal
     title='Pokémon Explorer: Async API Consumption and Dynamic Filtering'
     body='Dive into the world of Pokémon with my interactive JavaScript project! Using async/await, this application fetches Pokémon data from the API, allowing you to control the number of Pokémon retrieved to avoid overloading the API. While fetching data, a sleek progress bar keeps you informed. Once the retrieval is complete, you can filter Pokémon by type, name, or both, providing a versatile way to explore your favorite Pokémon. Experience the magic of Pokémon with this user-friendly, pure JavaScript project.'
     hasImgs
-    imgs={[Api1, Api2]}
+    imgs={[Api1.src, Api2.src]}
     hasPrjt
     projectLink='https://pokemon-api-iota.vercel.app/'
     githubUrl='https://github.com/Roosendo/pokemon-api'
@@ -41,7 +23,7 @@ import FS2 from '../assets/imgs/fullstack2.webp'
     title='PHP CRUD with Administrative Roles and Secure Sessions'
     body='Explore my comprehensive PHP-based CRUD project with an integrated database, designed for efficient personnel management. This dynamic system not only features robust administrative roles but also incorporates secure sessions to ensure that only registered users can access the application. Additionally, it offers the flexibility to print user profiles, with role-dependent permissions, granting administrators control over which profiles they can print. Elevate your personnel management capabilities with this powerful, user-friendly solution.'
     hasImgs
-    imgs={[Php1, Php2]}
+    imgs={[Php1.src, Php2.src]}
     hasPrjt={false}
     githubUrl='https://github.com/Roosendo/crud-php'
   />
@@ -49,99 +31,10 @@ import FS2 from '../assets/imgs/fullstack2.webp'
     title='FullStack Resource Management Solution'
     body='Discover our Fullstack Resource Management System, powered by Express for the API and MySQL for seamless database connectivity. This project offers an intuitive user interface, built with vanilla JavaScript, ensuring efficient resource allocation, tracking, and reporting. With local storage for user sessions and technologies like Express, Knex, CORS, and MySQL2, it streamlines resource management, enhancing productivity and user experience. Explore the future of resource management today. Made it collaboratively with classmates.'
     hasImgs
-    imgs={[FS1, FS2]}
+    imgs={[FS1.src, FS2.src]}
     hasPrjt={false}
     githubUrl='https://github.com/PaolaPaz1/proyecto-final-main'
   />
   <hr />
-  <p class='incoming'>And more incoming ...</p>
-  <button onclick=closeModal>Close</button>
-</Modal>
-
-<style>
-  .modal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: var(--main-util-color);
-    color: var(--main-bg-color);
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-    width: 80%;
-    max-width: 600px;
-    max-height: 80%;
-    overflow-y: auto;
-  }
-
-  .modal section {
-    display: grid;
-    place-items: center;
-  }
-
-  .modal a {
-    color: inherit;
-    text-decoration: none;
-    flex: 1;
-  }
-
-  .modal a:hover {
-    color: var(--main-util-color);
-  }
-
-  .modal img {
-    width: calc(80% - 20px);
-    height: auto;
-    margin-bottom: 20px;
-    border-radius: 7px;
-  }
-
-  .modal h2 {
-    font-size: 24px;
-    margin-bottom: 10px;
-  }
-
-  .modal p {
-    font-size: 16px;
-    margin-bottom: 15px;
-  }
-
-  .modal .incoming {
-    text-align: center;
-    margin-top: 7px;
-  }
-
-  .modal button, .main-button {
-    background-color: var(--second-util-color);
-    color: var(--main-bg-color);
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-size: 16px;
-    cursor: pointer;
-    margin: 10px auto 0;
-  }
-
-  .modalImgs {
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    gap: 20px;
-    place-items: start center;
-    margin-top: 5px;
-  }
-
-  .modalAnchor {
-    display: flex;
-    flex-direction: column;
-    place-items: center;
-    gap: 10px;
-    margin-top: 15px;
-    width: calc(50% - 10px);
-    background-color: var(--main-bg-color);
-    color: var(--second-util-color);
-    border-radius: 7px;
-    margin-bottom: 15px;
-  }
-
-</style>
+  <p class='incoming'>And more incoming...</p>
+</ModalContainer>
