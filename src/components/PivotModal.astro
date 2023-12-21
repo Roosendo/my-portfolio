@@ -3,7 +3,7 @@ const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = Astro.pr
 ---
 
 <section>
-  <h2>{title}</h2>
+  <h2 tabindex="-1">{title}</h2>
   <p>{body}</p>
   {hasImgs && (
     <div class='modalImgs'>
