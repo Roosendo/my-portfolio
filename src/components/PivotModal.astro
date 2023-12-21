@@ -2,9 +2,7 @@
 const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = Astro.props
 ---
 
-<section>
-  <h2 tabindex="-1">{title}</h2>
-  <p>{body}</p>
+<section tabindex="-1">
   {hasImgs && (
     <div class='modalImgs'>
       {imgs.map((img, index) => (
@@ -12,6 +10,8 @@ const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = Astro.pr
       ))}
     </div>
   )}
+  <h2>{title}</h2>
+  <p>{body}</p>
   <div class='modalAnchor'>
     {hasPrjt && <a href={projectLink} target='_blank'>See project</a>}
     <a href={githubUrl} target='_blank'>See GitHub</a>
