@@ -62,7 +62,7 @@ const { title, body, hasImgs, imgs, hasModal } = Astro.props
 
     animation: reveal linear both;
     animation-timeline: view();
-    animation-range: entry 20% cover 35%;
+    animation-range: entry 15% cover 30%;
   }
 
   @media screen and (max-width: 767px) {
@@ -88,7 +88,7 @@ const { title, body, hasImgs, imgs, hasModal } = Astro.props
   @keyframes reveal {
     from {
       opacity: 0;
-      translate: 0 100px;
+      translate: 0 75px;
       scale: 0.5;
     }
 
