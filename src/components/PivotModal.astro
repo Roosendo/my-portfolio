@@ -2,7 +2,7 @@
 const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = Astro.props
 ---
 
-<section tabindex="-1">
+<section>
   {hasImgs && (
     <div class='modalImgs'>
       {imgs.map((img, index) => (
