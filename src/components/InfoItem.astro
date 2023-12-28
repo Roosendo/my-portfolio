@@ -6,7 +6,7 @@ const link = mailto ? `mailto:${url}` : url
 
 <div class='personal-info'>
   <div class='icon'>
-    <img src={icon} alt={alt} />
+    <img src={icon} alt={alt} loading="lazy" />
   </div>
   <div class='text'>
     <a href={link} target='blank'>{text}</a>

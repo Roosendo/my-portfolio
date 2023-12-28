@@ -3,13 +3,15 @@ const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl } = Astro.pr
 ---
 
 <section>
-  {hasImgs && (
-    <div class='modalImgs'>
-      {imgs.map((img, index) => (
-        <img src={img} alt={`Screenshot ${index + 1}`} />
-      ))}
-    </div>
-  )}
+  {
+    hasImgs && (
+      <div class='modalImgs'>
+        {imgs.map((img: string, index: number) => (
+          <img src={img} alt={`Screenshot ${index + 1}`} loading="lazy" />
+        ))}
+      </div>
+    )
+  }
   <h2>{title}</h2>
   <p>{body}</p>
   <div class='modalAnchor'>

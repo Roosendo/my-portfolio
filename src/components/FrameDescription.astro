@@ -15,6 +15,7 @@ const { title, body, hasImgs, imgs, hasModal } = Astro.props
             src={img}
             alt={title}
             class='frame-description__img'
+            loading="lazy"
           />
         ))}
       </div>
