@@ -14,16 +14,10 @@
     "standard": "^17.1.0"
   },
   "dependencies": {
-    "@astrojs/react": "^3.0.8",
-    "@astrojs/renderer-react": "^0.5.0",
     "@astrojs/tailwind": "^5.1.0",
     "@fontsource-variable/onest": "^5.0.2",
-    "@types/react": "^18.2.45",
-    "@types/react-dom": "^18.2.18",
     "astro": "^4.0.6",
     "react": "18.2.0",
-    "react-dom": "^18.2.0",
-    "react-modal": "3.16.1",
     "tailwindcss": "^3.4.0"
   },
   "eslintConfig": {
