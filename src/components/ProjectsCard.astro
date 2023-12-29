@@ -1,0 +1,36 @@
+---
+import ModalContainer from './ModalContainer.jsx'
+import PivotModal from './PivotCard.astro.jsx'
+import Php2 from '../assets/imgs/crud2.webp'
+import Api1 from '../assets/imgs/api1.webp'
+import FS2 from '../assets/imgs/fullstack2.webp'
+---
+
+<ModalContainer client:visible>
+  <PivotModal
+    title='Pokémon Explorer: Async API Consumption and Dynamic Filtering'
+    body='Fetches data from API using async/await, with customizable retrieval and a sleek progress bar. Filter Pokémon by type or name for a user-friendly exploration experience.'
+    hasImgs
+    imgs={[Api1.src]}
+    hasPrjt
+    projectLink='https://pokemon-api-iota.vercel.app/'
+    githubUrl='https://github.com/Roosendo/pokemon-api'
+  />
+  <PivotModal
+    title='PHP CRUD with Administrative Roles and Secure Sessions'
+    body='Integrated database, robust administrative roles, and secure sessions. Allows administrators to print user profiles with role-dependent permissions, enhancing personnel management.'
+    hasImgs
+    imgs={[Php2.src]}
+    hasPrjt={false}
+    githubUrl='https://github.com/Roosendo/crud-php'
+  />
+  <PivotModal
+    title='FullStack Resource Management Solution'
+    body='Collaborative project with Express and MySQL. Intuitive UI with vanilla JavaScript for efficient resource allocation, tracking, and reporting. Utilizes technologies like Express,CORS, and MySQL2 for streamlined management.'
+    hasImgs
+    imgs={[FS2.src]}
+    hasPrjt={false}
+    githubUrl='https://github.com/PaolaPaz1/proyecto-final-main'
+  />
+  <p class='incoming'>And more incoming...</p>
+</ModalContainer>
