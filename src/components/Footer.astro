@@ -2,7 +2,7 @@
 const year = new Date().getFullYear()
 ---
 
-<footer class='footer'>
+<footer class='p-5 text-center my-5 text-white/60'>
   <p>&copy; {year} Rosendo Garcia. All rights reserved.</p>
   <div>
     <a href='https://twitter.com/rooos_endo' target='_blank'>Twitter</a>
@@ -12,24 +12,15 @@ const year = new Date().getFullYear()
 </footer>
 
 <style>
-  .footer {
-    background-color: var(--main-bg-color);
-    padding: 20px 0;
-    color: var(--second-util-color);
-    text-align: center;
-    margin-top: 20px;
-  }
-
-  .footer a {
-    color: var(--main-util-color);
+  a {
+    color: rgb(255 255 255 / 0.6);
     margin: 0 10px;
     text-decoration: none;
     transition: color 0.3s;
-
   }
 
-  .footer a:hover {
-    color: var(--second-util-color);
+  a:hover {
+    color: rgb(255 255 255 / 0.9);
   }
 
 </style>
