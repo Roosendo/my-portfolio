@@ -1,5 +1,4 @@
 ---
-import InfoItem from './InfoItem.astro'
 import Yo from '../assets/imgs/yo.webp'
 import SocialPool from './SocialPool.astro'
 import Email from '../assets/icons/Mail.astro'
@@ -11,7 +10,7 @@ import Twitter from '../assets/icons/Twitter.astro'
 
 <div class="flex flex-col text-left w-full place-items-center">
   <section class="grid gap-3">
-    <!-- <img src={Yo.src} alt='It should be me' class="w-full h-auto rounded" loading="lazy"/> -->
+    <img src={Yo.src} alt='It should be me' class="size-24 h-auto rounded" loading="lazy"/>
     <div class="flex flex-row items-center gap-3">
       <h1 class="text-3xl">Hey, I'm Rosendo</h1>
       <a href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" target="_blank" class="text-blue-700 transition bg-slate-300 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 text-center me-3 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
@@ -42,67 +41,4 @@ import Twitter from '../assets/icons/Twitter.astro'
       <span class="text-white/80">Twitter</span>
     </SocialPool>
   </nav>
-  <!-- <section class='piSocials'>
-    <InfoItem text='rosendo.garcia73@outlook.com' url='rosendo.garcia73@outlook.com' mailto>
-      <Email slot='icon' class="size-5" />
-    </InfoItem>
-    <InfoItem text='@Roosendo' url='' mailto={false}>
-      <GitHub slot='icon' class="size-5" />
-    </InfoItem>
-    <InfoItem text='Rosendo Garcia' url='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' mailto={false}>
-      <LinkedIn slot='icon' class="size-5" />
-    </InfoItem>
-    <InfoItem text='rosendonbhd' url='https://www.instagram.com/rosendonbhd/' mailto={false}>
-      <Instagram slot='icon' class="size-5" />
-    </InfoItem>
-    <InfoItem text='@rooos_endo' url='https://twitter.com/rooos_endo' mailto={false}>
-      <Twitter slot='icon' class="size-5" />
-    </InfoItem>
-  </section> -->
 </div>
-
-<!-- <style>
-  .piContainer {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    text-align: center;
-    padding: 20px;
-    border-radius: 7px;
-    height: calc(100vh - 40px);
-    width: calc(50vw - 40px);
-  }
-
-  @media screen and (max-width: 767px) {
-    .piContainer {
-      width: calc(90vw - 40px);
-    }
-  }
-
-  .piPersonal {
-    display: flex;
-    flex-direction: column;
-    width: 115px;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-  .myName {
-    flex: 1;
-  }
-
-  .piImg {
-    width: 100%;
-    height: auto;
-    border-radius: 7px;
-  }
-
-  .piSocials {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    margin-top: 15px;
-  }
-
-</style> -->
