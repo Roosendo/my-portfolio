@@ -1,28 +1,67 @@
 ---
 import InfoItem from './InfoItem.astro'
 import Yo from '../assets/imgs/yo.webp'
-import Email from '../assets/icons/email.svg'
-import GitHub from '../assets/icons/github.svg'
-import Linkedin from '../assets/icons/linkedin.svg'
-import Instagram from '../assets/icons/instagram.svg'
-import Twitter from '../assets/icons/twitter.svg'
+import SocialPool from './SocialPool.astro'
+import Email from '../assets/icons/Mail.astro'
+import GitHub from '../assets/icons/GitHub.astro'
+import LinkedIn from '../assets/icons/LinkedIn.astro'
+import Instagram from '../assets/icons/Instagram.astro'
+import Twitter from '../assets/icons/Twitter.astro'
 ---
 
-<div class='piContainer'>
-  <section class='piPersonal'>
-    <img src={Yo.src} alt='It should be me' class='piImg' loading="lazy"/>
-    <p class='myName'>Rosendo Garcia</p>
+<div class="flex flex-col text-left w-full place-items-center">
+  <section class="grid gap-3">
+    <!-- <img src={Yo.src} alt='It should be me' class="w-full h-auto rounded" loading="lazy"/> -->
+    <div class="flex flex-row items-center gap-3">
+      <h1 class="text-3xl">Hey, I'm Rosendo</h1>
+      <a href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" target="_blank" class="text-blue-700 transition bg-slate-300 hover:text-white border border-blue-700 hover:bg-blue-800 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-2 py-1 text-center me-3 mb-2 dark:border-blue-500 dark:text-blue-500 dark:hover:text-white dark:hover:bg-blue-500 dark:focus:ring-blue-800">
+        Available for hire
+      </a>
+    </div>
+    <p class="text-lg"><span class="text-emerald-400">Web developer from San Miguel, El Salvador</span>, I navigate the dynamic realm of technology with a focus on <span class="text-yellow-200">JavaScript backend</span> solutions. Eager to learn and driven by innovation, <span class="text-violet-500">I shape digital experiences that blend functionality with elegance.</span></p>
   </section>
-  <section class='piSocials'>
-    <InfoItem icon={Email.src} text='rosendo.garcia73@outlook.com' url='rosendo.garcia73@outlook.com' mailto />
-    <InfoItem icon={GitHub.src} text='@Roosendo' url='https://github.com/Roosendo' mailto={false} />
-    <InfoItem icon={Linkedin.src} text='Rosendo Garcia' url='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' mailto={false} />
-    <InfoItem icon={Instagram.src} text='rosendonbhd' url='https://www.instagram.com/rosendonbhd/' mailto={false} />
-    <InfoItem icon={Twitter.src} text='@rooos_endo' url='https://twitter.com/rooos_endo' mailto={false} />
-  </section>
+  <nav class="flex gap-4 mt-8 flex-wrap w-[70%]">
+    <SocialPool href="https://github.com/Roosendo">
+      <GitHub class="size-4 md:size-6 text-emerald-400" />
+      <span class="text-white/80">GitHub</span>
+    </SocialPool>
+    <SocialPool href="mailto:rosendo.garcia73@outlook.com">
+      <Email class="size-4 md:size-6 text-emerald-400" />
+      <span class="text-white/80">Email</span>
+    </SocialPool>
+    <SocialPool href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/">
+      <LinkedIn class="size-4 md:size-6 text-emerald-400" />
+      <span class="text-white/80">LinkedIn</span>
+    </SocialPool>
+    <SocialPool href="https://www.instagram.com/callmerosendo/">
+      <Instagram class="size-4 md:size-6 text-emerald-400" />
+      <span class="text-white/80">Instagram</span>
+    </SocialPool>
+    <SocialPool href="https://twitter.com/rooos_endo">
+      <Twitter class="size-4 md:size-6 text-emerald-400" />
+      <span class="text-white/80">Twitter</span>
+    </SocialPool>
+  </nav>
+  <!-- <section class='piSocials'>
+    <InfoItem text='rosendo.garcia73@outlook.com' url='rosendo.garcia73@outlook.com' mailto>
+      <Email slot='icon' class="size-5" />
+    </InfoItem>
+    <InfoItem text='@Roosendo' url='' mailto={false}>
+      <GitHub slot='icon' class="size-5" />
+    </InfoItem>
+    <InfoItem text='Rosendo Garcia' url='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' mailto={false}>
+      <LinkedIn slot='icon' class="size-5" />
+    </InfoItem>
+    <InfoItem text='rosendonbhd' url='https://www.instagram.com/rosendonbhd/' mailto={false}>
+      <Instagram slot='icon' class="size-5" />
+    </InfoItem>
+    <InfoItem text='@rooos_endo' url='https://twitter.com/rooos_endo' mailto={false}>
+      <Twitter slot='icon' class="size-5" />
+    </InfoItem>
+  </section> -->
 </div>
 
-<style>
+<!-- <style>
   .piContainer {
     display: flex;
     flex-direction: column;
@@ -30,8 +69,6 @@ import Twitter from '../assets/icons/twitter.svg'
     align-items: center;
     text-align: center;
     padding: 20px;
-    background-color: var(--second-bg-color);
-    border: 1px solid var(--second-util-color);
     border-radius: 7px;
     height: calc(100vh - 40px);
     width: calc(50vw - 40px);
@@ -68,4 +105,4 @@ import Twitter from '../assets/icons/twitter.svg'
     margin-top: 15px;
   }
 
-</style>
+</style> -->

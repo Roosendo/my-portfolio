@@ -1,12 +1,11 @@
 ---
-const { icon, text, url, mailto } = Astro.props
-const alt = `Icono de ${text}`
+const { text, url, mailto } = Astro.props
 const link = mailto ? `mailto:${url}` : url
 ---
 
 <div class='personal-info'>
   <div class='icon'>
-    <img src={icon} alt={alt} loading="lazy" />
+    <slot name='icon' />
   </div>
   <div class='text'>
     <a href={link} target='blank'>{text}</a>
@@ -18,6 +17,7 @@ const link = mailto ? `mailto:${url}` : url
     display: flex;
     flex-direction: row;
     align-items: center;
+    gap: 8px;
   }
 
   .personal-info:hover {
