@@ -47,6 +47,12 @@ import '@fontsource-variable/onest';
 		font-weight: 500;
 	}
 
+	@media (prefers-reduced-motion: reduce) {
+		html {
+			scroll-behavior: auto;
+		}
+	}
+
 	::-webkit-scrollbar {
 		width: 5px;
 	}
