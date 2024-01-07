@@ -27,7 +27,7 @@ import Mail from '../assets/icons/Mail.astro'
   
 </section>
 
-<script>
+<script is:inline>
   const success = document.getElementById('success')
   const notSuccess = document.getElementById('not-success')
   const form = document.getElementById('contactForm')
@@ -36,7 +36,6 @@ import Mail from '../assets/icons/Mail.astro'
     e.preventDefault()
     const name = document.getElementById('floating_name').value
     const message = document.getElementById('message').value
-    console.log(name, message)
 
     const data = { name, message }
 
