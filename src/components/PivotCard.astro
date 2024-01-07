@@ -10,7 +10,7 @@ import Pill from './Pill.astro'
   <div class="flex flex-row flex-wrap gap-2">
     {
       languages.map((lang: string) => (
-        <Pill><span class="text-violet-500 md:text-base text-sm">{lang}</span></Pill>
+        <Pill class="cursor-default"><span class="text-violet-500 md:text-base text-sm">{lang}</span></Pill>
       ))
     }
   </div>
@@ -24,7 +24,7 @@ import Pill from './Pill.astro'
     )
   }
   <div class="flex flex-row w-full justify-evenly gap-1">
-    {hasPrjt && <Pill href={projectLink}><span class="text-white md:text-base text-sm">See project</span></Pill>}
-    <Pill href={githubUrl}><span class="text-white md:text-base text-sm">See GitHub</span></Pill>
+    {hasPrjt && <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">See project</span></Pill>}
+    <Pill href={githubUrl} class="cursor-pointer"><span class="text-white md:text-base text-sm">See GitHub</span></Pill>
   </div>
 </section>
