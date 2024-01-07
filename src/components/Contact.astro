@@ -3,6 +3,12 @@ import Mail from '../assets/icons/Mail.astro'
 ---
 
 <section class="w-full">
+  <div class="hidden p-4 m-2 text-sm rounded-lg bg-gray-800 text-green-400" id="success" role="alert">
+    <span class="font-medium">Success alert!</span> The email has been sent
+  </div>
+  <div class="hidden p-4 m-2 text-sm rounded-lg bg-gray-800 text-red-400" id="not-success" role="alert">
+    <span class="font-medium">Danger alert!</span> The email could not be sent
+  </div>
   <div class="flex flex-row items-center p-1 gap-2 text-white/60">
     <Mail class="md:size-5 size-4" />
     <h3 class="md:text-base text-md">Contact</h3>
@@ -18,22 +24,52 @@ import Mail from '../assets/icons/Mail.astro'
     </div>
     <button type="submit" id="buttonF" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
   </form>
-  <div class="hidden p-4 mb-4 text-sm rounded-lg bg-gray-800 text-red-400" role="alert">
-    <span class="font-medium">Danger alert!</span> Change a few things up and try submitting again.
-  </div>
-  <div class="hidden p-4 mb-4 text-sm rounded-lg bg-gray-800 text-green-400" role="alert">
-    <span class="font-medium">Success alert!</span> Change a few things up and try submitting again.
-  </div>
+  
 </section>
 
 <script>
-  import { sendEmail } from '../utils/email.js'
+  const success = document.getElementById('success')
+  const notSuccess = document.getElementById('not-success')
   const form = document.getElementById('contactForm')
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault()
-    console.log('yes')
-    sendEmail('juan', 'hola')
+    const name = document.getElementById('floating_name').value
+    const message = document.getElementById('message').value
+    console.log(name, message)
+
+    const data = { name, message }
+
+    const apiUrl = 'https://resend-api-dev-ajrd.3.us-1.fl0.io/send-email'
+
+    const requestOptions = {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(data)
+    }
+
+    try {
+      const response = await fetch(apiUrl, requestOptions)
+
+      if (!response.ok) {
+        throw new Error('Network response was not ok')
+      }
+
+      success.classList.remove('hidden')
+      setTimeout(() => {
+        success.classList.add('hidden')
+      }, 2000)
+    } catch (error) {
+      console.log(error)
+      notSuccess.classList.remove('hidden')
+      setTimeout(() => {
+        notSuccess.classList.add('hidden')
+      }, 2000)
+    }
+
+    e.target.reset()
   })
 
 </script>
