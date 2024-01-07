@@ -6,6 +6,8 @@ import GitHub from '../assets/icons/GitHub.astro'
 import LinkedIn from '../assets/icons/LinkedIn.astro'
 import Send from '../assets/icons/Send.astro'
 import Copy from '../assets/icons/Copy.astro'
+import CV from '../assets/cv/CV-LUIS ROSENDO-ENGLISH.pdf'
+import CVIcon from '../assets/icons/CV.astro'
 ---
 
 <div class="flex flex-col text-left w-full place-items-center">
@@ -27,6 +29,10 @@ import Copy from '../assets/icons/Copy.astro'
     <Pill href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" class="cursor-pointer">
       <LinkedIn class="md:size-5 size-4 text-emerald-400" />
       <span class="text-white/80 md:text-base text-sm">LinkedIn</span>
+    </Pill>
+    <Pill href={CV} class="cursor-pointer">
+      <CVIcon class="md:size-5 size-4 text-emerald-400" />
+      <span class="text-white/80 md:text-base text-sm">CV</span>
     </Pill>
   </nav>
   <div class="hidden items-center p-4 m-2 text-sm rounded-lg bg-gray-800 text-blue-400" role="alert" id="alert-ok">
