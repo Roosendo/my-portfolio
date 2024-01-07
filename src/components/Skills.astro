@@ -10,6 +10,45 @@ import Node from '../assets/icons/skills/Node.astro'
 import React from '../assets/icons/skills/React.astro'
 import Tailwind from '../assets/icons/skills/Tailwind.astro'
 import TypeScript from '../assets/icons/skills/TypeScript.astro'
+
+const skills = [
+  {
+    name: 'HTML',
+    icon: HTML,
+  },
+  {
+    name: 'CSS',
+    icon: CSS,
+  },
+  {
+    name: 'JavaScript',
+    icon: JavaScript,
+  },
+  {
+    name: 'Node',
+    icon: Node,
+  },
+  {
+    name: 'TypeScript',
+    icon: TypeScript,
+  },
+  {
+    name: 'Express',
+    icon: Express,
+  },
+  {
+    name: 'Tailwind',
+    icon: Tailwind,
+  },
+  {
+    name: 'React',
+    icon: React,
+  },
+  {
+    name: 'Astro',
+    icon: AstroIcon,
+  },
+]
 ---
 
 <div class="flex flex-row items-center w-full p-1 gap-3 text-white/60">
@@ -17,40 +56,12 @@ import TypeScript from '../assets/icons/skills/TypeScript.astro'
   <h3 class="md:text-base text-md">Skills</h3>
 </div>
 <section class="flex gap-4 mt-4 flex-wrap md:w-[70%] w-[90%] mx-auto justify-center">
-  <Pill class="cursor-default">
-    <HTML class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">HTML</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <CSS class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">CSS</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <JavaScript class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">JavaScript</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <Node class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">Node</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <TypeScript class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">TypeScript</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <Tailwind class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">Tailwind</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <Express class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">Express</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <React class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">React</span>
-  </Pill>
-  <Pill class="cursor-default">
-    <AstroIcon class="md:size-5 size-4" />
-    <span class="text-white/80 md:text-base text-sm">Astro</span>
-  </Pill>
+  {
+    skills.map((skill) => (
+      <Pill>
+        <skill.icon class="md:size-5 size-4" />
+        <span class="text-white/80 md:text-base text-sm">{skill.name}</span>
+      </Pill>
+    ))
+  }
 </section>
