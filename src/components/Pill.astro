@@ -12,8 +12,8 @@ const WrapperTag = Astro.props.href ? 'a' : 'p'
     text-black/70 dark:text-white/50
     transition
     hover:scale-110 hover:bg-white/10
+    ${Astro.props.class}
   `}
-  {...Astro.props}
   target="_blank"
   rel="noopener noreferrer"
 >
