@@ -1,5 +1,14 @@
 ---
-const { title, body, hasImgs, imgs, hasPrjt, projectLink, githubUrl, languages } = Astro.props
+interface Props {
+  title: string
+  body: string
+  imgs: string[]
+  projectLink: string
+  githubUrl: string
+  languages: string[]
+}
+
+const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props
 
 import Pill from './Pill.astro'
 ---
@@ -9,22 +18,28 @@ import Pill from './Pill.astro'
   <p class="md:text-lg text-base text-white">{body}</p>
   <div class="flex flex-row flex-wrap gap-2">
     {
-      languages.map((lang: string) => (
+      languages.map((lang) => (
         <Pill class="cursor-default"><span class="text-violet-500 md:text-base text-sm">{lang}</span></Pill>
       ))
     }
   </div>
   {
-    hasImgs && (
+    imgs && (
       <div>
-        {imgs.map((img: string, index: number) => (
-          <img src={img} alt={`Screenshot ${index + 1}`} loading="lazy" class="w-full h-auto rounded-lg" />
-        ))}
+        {
+          imgs.map((img, index) => (
+            <img src={img} alt={`Screenshot ${index + 1}`} loading="lazy" class="w-full h-auto rounded-lg" />
+          ))
+        }
       </div>
     )
   }
   <div class="flex flex-row w-full justify-evenly gap-1">
-    {hasPrjt && <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">See project</span></Pill>}
+    {
+      projectLink && (
+        <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">See project</span></Pill>
+      )
+    }
     <Pill href={githubUrl} class="cursor-pointer"><span class="text-white md:text-base text-sm">See GitHub</span></Pill>
   </div>
 </section>
