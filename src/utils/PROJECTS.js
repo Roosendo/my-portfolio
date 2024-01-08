@@ -4,6 +4,14 @@ import FS2 from '../assets/imgs/fullstack2.webp'
 
 export const PROJECTS = [
   {
+    title: 'FullStack Resource Management Solution',
+    body: 'Collaborative project with Express and MySQL. Intuitive UI with vanilla JavaScript for efficient resource allocation, tracking, and reporting. Utilizes technologies like Express, CORS, and MySQL2 for streamlined management.',
+    imgs: [FS2.src],
+    projectLink: '',
+    githubUrl: 'https://github.com/PaolaPaz1/proyecto-final-main',
+    languages: ['JavaScript', 'MySQL', 'HTML', 'CSS', 'Express']
+  },
+  {
     title: 'Pokémon Explorer: Async API Consumption and Dynamic Filtering',
     body: 'Fetches data from API using async/await, with customizable retrieval and a sleek progress bar. Filter Pokémon by type or name for a user-friendly exploration experience.',
     imgs: [Api1.src],
@@ -18,13 +26,5 @@ export const PROJECTS = [
     projectLink: '',
     githubUrl: 'https://github.com/Roosendo/crud-php',
     languages: ['PHP', 'MySQL', 'HTML', 'CSS']
-  },
-  {
-    title: 'FullStack Resource Management Solution',
-    body: 'Collaborative project with Express and MySQL. Intuitive UI with vanilla JavaScript for efficient resource allocation, tracking, and reporting. Utilizes technologies like Express, CORS, and MySQL2 for streamlined management.',
-    imgs: [FS2.src],
-    projectLink: '',
-    githubUrl: 'https://github.com/PaolaPaz1/proyecto-final-main',
-    languages: ['JavaScript', 'MySQL', 'HTML', 'CSS', 'Express']
   }
 ]
