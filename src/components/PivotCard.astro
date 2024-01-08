@@ -13,10 +13,10 @@ const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props
 import Pill from './Pill.astro'
 ---
 
-<section class="flex flex-col gap-4">
+<section class="flex flex-col gap-3">
   <h2 class="md:text-2xl text-xl text-yellow-200">{title}</h2>
   <p class="md:text-lg text-base text-white">{body}</p>
-  <div class="flex flex-row flex-wrap gap-2">
+  <div class="flex flex-row flex-wrap gap-3">
     {
       languages.map((lang) => (
         <Pill class="cursor-default"><span class="text-[#eea5ee] md:text-base text-sm">{lang}</span></Pill>
@@ -34,7 +34,7 @@ import Pill from './Pill.astro'
       </div>
     )
   }
-  <div class="flex flex-row w-full justify-evenly gap-1">
+  <div class="flex flex-row w-full justify-evenly gap-3">
     {
       projectLink && (
         <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">See project</span></Pill>
