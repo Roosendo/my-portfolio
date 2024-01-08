@@ -3,6 +3,8 @@ import CSS from '../assets/icons/skills/CSS.astro'
 import Express from '../assets/icons/skills/Express.astro'
 import HTML from '../assets/icons/skills/HTML.astro'
 import JavaScript from '../assets/icons/skills/JavaScript.astro'
+import Git from '../assets/icons/skills/Git.astro'
+import PHP from '../assets/icons/skills/PHP.astro'
 import Node from '../assets/icons/skills/Node.astro'
 import React from '../assets/icons/skills/React.astro'
 import Tailwind from '../assets/icons/skills/Tailwind.astro'
@@ -20,6 +22,14 @@ export const SKILLS = [
   {
     name: 'JavaScript',
     icon: JavaScript
+  },
+  {
+    name: 'Git',
+    icon: Git
+  },
+  {
+    name: 'PHP',
+    icon: PHP
   },
   {
     name: 'Node',
