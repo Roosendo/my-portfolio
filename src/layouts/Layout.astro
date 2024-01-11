@@ -20,12 +20,12 @@ const { currentLocale } = Astro
 		<link rel="icon" type="image/x-icon" href="/portfolio.ico" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
+		<ViewTransitions />
 	</head>
 	<body>
 		<slot name="header" />
 		<main class="flex flex-col place-items-center w-full justify-center">
 			<slot />
-			<ViewTransitions />
 		</main>
 	</body>
 </html>

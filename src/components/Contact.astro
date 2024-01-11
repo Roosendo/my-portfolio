@@ -33,47 +33,49 @@ const i18n = getI18N({ currentLocale })
 </section>
 
 <script is:inline>
-  const success = document.getElementById('success')
-  const notSuccess = document.getElementById('not-success')
-  const form = document.getElementById('contactForm')
-
-  form.addEventListener('submit', async (e) => {
-    e.preventDefault()
-    const name = document.getElementById('floating_name').value
-    const message = document.getElementById('message').value
-
-    const data = { name, message }
-
-    const apiUrl = 'https://resend-api-dev-ajrd.3.us-1.fl0.io/send-email'
-
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }
-
-    try {
-      const response = await fetch(apiUrl, requestOptions)
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
+  document.addEventListener('astro:page-load', () => {
+    const success = document.getElementById('success')
+    const notSuccess = document.getElementById('not-success')
+    const form = document.getElementById('contactForm')
+  
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault()
+      const name = document.getElementById('floating_name').value
+      const message = document.getElementById('message').value
+  
+      const data = { name, message }
+  
+      const apiUrl = 'https://resend-api-dev-ajrd.3.us-1.fl0.io/send-email'
+  
+      const requestOptions = {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(data)
       }
-
-      success.classList.remove('hidden')
-      setTimeout(() => {
-        success.classList.add('hidden')
-      }, 2000)
-    } catch (error) {
-      console.log(error)
-      notSuccess.classList.remove('hidden')
-      setTimeout(() => {
-        notSuccess.classList.add('hidden')
-      }, 2000)
-    }
-
-    e.target.reset()
+  
+      try {
+        const response = await fetch(apiUrl, requestOptions)
+  
+        if (!response.ok) {
+          throw new Error('Network response was not ok')
+        }
+  
+        success.classList.remove('hidden')
+        setTimeout(() => {
+          success.classList.add('hidden')
+        }, 2000)
+      } catch (error) {
+        console.log(error)
+        notSuccess.classList.remove('hidden')
+        setTimeout(() => {
+          notSuccess.classList.add('hidden')
+        }, 2000)
+      }
+  
+      e.target.reset()
+    })
   })
 
 </script>
