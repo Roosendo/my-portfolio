@@ -11,7 +11,7 @@ export const getI18N = ({
 }: {
   currentLocale: string | undefined
 }) => {
-  if (currentLocale === LANGUAGES.SPANISH) return spanish
   if (currentLocale === LANGUAGES.ENGLISH) return english
-  return spanish
+  if (currentLocale === LANGUAGES.SPANISH) return spanish
+  return english
 }
