@@ -1,6 +1,6 @@
-import Php2 from '../assets/imgs/crud2.webp'
-import Api1 from '../assets/imgs/api1.webp'
-import FS2 from '../assets/imgs/fullstack2.webp'
+import Php2 from '@imgs/crud2.webp'
+import Api1 from '@imgs/api1.webp'
+import FS2 from '@imgs/fullstack2.webp'
 
 import { getI18N } from '@c/i18n'
 
