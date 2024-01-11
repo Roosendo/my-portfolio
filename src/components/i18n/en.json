@@ -65,6 +65,7 @@
     "LABEL": "Contact",
     "INPUT_PLACEHOLDER": "Your name",
     "INPUT_PLACEHOLDER_2": "Your message",
+    "INPUT_PLACEHOLDER_3": "Leave a comment...",
     "BUTTON": "Submit"
   },
   "FOOTER": {
