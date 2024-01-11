@@ -1,6 +1,6 @@
 ---
 import '@fontsource-variable/onest'
-const { description } = Astro.props
+const { title, description } = Astro.props
 ---
 
 <!doctype html>
@@ -11,7 +11,7 @@ const { description } = Astro.props
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/x-icon" href="/portfolio.ico" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Rosendo Garcia | Portfolio</title>
+		<title>{title}</title>
 	</head>
 	<body>
 		<slot name="header" />
