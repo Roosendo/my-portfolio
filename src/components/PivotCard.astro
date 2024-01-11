@@ -10,6 +10,11 @@ interface Props {
 
 const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props
 
+import { getI18N } from '@c/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
 import Pill from './Pill.astro'
 ---
 
@@ -37,9 +42,9 @@ import Pill from './Pill.astro'
   <div class="flex flex-row w-full justify-evenly gap-3">
     {
       projectLink && (
-        <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">See project</span></Pill>
+        <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">{i18n.PROJECTS.BUTTONS.LIVE}</span></Pill>
       )
     }
-    <Pill href={githubUrl} class="cursor-pointer"><span class="text-white md:text-base text-sm">See GitHub</span></Pill>
+    <Pill href={githubUrl} class="cursor-pointer"><span class="text-white md:text-base text-sm">{i18n.PROJECTS.BUTTONS.GITHUB}</span></Pill>
   </div>
 </section>
