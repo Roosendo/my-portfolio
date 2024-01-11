@@ -9,7 +9,7 @@ const pathname = url.pathname
 
 let restUrl: string
 
-if (pathname.startsWith('/ca')) {
+if (pathname.startsWith('/es')) {
   const segments = pathname.split('/').slice(2)
   restUrl = '/' + segments.join('/').replace(/\/+$/, '')
 } else {
@@ -18,19 +18,19 @@ if (pathname.startsWith('/ca')) {
 
 const LOCALES: Record<
   string,
-  { code: string; name: string; href: string; flag: typeof SpainFlag }
+  { code: string; name: string; href: string; flag: typeof UsaFlag }
 > = {
-  en: {
-    code: 'en',
-    href: `/ca${restUrl}`,
-    name: 'English',
-    flag: UsaFlag,
-  },
   es: {
     code: 'es',
-    href: restUrl,
+    href: `/es${restUrl}`,
     name: 'Español',
     flag: SpainFlag,
+  },
+  en: {
+    code: 'en',
+    href: restUrl,
+    name: 'English',
+    flag: UsaFlag,
   },
 }
 
@@ -60,7 +60,7 @@ const currentPath = url.pathname.replace(currentLocaleData.href, '')
     >
       {
         otherLocales.map((locale) => (
-          <li class=''>
+          <li>
             <a
               class='rounded-md bg-black/30 hover:bg-black/70 whitespace-nowrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
               href={`${locale.href}${currentPath}`}
