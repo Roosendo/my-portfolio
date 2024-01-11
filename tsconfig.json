@@ -5,7 +5,7 @@
     "paths": {
       "@icons/*": ["./src/assets/icons/*"],
       "@icons_f/*": ["./src/assets/icons/flags/*"],
-      "@icons_s/*": ["./src/assets/icons/skills*"],
+      "@icons_s/*": ["./src/assets/icons/skills/*"],
       "@imgs/*": ["./src/assets/imgs/*"],
       "@c/*": ["./src/components/*"],
       "@l/*": ["./src/layouts/*"],
