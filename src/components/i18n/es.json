@@ -1,0 +1,73 @@
+{
+  "SEO_TITLE": "Rosendo Garcia | Portafolio",
+  "SEO_DESCRIPTION": "Explora un mundo de creatividad e innovación a través de mi portafolio diverso. Desde impresionantes diseños visuales hasta desarrollo web de vanguardia, sea testigo de la perfecta combinación de arte y tecnología. Eleva tu presencia digital con mi experiencia y deja que tus ideas cobren vida. Descubra la fusión perfecta de pasión y habilidad en mi portafolio, donde cada proyecto cuenta una historia única.",
+  "HEADER": {
+    "PROJECTS": "Projectos",
+    "ABOUT_ME": "Sobre mí",
+    "CONTACT": "Contacto"
+  },
+  "PERSONAL_INFO": {
+    "GREETING": "Ey, soy Rosendo Garcia",
+    "PILL_MESSAGE": "Disponible para contratación",
+    "PARAGRAPH": "¡Saludos desde San Miguel, El Salvador!, Soy un desarrollador web navegando en el vertiginoso mundo de la tecnología, con especial enfoque en soluciones inteligentes en JavaScript usando Node.js. Con muchas ganas de aprender y motivado por la innovación, diseño experiencias digitales que combinan funcionalidad con elegancia, ¡como un chef experto mezclando los ingredientes perfectos para un festín tecnológico!",
+    "PHRASES": {
+      "¡Saludos desde San Miguel, El Salvador!": "text-emerald-400",
+      "JavaScript usando Node.js": "text-yellow-200",
+      "diseño experiencias digitales que combinan funcionalidad con elegancia": "text-[#eea5ee]"
+    },
+    "EMAIL": "Correo"
+  },
+  "PROJECTS": {
+    "LABEL": "Projectos recientes",
+    "PROJECT_1": {
+      "TITLE": "Solución de gestión de recursos FullStack",
+      "DESCRIPTION": "Proyecto colaborativo con Express y MySQL. Interfaz de usuario intuitiva con JavaScript básico para una asignación, seguimiento e informes de recursos eficientes. Utiliza tecnologías como Express, CORS y MySQL2 para una gestión optimizada."
+    },
+    "PROJECT_2": {
+      "TITLE": "Pokémon Explorer: consumo de API asíncrono y filtrado dinámico",
+      "DESCRIPTION": "Obtiene datos de la API mediante async/await, con recuperación personalizable y una elegante barra de progreso. Filtra Pokémon por tipo o nombre para disfrutar de una experiencia de exploración fácil de usar."
+    },
+    "PROJECT_3": {
+      "TITLE": "PHP CRUD con Roles Administrativos y Sesiones Seguras",
+      "DESCRIPTION": "Base de datos integrada, funciones administrativas sólidas y sesiones seguras. Permite a los administradores imprimir perfiles de usuario con permisos dependientes de roles, mejorando la gestión del personal."
+    },
+    "BUTTONS": {
+      "LIVE": "Ver Projecto",
+      "GITHUB": "Ver Codigo"
+    }
+  },
+  "SKILLS": {
+    "LABEL": "Habilidades"
+  },
+  "WORK_EXPERIENCE": {
+    "LABEL": "Experiencia laboral",
+    "COMPANY_1": {
+      "TITLE": "Asesor de ventas en Par2",
+      "DESCRIPTION": "Participé en funciones centradas en el cliente en una destacada zapatería. Principalmente enfocado en brindar un servicio excepcional, atender consultas y facilitar las ventas.",
+      "TIME": "Noviembre - Diciembre 2022"
+    },
+    "COMPANY_2": {
+      "TITLE": "Asesor de ventas en Gasolinera Texaco",
+      "DESCRIPTION": "Gestioné transacciones y brindé servicio al cliente en una bulliciosa gasolinera. Las responsabilidades incluían dispensar combustible, procesar pagos y garantizar una experiencia positiva para el cliente.",
+      "TIME": "Noviembre - Diciembre 2021"
+    }
+  },
+  "ABOUT_ME": {
+    "LABEL": "Sobre mí",
+    "TITLE_1": "Quién soy",
+    "TITLE_2": "Educación",
+    "TITLE_3": "Experiencia",
+    "PARAGRAPH_1": "Soy Rosendo, un desarrollador web de San Miguel, El Salvador. Me concentro en crear soluciones backend de JavaScript, combinando funcionalidad con elegancia. Mi viaje está impulsado por la curiosidad, la innovación y el compromiso con el aprendizaje continuo.",
+    "PARAGRAPH_2": "Obtuve un Grado Asociado en Ingeniería de Desarrollo de Software del ITCA Fepade San Miguel, formando mi base educativa. Impulsado por una pasión por aprender, amplié mis conocimientos de forma independiente, profundizando en los fundamentos de JavaScript y creando API RESTful con Express a través de tutoriales de GitHub y YouTube, incluidos los cursos de Midudev. Esta combinación de educación formal y aprendizaje en línea mejora mi comprensión del desarrollo de software.",
+    "PARAGRAPH_3": "Si bien carezco de experiencia laboral formal en desarrollo web, he emprendido proyectos personales, tanto dentro como fuera de ITCA. Estos esfuerzos, que utilizan tecnologías clave como Astro, Express y Tailwind, han sido fundamentales para dar forma a mi comprensión del ámbito del desarrollo web. Sirven como experiencias prácticas de aprendizaje y contribuyen a mi competencia en este campo dinámico."
+  },
+  "CONTACT": {
+    "LABEL": "Contacto",
+    "INPUT_PLACEHOLDER": "Su nombre",
+    "INPUT_PLACEHOLDER_2": "Su mensaje",
+    "BUTTON": "Enviar"
+  },
+  "FOOTER": {
+    "LABEL": "Todos los derechos reservados."
+  }
+}
