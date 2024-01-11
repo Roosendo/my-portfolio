@@ -1,4 +1,5 @@
 ---
+import { ViewTransitions } from 'astro:transitions'
 import '@fontsource-variable/onest'
 
 interface Props {
@@ -24,6 +25,7 @@ const { currentLocale } = Astro
 		<slot name="header" />
 		<main class="flex flex-col place-items-center w-full justify-center">
 			<slot />
+			<ViewTransitions />
 		</main>
 	</body>
 </html>
