@@ -1,6 +1,11 @@
 ---
 import Yo from '../assets/imgs/yo.webp'
 const year = new Date().getFullYear()
+
+import { getI18N } from '@c/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 ---
 
 <footer class="rounded-lg shadow bg-transparent/10 w-full mt-3">
@@ -23,6 +28,6 @@ const year = new Date().getFullYear()
       </ul>
     </div>
     <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-400 sm:text-center">&copy; {year} Rosendo Garcia. All Rights Reserved.</span>
+    <span class="block text-sm text-gray-400 sm:text-center">&copy; {year} Rosendo Garcia. {i18n.FOOTER.LABEL}</span>
   </div>
 </footer>
