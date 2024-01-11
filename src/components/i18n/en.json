@@ -1,0 +1,72 @@
+{
+  "SEO_DESCRIPTION": "Explore a world of creativity and innovation through my diverse portfolio. From stunning visual designs to cutting-edge web development, witness the seamless blend of art and technology. Elevate your digital presence with my expertise and let your ideas come to life. Discover the perfect fusion of passion and skill in my portfolio - where every project tells a unique story.",
+  "HEADER": {
+    "PROJECTS": "Projects",
+    "ABOUT_ME": "About Me",
+    "CONTACT": "Contact"
+  },
+  "PERSONAL_INFO": {
+    "GREETING": "Hey, I'm Rosendo Garcia",
+    "PILL_MESSAGE": "Available for hire",
+    "PARAGRAPH": "Greetings from San Miguel, El Salvador!, I'm a web developer navigating the dizzying world of technology, with a special focus on clever solutions in JavaScript using Node.js. Eager to learn and motivated by innovation, I design digital experiences that blend functionality with elegance, like an expert chef mixing the perfect ingredients for a technological feast!",
+    "PHRASES": {
+      "Greetings from San Miguel, El Salvador!": "text-emerald-400",
+      "JavaScript using Node.js": "text-yellow-200",
+      "I design digital experiences that blend functionality with elegance": "text-[#eea5ee]"
+    },
+    "EMAIL": "Email"
+  },
+  "PROJECTS": {
+    "LABEL": "Latest projects",
+    "PROJECT_1": {
+      "TITLE": "FullStack Resource Management Solution",
+      "DESCRIPTION": "Collaborative project with Express and MySQL. Intuitive UI with vanilla JavaScript for efficient resource allocation, tracking, and reporting. Utilizes technologies like Express, CORS, and MySQL2 for streamlined management."
+    },
+    "PROJECT_2": {
+      "TITLE": "Pokémon Explorer: Async API Consumption and Dynamic Filtering",
+      "DESCRIPTION": "Fetches data from API using async/await, with customizable retrieval and a sleek progress bar. Filter Pokémon by type or name for a user-friendly exploration experience."
+    },
+    "PROJECT_3": {
+      "TITLE": "PHP CRUD with Administrative Roles and Secure Sessions",
+      "DESCRIPTION": "Integrated database, robust administrative roles, and secure sessions. Allows administrators to print user profiles with role-dependent permissions, enhancing personnel management."
+    },
+    "BUTTONS": {
+      "LIVE": "See Project",
+      "GITHUB": "See Code"
+    }
+  },
+  "SKILLS": {
+    "LABEL": "Skills"
+  },
+  "WORK_EXPERIENCE": {
+    "LABEL": "Work experience",
+    "COMPANY_1": {
+      "TITLE": "Sales advisor at Par2",
+      "DESCRIPTION": "Engaged in customer-centric roles at a prominent shoe store. Primarily focused on delivering exceptional service, handling inquiries, and facilitating sales.",
+      "TIME": "November - December 2022"
+    },
+    "COMPANY_2": {
+      "TITLE": "Sales advisor at Gasolinera Texaco",
+      "DESCRIPTION": "Managed transactions and provided customer service at a bustling gas station. Responsibilities included fuel dispensing, payment processing, and ensuring a positive customer experience.",
+      "TIME": "November - December 2021"
+    }
+  },
+  "ABOUT_ME": {
+    "LABEL": "About me",
+    "TITLE_1": "Who I Am",
+    "TITLE_2": "Education",
+    "TITLE_3": "Experience",
+    "PARAGRAPH_1": "I'm Rosendo, a web developer from San Miguel, El Salvador. I focus on crafting JavaScript backend solutions, blending functionality with elegance. My journey is fueled by curiosity, innovation, and a commitment to continuous learning.",
+    "PARAGRAPH_2": "I earned an Associate Degree in Software Development Engineering from ITCA Fepade San Miguel, forming my educational foundation. Fueled by a passion for learning, I expanded my knowledge independently, delving into JavaScript fundamentals and building RESTful APIs with Express through GitHub and YouTube tutorials, including Midudev's courses. This mix of formal education and online learning enhances my grasp of software development.",
+    "PARAGRAPH_3": "While I lack formal work experience in web development, I've undertaken personal projects, both within and outside ITCA. These endeavors, utilizing key technologies like Astro, Express, and Tailwind, have been instrumental in shaping my understanding of the web development domain. They serve as practical learning experiences, contributing to my proficiency in this dynamic field."
+  },
+  "CONTACT": {
+    "LABEL": "Contact",
+    "INPUT_PLACEHOLDER": "Your name",
+    "INPUT_PLACEHOLDER_2": "Your message",
+    "BUTTON": "Submit"
+  },
+  "FOOTER": {
+    "LABEL": "All rights reserved."
+  }
+}
