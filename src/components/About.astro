@@ -1,41 +1,46 @@
 ---
 import AboutMe from '../assets/icons/AboutMe.astro'
+
+import { getI18N } from '@c/i18n'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 ---
 
 <section class="mt-3" id="about-me">
   <div class="flex flex-row items-center p-2 gap-3 text-white/60">
     <AboutMe class="md:size-5 size-4" />
-    <h3 class="md:text-base text-md">About me</h3>
+    <h3 class="md:text-base text-md">{i18n.ABOUT_ME.LABEL}</h3>
   </div>
   <article class="grid md:grid-cols-2 p-2 gap-2 md:gap-y-6 gap-y-4 w-full">
     <!-- Left col -->
     <div>
-      <h2 class="md:text-2xl text-xl font-bold md:mb-3 text-yellow-200">Who I Am</h2>
+      <h2 class="md:text-2xl text-xl font-bold md:mb-3 text-yellow-200">{i18n.ABOUT_ME.TITLE_1}</h2>
     </div>
   
     <!-- Right col -->
     <div>
-      <p class="text-white md:text-lg text-base">I'm Rosendo, a web developer from San Miguel, El Salvador. I focus on crafting JavaScript backend solutions, blending functionality with elegance. My journey is fueled by curiosity, innovation, and a commitment to continuous learning.</p>
+      <p class="text-white md:text-lg text-base">{i18n.ABOUT_ME.PARAGRAPH_1}</p>
     </div>
   
     <!-- Left col -->
     <div>
-      <h2 class="md:text-2xl text-xl font-bold md:mb-3 text-yellow-200">Education</h2>
+      <h2 class="md:text-2xl text-xl font-bold md:mb-3 text-yellow-200">{i18n.ABOUT_ME.TITLE_2}</h2>
     </div>
   
     <!-- Right col -->
     <div>
-      <p class="text-white md:text-lg text-base">I earned an Associate Degree in Software Development Engineering from ITCA Fepade San Miguel, forming my educational foundation. Fueled by a passion for learning, I expanded my knowledge independently, delving into JavaScript fundamentals and building RESTful APIs with Express through GitHub and YouTube tutorials, including Midudev's courses. This mix of formal education and online learning enhances my grasp of software development.</p>
+      <p class="text-white md:text-lg text-base">{i18n.ABOUT_ME.PARAGRAPH_2}</p>
     </div>
 
     <!-- Left col -->
     <div>
-      <h2 class="md:text-2xl text-xl font-bold md:mb-3 text-yellow-200">Experience</h2>
+      <h2 class="md:text-2xl text-xl font-bold md:mb-3 text-yellow-200">{i18n.ABOUT_ME.TITLE_3}</h2>
     </div>
   
     <!-- Right col -->
     <div>
-      <p class="text-white md:text-lg text-base">While I lack formal work experience in web development, I've undertaken personal projects, both within and outside ITCA. These endeavors, utilizing key technologies like Astro, Express, and Tailwind, have been instrumental in shaping my understanding of the web development domain. They serve as practical learning experiences, contributing to my proficiency in this dynamic field.</p>
+      <p class="text-white md:text-lg text-base">{i18n.ABOUT_ME.PARAGRAPH_3}</p>
     </div>
   </article>
 </section>
