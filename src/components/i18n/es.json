@@ -13,7 +13,7 @@
     "PHRASES": {
       "¡Saludos desde San Miguel, El Salvador!": "text-emerald-400",
       "JavaScript utilizando Node.js": "text-yellow-200",
-      "Diseño experiencias digitales que combinan funcionalidad con elegancia": "text-[#eea5ee]"
+      "diseño experiencias digitales que combinan funcionalidad con elegancia": "text-[#eea5ee]"
     },
     "ALERTS": {
       "SUCCESS": "¡Copiado exitosamente!",
