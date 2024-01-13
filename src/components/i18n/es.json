@@ -15,6 +15,10 @@
       "JavaScript usando Node.js": "text-yellow-200",
       "diseño experiencias digitales que combinan funcionalidad con elegancia": "text-[#eea5ee]"
     },
+    "ALERTS": {
+      "SUCCESS": "¡Copiado exitosamente!",
+      "ERROR": "Error al copiar"
+    },
     "EMAIL": "Correo"
   },
   "PROJECTS": {
