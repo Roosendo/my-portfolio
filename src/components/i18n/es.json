@@ -67,6 +67,10 @@
   },
   "CONTACT": {
     "LABEL": "Contacto",
+    "ALERTS": {
+      "SUCCESS": "¡Mensaje enviado exitosamente!",
+      "ERROR": "Error al enviar mensaje."
+    },
     "INPUT_PLACEHOLDER": "Tu nombre",
     "INPUT_PLACEHOLDER_2": "Tu mensaje",
     "INPUT_PLACEHOLDER_3": "Deja un comentario...",
