@@ -14,7 +14,7 @@ export const getProjects = (currentLocale: string) => {
       imgs: [FS2.src],
       projectLink: '',
       githubUrl: 'https://github.com/PaolaPaz1/proyecto-final-main',
-      languages: ['JavaScript', 'MySQL', 'HTML', 'CSS', 'Express']
+      languages: ['JavaScript', 'MySql', 'HTML', 'CSS', 'Express']
     },
     {
       title: i18n.PROJECTS.PROJECT_2.TITLE,
@@ -22,7 +22,7 @@ export const getProjects = (currentLocale: string) => {
       imgs: [Api1.src],
       projectLink: 'https://pokemon-api-iota.vercel.app/',
       githubUrl: 'https://github.com/Roosendo/pokemon-api',
-      languages: ['HTML', 'CSS', 'JavaScript']
+      languages: ['HTML', 'CSS', 'TypeScript']
     },
     {
       title: i18n.PROJECTS.PROJECT_3.TITLE,
@@ -30,7 +30,7 @@ export const getProjects = (currentLocale: string) => {
       imgs: [Php2.src],
       projectLink: '',
       githubUrl: 'https://github.com/Roosendo/crud-php',
-      languages: ['PHP', 'MySQL', 'HTML', 'CSS']
+      languages: ['PHP', 'MySql', 'HTML', 'CSS']
     }
   ]
 }
