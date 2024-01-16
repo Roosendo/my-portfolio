@@ -4,6 +4,7 @@ import Express from '@icons_s/Express.astro'
 import HTML from '@icons_s/HTML.astro'
 import JavaScript from '@icons_s/JavaScript.astro'
 import Git from '@icons_s/Git.astro'
+import MySql from '@icons/skills/MySql.astro'
 import PHP from '@icons_s/PHP.astro'
 import Node from '@icons_s/Node.astro'
 import React from '@icons_s/React.astro'
@@ -26,6 +27,10 @@ export const SKILLS = [
   {
     name: 'Git',
     icon: Git
+  },
+  {
+    name: 'MySql',
+    icon: MySql
   },
   {
     name: 'PHP',
