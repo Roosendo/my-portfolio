@@ -88,45 +88,43 @@ const htmlParagraph = unescapeHTML(paragraph)
   </div>
 </div>
 
-<script is:inline>
-  document.addEventListener('astro:page-load', () => {
-    const email = 'rosendo.garcia73@outlook.com'
-    const button = document.getElementById('to-copy')
-    const alertOk = document.getElementById('alert-ok')
-    const alertNo = document.getElementById('alert-no')
+<script>
+  const email = 'rosendo.garcia73@outlook.com'
+  const button = document.querySelector('#to-copy') as HTMLButtonElement
+  const alertOk = document.querySelector('#alert-ok') as HTMLDivElement
+  const alertNo = document.querySelector('#alert-no') as HTMLDivElement
+
+  if (button && alertOk && alertNo) {
+    button.addEventListener('click', async () => {
+      let tempInput = document.createElement('input')
+      document.body.appendChild(tempInput)
+      tempInput.value = email
+      tempInput.select()
   
-    if (button && alertOk && alertNo) {
-      button.addEventListener('click', async () => {
-        let tempInput = document.createElement('input')
-        document.body.appendChild(tempInput)
-        tempInput.value = email
-        tempInput.select()
-    
+      try {
+        await navigator.clipboard.writeText(email)
+        alertOk.style.display = 'flex'
+        setTimeout(() => {
+          alertOk.style.display = 'none'
+        }, 2000)
+      } catch (err) {
         try {
-          await navigator.clipboard.writeText(email)
-          alertOk.style.display = 'flex'
-          setTimeout(() => {
-            alertOk.style.display = 'none'
-          }, 2000)
+          document.execCommand('copy')
+        alertOk.style.display = 'flex'
+        setTimeout(() => {
+          alertOk.style.display = 'none'
+        }, 2000)
         } catch (err) {
-          try {
-            document.execCommand('copy')
-          alertOk.style.display = 'flex'
+          alertNo.style.display = 'flex'
           setTimeout(() => {
-            alertOk.style.display = 'none'
+            alertNo.style.display = 'none'
           }, 2000)
-          } catch (err) {
-            alertNo.style.display = 'flex'
-            setTimeout(() => {
-              alertNo.style.display = 'none'
-            }, 2000)
-          }
         }
-        document.body.removeChild(tempInput)
-      })
-    } else {
-      console.error('Something went wrong')
-    }
-  })
+      }
+      document.body.removeChild(tempInput)
+    })
+  } else {
+    console.error('Something went wrong')
+  }
 
 </script>
