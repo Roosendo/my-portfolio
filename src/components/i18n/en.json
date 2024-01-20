@@ -77,6 +77,7 @@
     "BUTTON": "Submit"
   },
   "FOOTER": {
-    "LABEL": "All rights reserved."
+    "LABEL_1": "Made by me",
+    "LABEL_2": "Inspired by"
   }
 }

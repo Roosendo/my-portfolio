@@ -77,6 +77,7 @@
     "BUTTON": "Enviar"
   },
   "FOOTER": {
-    "LABEL": "Todos los derechos reservados."
+    "LABEL_1": "Hecho por mí",
+    "LABEL_2": "Inspirado por"
   }
 }
