@@ -35,10 +35,10 @@ import Pill from './Pill.astro'
   </div>
   {
     imgs && (
-      <div>
+      <div class="flex flex-col place-items-center">
         {
           imgs.map((img, index) => (
-            <img src={img} alt={`Screenshot ${index + 1}`} loading="lazy" width="100%" height="aut0" class="rounded-lg" />
+            <img src={img} alt={`Screenshot ${index + 1}`} loading="lazy" width="80%" height="aut0" class="rounded-lg" />
           ))
         }
       </div>
