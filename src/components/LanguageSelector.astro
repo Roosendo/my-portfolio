@@ -51,7 +51,7 @@ const currentPath = url.pathname.replace(currentLocaleData.href, '')
       aria-expanded='true'
       aria-haspopup='true'
     >
-      <currentLocaleData.flag />
+      <currentLocaleData.flag class="md:size-4 size-5" />
       {currentLocaleData.name}
       <ChevronIcon />
     </button>
@@ -65,7 +65,7 @@ const currentPath = url.pathname.replace(currentLocaleData.href, '')
               class='rounded-md bg-black/30 hover:bg-black/70 whitespace-nowrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
               href={`${locale.href}${currentPath}`}
             >
-              <locale.flag />
+              <locale.flag class="md:size-4 size-5" />
               {locale.name}
             </a>
           </li>
