@@ -1,6 +1,5 @@
 ---
 import Yo from '@imgs/yo.webp'
-const year = new Date().getFullYear()
 
 import { getI18N } from '@c/i18n'
 
@@ -28,6 +27,6 @@ const i18n = getI18N({ currentLocale })
       </ul>
     </div>
     <hr class="my-6 border-gray-700 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-400 text-center">&copy; {year} Rosendo Garcia. {i18n.FOOTER.LABEL}</span>
+    <span class="block text-sm text-gray-400 text-center">{i18n.FOOTER.LABEL_1}. {i18n.FOOTER.LABEL_2} <a href="https://github.com/midudev" class="hover:underline">@midudev</a></span>
   </div>
 </footer>
