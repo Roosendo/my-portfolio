@@ -77,7 +77,9 @@
     "BUTTON": "Enviar"
   },
   "FOOTER": {
-    "LABEL_1": "Hecho por mí",
-    "LABEL_2": "Inspirado por"
+    "LABEL_1": "Estilado con",
+    "LABEL_2": "Iconos SVG de",
+    "LABEL_3": "Hecho por mí",
+    "LABEL_4": "Inspirado por"
   }
 }

@@ -77,7 +77,9 @@
     "BUTTON": "Submit"
   },
   "FOOTER": {
-    "LABEL_1": "Made by me",
-    "LABEL_2": "Inspired by"
+    "LABEL_1": "Styled with",
+    "LABEL_2": "SVG icons from",
+    "LABEL_3": "Made by me",
+    "LABEL_4": "Inspired by"
   }
 }
