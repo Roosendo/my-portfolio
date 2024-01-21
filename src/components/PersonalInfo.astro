@@ -74,7 +74,7 @@ const htmlParagraph = unescapeHTML(paragraph)
     <h2 class="md:text-base text-md">{i18n.PERSONAL_INFO.EMAIL}</h2>
   </div>
   <div class="flex flex-row gap-4 w-full justify-center">
-    <div class="inline-flex rounded-md shadow-sm w-full justify-center" role="group">
+    <div class="inline-flex rounded-md shadow-sm w-full justify-center" role="group" id="container">
       <div class="inline-flex items-center px-3 py-2 text-white bg-transparent border border-gray-200 rounded-s-lg">
         <p class="md:text-base text-xs">rosendo.garcia73@outlook.com</p>
       </div>
@@ -89,26 +89,28 @@ const htmlParagraph = unescapeHTML(paragraph)
 </div>
 
 <script>
-  import { copyToClipboard } from '@u/CopyFunctionality'
-  import { showAndHideAlert } from '@u/ShowAndHideAlert'
+  import { copyToClipboard, showAndHideAlert } from '@u/CopyFunctionality'
 
-  const email = 'rosendo.garcia73@outlook.com'
-  const button = document.querySelector('#to-copy') as HTMLButtonElement
-  const alertOk = document.querySelector('#alert-ok') as HTMLDivElement
-  const alertNo = document.querySelector('#alert-no') as HTMLDivElement
+  const container = document.querySelector('#container') as HTMLDivElement
 
-  if (button && alertOk && alertNo) {
-    button.addEventListener('click', async () => {
-      const successfull = copyToClipboard(email)
+  if (container) {
+    container.addEventListener('click', async () => {
+      const button = document.querySelector('#to-copy') as HTMLButtonElement
+      if (button) {
+        const email = 'rosendo.garcia73@outlook.com'
+        const successfull = copyToClipboard(email)
 
-      if (successfull) {
-        showAndHideAlert(alertOk)
-      } else {
-        showAndHideAlert(alertNo)
+        const alertElement = successfull ? document.querySelector('#alert-ok') as HTMLDivElement : document.querySelector('#alert-no') as HTMLDivElement
+
+        if (alertElement) {
+          showAndHideAlert(alertElement)
+        } else {
+          console.error('Something went wrong')
+        }
       }
     })
   } else {
-    console.error('Something went wrong')
+    console.error('Container not found')
   }
 
 </script>
