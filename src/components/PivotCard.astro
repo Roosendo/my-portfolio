@@ -20,7 +20,7 @@ import Pill from './Pill.astro'
 ---
 
 <section class="flex flex-col gap-3 mb-3">
-  <h2 class="md:text-2xl text-xl text-yellow-200">{title}</h2>
+  <h2 class="md:text-2xl text-xl text-[#eea5ee]">{title}</h2>
   <p class="md:text-lg text-base text-white">{body}</p>
   <div class="flex flex-row flex-wrap gap-3">
     {
@@ -28,7 +28,7 @@ import Pill from './Pill.astro'
         const skill = SKILLS.find(skill => skill.name === lang)
 
         return (
-          <Pill class="cursor-default">{skill && <skill.icon class="md:size-5 size-4" />}<span class="text-[#eea5ee] md:text-base text-sm">{lang}</span></Pill>
+          <Pill class="cursor-default">{skill && <skill.icon class="md:size-5 size-4" />}<span class="text-white/80 md:text-base text-sm">{lang}</span></Pill>
         )
       })
     }
