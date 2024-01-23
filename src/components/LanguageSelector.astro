@@ -38,7 +38,7 @@ const currentLocaleData = LOCALES[currentLocale]
 const otherLocales = Object.values(LOCALES).filter(
   (locale) => locale.code !== currentLocale
 )
-const currentPath = url.pathname.replace(currentLocaleData.href, '')
+const currentPath = url.pathname.replace(currentLocaleData!.href, '')
 ---
 
 <div class='relative inline-block text-left w-auto'>
@@ -51,8 +51,8 @@ const currentPath = url.pathname.replace(currentLocaleData.href, '')
       aria-expanded='true'
       aria-haspopup='true'
     >
-      <currentLocaleData.flag class="md:size-4 size-5" />
-      {currentLocaleData.name}
+      {currentLocaleData?.flag && <currentLocaleData.flag class="md:size-4 size-5" />}
+      {currentLocaleData?.name}
       <ChevronIcon />
     </button>
     <ul

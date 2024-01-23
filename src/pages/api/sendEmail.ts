@@ -3,8 +3,13 @@ import { Resend } from 'resend'
 
 const resend = new Resend(import.meta.env.RESEND_TOKEN)
 
+interface EmailBody {
+  name: string
+  message: string
+}
+
 export const POST: APIRoute = async ({ request }) => {
-  const { name, message } = await request.json()
+  const { name, message }: EmailBody = await request.json()
 
   if (!name || !message) {
     return new Response('Missing email or message', { status: 400 })
