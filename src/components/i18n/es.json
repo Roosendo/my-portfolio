@@ -8,7 +8,7 @@
   },
   "PERSONAL_INFO": {
     "GREETING": "Hola, soy Rosendo García",
-    "PILL_MESSAGE": "Disponible para contratación",
+    "PILL_MESSAGE": "Disponible",
     "PARAGRAPH": "¡Saludos desde San Miguel, El Salvador! Soy un desarrollador web que navega por el vertiginoso mundo de la tecnología, con un enfoque especial en soluciones ingeniosas en JavaScript utilizando Node.js. Ansioso por aprender y motivado por la innovación, diseño experiencias digitales que combinan funcionalidad con elegancia, como un chef experto mezclando los ingredientes perfectos para un festín tecnológico.",
     "PHRASES": {
       "¡Saludos desde San Miguel, El Salvador!": "text-emerald-400",
