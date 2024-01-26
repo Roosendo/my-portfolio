@@ -32,6 +32,7 @@ const i18n = getI18N({ currentLocale })
 </section>
 
 <script>
+  import { showAndHideAlert, sendEmail } from '@u/CopyFunctionality'
   const success = document.querySelector('#success') as HTMLDivElement
   const notSuccess = document.querySelector('#not-success') as HTMLDivElement
   const form = document.querySelector('#contactForm') as HTMLFormElement
@@ -41,39 +42,13 @@ const i18n = getI18N({ currentLocale })
     const name = (document.querySelector('#floating_name') as HTMLInputElement).value
     const message = (document.querySelector('#message') as HTMLTextAreaElement).value
 
-    const data = { name, message }
+    const response = await sendEmail(name, message)
 
-    const apiUrl = '/api/sendEmail'
-
-    const requestOptions = {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify(data)
-    }
-
-    try {
-      const response = await fetch(apiUrl, requestOptions)
-
-      if (!response.ok) {
-        throw new Error('Network response was not ok')
-      }
-
-      success.classList.remove('hidden')
-      success.classList.add('flex')
-      setTimeout(() => {
-        success.classList.remove('flex')
-        success.classList.add('hidden')
-      }, 2000)
-    } catch (error) {
-      console.log(error)
-      notSuccess.classList.remove('hidden')
-      notSuccess.classList.add('flex')
-      setTimeout(() => {
-        notSuccess.classList.remove('flex')
-        notSuccess.classList.add('hidden')
-      }, 2000)
+    if (!response) {
+      showAndHideAlert(notSuccess)
+      return
+    } else {
+      showAndHideAlert(success)
     }
 
     (e.target as HTMLFormElement).reset()
