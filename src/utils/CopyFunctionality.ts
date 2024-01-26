@@ -22,3 +22,25 @@ export function copyToClipboard(text: string): boolean {
     return false
   }
 }
+
+export async function sendEmail (name: string, message: string) {
+  const apiUrl = '/api/sendEmail'
+
+  const requestOptions = {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ name, message })
+  }
+
+  try {
+    const response = await fetch(apiUrl, requestOptions)
+
+    if (!response.ok) {
+      throw new Error('Network response was not ok')
+    }
+
+    return true
+  } catch (err) {
+    return false
+  }
+}
