@@ -23,13 +23,11 @@ const { currentLocale } = Astro
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body>
+	<body class="flex flex-col place-items-center w-full justify-center">
 		<slot name="header" />
 		<div class="absolute top-0 z-[-2] h-full w-full bg-inherit bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
 		</div>
-		<main class="flex flex-col place-items-center w-full justify-center">
-			<slot />
-		</main>
+		<slot />
 		<Footer />
 	</body>
 </html>
@@ -97,7 +95,7 @@ const { currentLocale } = Astro
 		background-color: #2e2e2e;
 	}
 
-	main section {
+	section {
 		animation: reveal linear both;
 		animation-duration: 200ms;
 		animation-timeline: view();
