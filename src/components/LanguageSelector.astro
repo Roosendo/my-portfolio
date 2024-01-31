@@ -41,9 +41,9 @@ const otherLocales = Object.values(LOCALES).filter(
 const currentPath = url.pathname.replace(currentLocaleData!.href, '')
 ---
 
-<div class='relative inline-block text-left w-auto'>
+<div class='relative flex text-left w-auto'>
   <div
-    class='group rounded-md md:text-base text-sm bg-black/30 hover:bg-black/70 transition-all'
+    class='group rounded md:text-base text-sm bg-black/30 hover:bg-black/70 transition-all'
   >
     <button
       type='button'
@@ -52,7 +52,7 @@ const currentPath = url.pathname.replace(currentLocaleData!.href, '')
       aria-haspopup='true'
     >
       {currentLocaleData?.flag && <currentLocaleData.flag class="md:size-4 size-5" />}
-      {currentLocaleData?.name}
+      <span class="md:block hidden">{currentLocaleData?.name}</span>
       <ChevronIcon />
     </button>
     <ul
@@ -62,11 +62,11 @@ const currentPath = url.pathname.replace(currentLocaleData!.href, '')
         otherLocales.map((locale) => (
           <li>
             <a
-              class='rounded-md bg-black/30 hover:bg-black/70 whitespace-nowrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
+              class='rounded bg-black/30 hover:bg-black/70 whitespace-nowrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
               href={`${locale.href}${currentPath}`}
             >
               <locale.flag class="md:size-4 size-5" />
-              {locale.name}
+              <span class="md:block hidden">{locale.name}</span>
             </a>
           </li>
         ))
