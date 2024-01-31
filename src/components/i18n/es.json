@@ -74,7 +74,8 @@
     "INPUT_PLACEHOLDER": "Tu nombre",
     "INPUT_PLACEHOLDER_2": "Tu mensaje",
     "INPUT_PLACEHOLDER_3": "Deja un comentario...",
-    "BUTTON": "Enviar"
+    "BUTTON": "Enviar",
+    "BUTTONLOADING": "Cargando ..."
   },
   "FOOTER": {
     "LABEL_1": "Estilado con",
