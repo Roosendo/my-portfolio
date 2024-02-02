@@ -1,7 +1,6 @@
 ---
 import Yo from '@imgs/yo.webp'
 import Pill from './Pill.astro'
-import Email from '@icons/Mail.astro'
 import GitHub from '@icons/GitHub.astro'
 import LinkedIn from '@icons/LinkedIn.astro'
 import Send from '@icons/Send.astro'
@@ -10,6 +9,7 @@ import CV from '../assets/cv/CV_ROSENDO_GARCIA.pdf'
 import CVes from '../assets/cv/curriculum.pdf'
 import CVIcon from '@icons/CV.astro'
 import AlertMessage from './AlertMessage.astro'
+import At from '@icons/At.astro'
 
 import { getI18N } from '@c/i18n'
 import { unescapeHTML } from 'astro/compiler-runtime'
@@ -58,7 +58,7 @@ let CVfinal = currentLocale === 'es' ? CVes : CV
   <AlertMessage type='success' message={i18n.PERSONAL_INFO.ALERTS.SUCCESS} divId='alert-ok' />
   <AlertMessage type='error' message={i18n.PERSONAL_INFO.ALERTS.ERROR} divId='alert-no' />
   <div class="flex flex-row gap-3 mb-3 text-white items-center w-full mt-3">
-    <Email class="md:size-5 size-4" />
+    <At class="md:size-5 size-4" />
     <h2 class="md:text-base text-md">{i18n.PERSONAL_INFO.EMAIL}</h2>
   </div>
   <div class="flex gap-4 justify-center">
