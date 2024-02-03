@@ -8,7 +8,7 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<header id="header-nav" class="flex justify-center items-center dark:text-white/80 text-black/80 text-sm p-2 mx-auto rounded sticky top-2 max-w-full z-10">
+<header id="header-nav" class="flex justify-around items-center dark:text-white/80 text-black/80 text-sm mx-auto rounded sticky top-1 max-w-full z-10">
   <nav class="flex flex-wrap items-center justify-around p-1 gap-3"> 
     <a class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto" href="#projects">{i18n.HEADER.PROJECTS}</a>
     <a class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto" href="#about-me">{i18n.HEADER.ABOUT_ME}</a>

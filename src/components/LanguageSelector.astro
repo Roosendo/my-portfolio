@@ -47,7 +47,7 @@ const currentPath = url.pathname.replace(currentLocaleData!.href, '')
   >
     <button
       type='button'
-      class='inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
+      class='inline-flex justify-start items-center w-full gap-x-1 px-2 py-1'
       aria-expanded='true'
       aria-haspopup='true'
     >
@@ -62,7 +62,7 @@ const currentPath = url.pathname.replace(currentLocaleData!.href, '')
         otherLocales.map((locale) => (
           <li>
             <a
-              class='rounded dark:bg-black/30 bg-white/30 dark:hover:bg-black/70 hover:bg-white/70 whitespace-nowrap inline-flex justify-start items-center w-full gap-x-2 px-3 py-2'
+              class='rounded dark:bg-black/30 bg-white/30 dark:hover:bg-black/70 hover:bg-white/70 whitespace-nowrap inline-flex justify-start items-center w-full gap-x-2 px-2 py-1'
               href={`${locale.href}${currentPath}`}
             >
               <locale.flag class="md:size-4 size-5" />
