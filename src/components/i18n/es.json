@@ -11,9 +11,9 @@
     "PILL_MESSAGE": "Disponible",
     "PARAGRAPH": "¡Saludos desde San Miguel, El Salvador! Soy un desarrollador web que navega por el vertiginoso mundo de la tecnología, con un enfoque especial en soluciones ingeniosas en JavaScript utilizando Node.js. Ansioso por aprender y motivado por la innovación, diseño experiencias digitales que combinan funcionalidad con elegancia, como un chef experto mezclando los ingredientes perfectos para un festín tecnológico.",
     "PHRASES": {
-      "¡Saludos desde San Miguel, El Salvador!": "text-emerald-400",
-      "JavaScript utilizando Node.js": "text-yellow-200",
-      "diseño experiencias digitales que combinan funcionalidad con elegancia": "text-[#eea5ee]"
+      "¡Saludos desde San Miguel, El Salvador!": "dark:text-emerald-400 text-emerald-600",
+      "JavaScript utilizando Node.js": "dark:text-yellow-200 text-yellow-400",
+      "diseño experiencias digitales que combinan funcionalidad con elegancia": "dark:text-[#eea5ee] text-[#cc00cc]"
     },
     "ALERTS": {
       "SUCCESS": "¡Copiado exitosamente!",

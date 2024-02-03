@@ -11,9 +11,9 @@
     "PILL_MESSAGE": "Available for hire",
     "PARAGRAPH": "Greetings from San Miguel, El Salvador!, I'm a web developer navigating the dizzying world of technology, with a special focus on clever solutions in JavaScript using Node.js. Eager to learn and motivated by innovation, I design digital experiences that blend functionality with elegance, like an expert chef mixing the perfect ingredients for a technological feast!",
     "PHRASES": {
-      "Greetings from San Miguel, El Salvador!": "text-emerald-400",
-      "JavaScript using Node.js": "text-yellow-200",
-      "I design digital experiences that blend functionality with elegance": "text-[#eea5ee]"
+      "Greetings from San Miguel, El Salvador!": "dark:text-emerald-400 text-emerald-600",
+      "JavaScript using Node.js": "dark:text-yellow-200 text-yellow-400",
+      "I design digital experiences that blend functionality with elegance": "dark:text-[#eea5ee] text-[#cc00cc]"
     },
     "ALERTS": {
       "SUCCESS": "Copied successfully!",
