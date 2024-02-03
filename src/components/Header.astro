@@ -1,5 +1,6 @@
 ---
-import LanguageSelector from './LanguageSelector.astro'
+// import LanguageSelector from './LanguageSelector.astro'
+import ThemeToggle from './ThemeToggle.astro'
 
 import { getI18N } from '@c/i18n'
 
@@ -12,6 +13,7 @@ const i18n = getI18N({ currentLocale })
     <a class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto" href="#projects">{i18n.HEADER.PROJECTS}</a>
     <a class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto" href="#about-me">{i18n.HEADER.ABOUT_ME}</a>
     <a class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto" href="#contact">{i18n.HEADER.CONTACT}</a>
-    <LanguageSelector />
+    <ThemeToggle />
+    <!-- <LanguageSelector /> -->
   </nav>
 </header>

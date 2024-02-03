@@ -33,6 +33,10 @@ const { currentLocale } = Astro
 </html>
 
 <style is:global>
+	:root {
+		color-scheme: light dark;
+	}
+
 	* {
 		min-width: 0;
 		font: inherit;
@@ -80,8 +84,8 @@ const { currentLocale } = Astro
 	}
 
 	::-webkit-scrollbar-thumb {
-		background-color: #fff;
 		border-radius: 7px;
+		background-color: #09f;
 	}
 
 	::-webkit-scrollbar-track {
@@ -92,6 +96,10 @@ const { currentLocale } = Astro
 		min-height: 100vh;
 		overflow-x: hidden;
 		overflow: auto;
+		background-color: #f5f5f5;
+	}
+
+	body.dark {
 		background-color: #2e2e2e;
 	}
 
