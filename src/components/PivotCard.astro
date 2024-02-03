@@ -20,15 +20,15 @@ import Pill from './Pill.astro'
 ---
 
 <section class="flex flex-col gap-3 mb-3">
-  <h2 class="md:text-2xl text-xl text-[#eea5ee]">{title}</h2>
-  <p class="md:text-lg text-base text-white">{body}</p>
+  <h2 class="md:text-2xl text-xl dark:text-[#eea5ee] text-[#cc00cc]">{title}</h2>
+  <p class="md:text-lg text-base dark:text-white text-black">{body}</p>
   <div class="flex flex-row flex-wrap gap-3">
     {
       languages.map((lang) => {
         const skill = SKILLS.find(skill => skill.name === lang)
 
         return (
-          <Pill class="cursor-default">{skill && <skill.icon class="md:size-5 size-4" />}<span class="text-white/80 md:text-base text-sm">{lang}</span></Pill>
+          <Pill class="cursor-default">{skill && <skill.icon class="md:size-5 size-4" />}<span class="dark:text-white/80 text-black/80 md:text-base text-sm">{lang}</span></Pill>
         )
       })
     }
@@ -47,9 +47,9 @@ import Pill from './Pill.astro'
   <div class="flex flex-row w-full justify-evenly gap-3">
     {
       projectLink && (
-        <Pill href={projectLink} class="cursor-pointer"><span class="text-white md:text-base text-sm">{i18n.PROJECTS.BUTTONS.LIVE}</span></Pill>
+        <Pill href={projectLink} class="cursor-pointer"><span class="dark:text-white text-black md:text-base text-sm">{i18n.PROJECTS.BUTTONS.LIVE}</span></Pill>
       )
     }
-    <Pill href={githubUrl} class="cursor-pointer"><span class="text-white md:text-base text-sm">{i18n.PROJECTS.BUTTONS.GITHUB}</span></Pill>
+    <Pill href={githubUrl} class="cursor-pointer"><span class="dark:text-white text-black md:text-base text-sm">{i18n.PROJECTS.BUTTONS.GITHUB}</span></Pill>
   </div>
 </section>

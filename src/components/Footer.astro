@@ -12,9 +12,9 @@ const i18n = getI18N({ currentLocale })
     <div class="sm:flex sm:items-center sm:justify-between">
       <a href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" class="flex items-center mb-4 sm:mb-0 space-x-3 rtl:space-x-reverse">
         <img src={Yo.src} class="w-8 h-auto rounded" alt="It should be me" />
-        <span class="self-center text-2xl font-semibold whitespace-nowrap text-white">Rosendo Garcia</span>
+        <span class="self-center text-2xl font-semibold whitespace-nowrap dark:text-white text-black">Rosendo Garcia</span>
       </a>
-      <ul class="flex flex-wrap items-center mb-6 text-sm font-medium text-gray-400 sm:mb-0">
+      <ul class="flex flex-wrap items-center mb-6 text-sm font-medium dark:text-gray-400 text-gray-600 sm:mb-0">
         <li>
           <a href="https://twitter.com/rooos_endo" target="_blank" class="hover:underline me-4 md:me-6">Twitter</a>
         </li>
@@ -26,9 +26,9 @@ const i18n = getI18N({ currentLocale })
         </li>
       </ul>
     </div>
-    <hr class="my-3 border-gray-700 sm:mx-auto lg:my-8" />
-    <span class="block text-sm text-gray-400 text-center">{i18n.FOOTER.LABEL_1} <a href="https://flowbite.com/" target="_blank" class="hover:underline">Flowbite</a>.</span>
-    <span class="block text-sm text-gray-400 text-center">{i18n.FOOTER.LABEL_2} <a href="https://tabler.io/icons" target="_blank" class="hover:underline">Tabler Icons</a>, <a href="https://svgl.app/" target="_blank" class="hover:underline">SVGL</a> & <a href="https://heroicons.com/" target="_blank" class="hover:underline">Heroicons</a>.</span>
-    <span class="block text-sm text-gray-400 text-center">{i18n.FOOTER.LABEL_3}. {i18n.FOOTER.LABEL_4} <a href="https://github.com/midudev" target="_blank" class="hover:underline">@midudev</a>.</span>
+    <hr class="my-3 dark:border-gray-700 border-gray-800 sm:mx-auto lg:my-8" />
+    <span class="block text-sm dark:text-gray-400 text-gray-600 text-center">{i18n.FOOTER.LABEL_1} <a href="https://flowbite.com/" target="_blank" class="hover:underline">Flowbite</a>.</span>
+    <span class="block text-sm dark:text-gray-400 text-gray-600 text-center">{i18n.FOOTER.LABEL_2} <a href="https://tabler.io/icons" target="_blank" class="hover:underline">Tabler Icons</a>, <a href="https://svgl.app/" target="_blank" class="hover:underline">SVGL</a> & <a href="https://heroicons.com/" target="_blank" class="hover:underline">Heroicons</a>.</span>
+    <span class="block text-sm dark:text-gray-400 text-gray-600 text-center">{i18n.FOOTER.LABEL_3}. {i18n.FOOTER.LABEL_4} <a href="https://github.com/midudev" target="_blank" class="hover:underline">@midudev</a>.</span>
   </div>
 </footer>

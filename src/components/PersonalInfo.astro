@@ -31,7 +31,7 @@ let CVfinal = currentLocale === 'es' ? CVes : CV
 ---
 
 <div class="flex flex-col text-left w-full place-items-center p-1">
-  <section class="grid gap-3 text-white">
+  <section class="grid gap-3 dark:text-white text-black">
     <img src={Yo.src} loading="lazy" alt='It should be me' width="64px" height="auto" class="md:w-24 md:rounded rounded" />
     <div class="flex flex-row justify-between md:justify-start items-center gap-1">
       <h1 class="md:text-3xl text-2xl flex-1 md:flex-none">{i18n.PERSONAL_INFO.GREETING}</h1>
@@ -43,33 +43,33 @@ let CVfinal = currentLocale === 'es' ? CVes : CV
   </section>
   <nav class="flex gap-4 m-3 flex-wrap md:w-[70%] w-[90%] place-items-center justify-center">
     <Pill href="https://github.com/Roosendo" class="cursor-pointer">
-      <GitHub class="md:size-5 size-4 text-emerald-400" />
-      <span class="text-white/80 md:text-base text-sm">GitHub</span>
+      <GitHub class="md:size-5 size-4 dark:text-emerald-400 text-emerald-600" />
+      <span class="dark:text-white/80 md:text-base text-sm">GitHub</span>
     </Pill>
     <Pill href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" class="cursor-pointer">
-      <LinkedIn class="md:size-5 size-4 text-emerald-400" />
-      <span class="text-white/80 md:text-base text-sm">LinkedIn</span>
+      <LinkedIn class="md:size-5 size-4 dark:text-emerald-400 text-emerald-600" />
+      <span class="dark:text-white/80 md:text-base text-sm">LinkedIn</span>
     </Pill>
     <Pill href={CVfinal} class="cursor-pointer">
-      <CVIcon class="md:size-5 size-4 text-emerald-400" />
-      <span class="text-white/80 md:text-base text-sm">CV</span>
+      <CVIcon class="md:size-5 size-4 dark:text-emerald-400 text-emerald-600" />
+      <span class="dark:text-white/80 md:text-base text-sm">CV</span>
     </Pill>
   </nav>
   <AlertMessage type='success' message={i18n.PERSONAL_INFO.ALERTS.SUCCESS} divId='alert-ok' />
   <AlertMessage type='error' message={i18n.PERSONAL_INFO.ALERTS.ERROR} divId='alert-no' />
-  <div class="flex flex-row gap-3 mb-3 text-white items-center w-full mt-3">
+  <div class="flex flex-row gap-3 mb-3 dark:text-white text-black items-center w-full mt-3">
     <At class="md:size-5 size-4" />
     <h2 class="md:text-base text-md">{i18n.PERSONAL_INFO.EMAIL}</h2>
   </div>
   <div class="flex gap-4 justify-center">
     <div class="inline-flex rounded-md shadow-sm w-full justify-center" role="group" id="container">
-      <div class="inline-flex items-center px-3 py-2 text-white bg-transparent border border-gray-200 rounded-s-lg">
+      <div class="inline-flex items-center px-3 py-2 dark:text-white text-black bg-transparent border dark:border-gray-200 border-gray-400 rounded-s-lg">
         <p class="md:text-base text-xs">rosendo.garcia73@outlook.com</p>
       </div>
-      <a href="mailto:rosendo.garcia73@outlook.com" class="inline-flex items-center md:px-3 md:py-2 px-2 py-1 gap-1 text-gray-900 bg-white/80 border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+      <a href="mailto:rosendo.garcia73@outlook.com" class="inline-flex items-center md:px-3 md:py-2 px-2 py-1 gap-1 text-gray-900 bg-white/80 border dark:border-gray-200 border-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
         <Send class="md:size-5 size-4 text-[#2e2e2e]" /><span class="sr-only">Send an email</span>
       </a>
-      <button type="button" id="to-copy" aria-label="Button to copy the email" class="inline-flex items-center md:px-3 md:py-2 px-2 py-1 gap-1 text-gray-900 bg-white/80 border border-gray-200 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
+      <button type="button" id="to-copy" aria-label="Button to copy the email" class="inline-flex items-center md:px-3 md:py-2 px-2 py-1 gap-1 text-gray-900 bg-white/80 border dark:border-gray-200 border-gray-400 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
         <Copy class="md:size-5 size-4 text-[#2e2e2e]" />
       </button>
     </div>

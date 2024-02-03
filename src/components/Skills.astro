@@ -10,7 +10,7 @@ const i18n = getI18N({ currentLocale })
 ---
 
 <section class="w-full">
-  <div class="flex flex-row items-center w-full p-2 gap-3 text-white/60">
+  <div class="flex flex-row items-center w-full p-2 gap-3 dark:text-white/60 text-black/60">
     <Trophy class="md:size-5 size-4" />
     <h3 class="md:text-base text-md">{i18n.SKILLS.LABEL}</h3>
   </div>
@@ -19,7 +19,7 @@ const i18n = getI18N({ currentLocale })
       SKILLS.map((skill) => (
         <Pill class="cursor-default">
           <skill.icon class="md:size-5 size-4" />
-          <span class="text-white/80 md:text-base text-sm">{skill.name}</span>
+          <span class="dark:text-white/80 text-black/80 md:text-base text-sm">{skill.name}</span>
         </Pill>
       ))
     }
