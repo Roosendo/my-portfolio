@@ -1,7 +1,6 @@
 ---
 import Layout from '@l/Layout.astro'
 import PersonalInfo from '@c/PersonalInfo.astro'
-import Header from '@c/Header.astro'
 import LatestProjects from '@c/LatestProjects.astro'
 import Skills from '@c/Skills.astro'
 import TimeLine from '@c/TimeLine.astro'
@@ -15,7 +14,6 @@ const i18n = getI18N({ currentLocale })
 ---
 
 <Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
-  <Header slot='header' />
   <div class="grid grid-cols-1 md:w-[746px] sm:w-[618px] w-[290px] gap-2 place-items-center my-5">
     <PersonalInfo />
     <LatestProjects />

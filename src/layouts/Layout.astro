@@ -1,6 +1,7 @@
 ---
 import { ViewTransitions } from 'astro:transitions'
 import '@fontsource-variable/onest'
+import Header from '@c/Header.astro'
 import Footer from '@c/Footer.astro'
 
 interface Props {
@@ -24,7 +25,7 @@ const { currentLocale } = Astro
 		<ViewTransitions />
 	</head>
 	<body class="flex flex-col place-items-center w-full justify-center">
-		<slot name="header" />
+		<Header />
 		<div class="absolute top-0 z-[-2] h-full w-full bg-inherit bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
 		</div>
 		<slot />
