@@ -59,7 +59,6 @@ const THEMES = ["Light", "Dark", "System"]
   let remove = null
   const matchMedia = window.matchMedia('(prefers-color-scheme: dark)')
   const themesMenu = document.getElementById('themes-menu')
-  const bodyElement = document.body
 
   const getThemePreference = () => {
     if (typeof localStorage !== 'undefined') {
@@ -91,22 +90,22 @@ const THEMES = ["Light", "Dark", "System"]
       (themePreference === 'system' && matchMedia.matches)
 
     updateIcon(themePreference)
-    bodyElement.classList[isDark ? 'add' : 'remove']('dark')
+    document.documentElement.classList[isDark ? 'add' : 'remove']('dark')
   }
 
   updateTheme()
 
-  document.addEventListener("click", () => themesMenu.classList.remove("open"))
+  document.addEventListener('click', () => themesMenu.classList.remove('open'))
 
-  document.getElementById("theme-toggle-btn").addEventListener("click", (e) => {
+  document.getElementById('theme-toggle-btn').addEventListener('click', (e) => {
     e.stopPropagation()
-    const isClosed = !themesMenu.classList.contains("open")
-    themesMenu.classList[isClosed ? "add" : "remove"]("open")
+    const isClosed = !themesMenu.classList.contains('open')
+    themesMenu.classList[isClosed ? 'add' : 'remove']('open')
   })
 
-  document.querySelectorAll(".themes-menu-option").forEach((element) => {
-    element.addEventListener("click", (e) => {
-      localStorage.setItem("theme", e.target.innerText.toLowerCase().trim())
+  document.querySelectorAll('.themes-menu-option').forEach((element) => {
+    element.addEventListener('click', (e) => {
+      localStorage.setItem('theme', e.target.innerText.toLowerCase().trim())
       updateTheme()
     })
   })
