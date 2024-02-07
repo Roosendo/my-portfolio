@@ -10,6 +10,7 @@ import Node from '@icons_s/Node.astro'
 import React from '@icons_s/React.astro'
 import Tailwind from '@icons_s/Tailwind.astro'
 import TypeScript from '@icons_s/TypeScript.astro'
+import AWS from '@icons_s/AWS.astro'
 
 export const SKILLS = [
   {
@@ -59,5 +60,9 @@ export const SKILLS = [
   {
     name: 'Astro',
     icon: AstroIcon
+  },
+  {
+    name: 'AWS',
+    icon: AWS
   }
 ]
