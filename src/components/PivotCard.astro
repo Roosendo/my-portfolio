@@ -1,55 +1,74 @@
 ---
 interface Props {
-  title: string
-  body: string
-  imgs: string[]
-  projectLink: string
-  githubUrl: string
-  languages: string[]
+	title: string;
+	body: string;
+	imgs: string[];
+	projectLink: string;
+	githubUrl: string;
+	languages: string[];
 }
 
-import { SKILLS } from '@u/SKILLS'
-const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props
+import { SKILLS } from '@u/SKILLS';
+const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props;
 
-import { getI18N } from '@c/i18n'
+import { getI18N } from '@c/i18n';
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { currentLocale } = Astro;
+const i18n = getI18N({ currentLocale });
 
-import Pill from './Pill.astro'
+import Pill from './Pill.astro';
 ---
 
-<section class="flex flex-col gap-3 mb-3">
-  <h2 class="md:text-2xl text-xl dark:text-[#eea5ee] text-[#cc00cc]">{title}</h2>
-  <p class="md:text-lg text-base dark:text-white text-black">{body}</p>
-  <div class="flex flex-row flex-wrap gap-3">
-    {
-      languages.map((lang) => {
-        const skill = SKILLS.find(skill => skill.name === lang)
+<section class="flex flex-col gap-3 mb-3" id="projects">
+	<h2 class="md:text-2xl text-xl dark:text-[#eea5ee] text-[#cc00cc]">
+		{title}
+	</h2>
+	<p class="md:text-lg text-base dark:text-white text-black">{body}</p>
+	<div class="flex flex-row flex-wrap gap-3">
+		{
+			languages.map((lang) => {
+				const skill = SKILLS.find((skill) => skill.name === lang);
 
-        return (
-          <Pill class="cursor-default">{skill && <skill.icon class="md:size-5 size-4" />}<span class="dark:text-white/80 text-black/80 md:text-base text-sm">{lang}</span></Pill>
-        )
-      })
-    }
-  </div>
-  {
-    imgs && (
-      <div class="flex flex-col place-items-center">
-        {
-          imgs.map((img, index) => (
-            <img src={img} loading="lazy" alt={`Screenshot ${index + 1}`} width="80%" height="auto" class="rounded-lg" />
-          ))
-        }
-      </div>
-    )
-  }
-  <div class="flex flex-row w-full justify-evenly gap-3">
-    {
-      projectLink && (
-        <Pill href={projectLink} class="cursor-pointer"><span class="dark:text-white text-black md:text-base text-sm">{i18n.PROJECTS.BUTTONS.LIVE}</span></Pill>
-      )
-    }
-    <Pill href={githubUrl} class="cursor-pointer"><span class="dark:text-white text-black md:text-base text-sm">{i18n.PROJECTS.BUTTONS.GITHUB}</span></Pill>
-  </div>
+				return (
+					<Pill class="cursor-default">
+						{skill && <skill.icon class="md:size-5 size-4" />}
+						<span class="dark:text-white/80 text-black/80 md:text-base text-sm">
+							{lang}
+						</span>
+					</Pill>
+				);
+			})
+		}
+	</div>
+	{
+		imgs && (
+			<div class="flex flex-col place-items-center">
+				{imgs.map((img, index) => (
+					<img
+						src={img}
+						loading="lazy"
+						alt={`Screenshot ${index + 1}`}
+						width="80%"
+						height="auto"
+						class="rounded-lg"
+					/>
+				))}
+			</div>
+		)
+	}
+	<div class="flex flex-row w-full justify-evenly gap-3">
+		{
+			projectLink && (
+				<Pill href={projectLink} class="cursor-pointer">
+					<span class="dark:text-white text-black md:text-base text-sm">
+						{i18n.PROJECTS.BUTTONS.LIVE}
+					</span>
+				</Pill>
+			)
+		}
+		<Pill href={githubUrl} class="cursor-pointer">
+			<span class="dark:text-white text-black md:text-base text-sm"
+				>{i18n.PROJECTS.BUTTONS.GITHUB}</span>
+		</Pill>
+	</div>
 </section>
