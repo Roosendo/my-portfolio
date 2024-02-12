@@ -1,10 +1,16 @@
 ---
-import AboutMe from '@icons/AboutMe.astro';
+import AboutMe from '@icons/AboutMe.astro'
 
-import { getI18N } from '@c/i18n';
+import { getI18N } from '@c/i18n'
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+const content = [
+	{ title: i18n.ABOUT_ME.TITLE_1, paragraph: i18n.ABOUT_ME.PARAGRAPH_1, },
+	{ title: i18n.ABOUT_ME.TITLE_2, paragraph: i18n.ABOUT_ME.PARAGRAPH_2, },
+	{ title: i18n.ABOUT_ME.TITLE_3, paragraph: i18n.ABOUT_ME.PARAGRAPH_3, },
+]
 ---
 
 <section class="mt-3" id="about-me">
@@ -15,52 +21,21 @@ const i18n = getI18N({ currentLocale });
 		<h3 class="md:text-base text-md">{i18n.ABOUT_ME.LABEL}</h3>
 	</div>
 	<article class="grid md:grid-cols-2 p-2 gap-2 md:gap-y-6 gap-y-4 w-full">
-		<!-- Left col -->
-		<div>
-			<h2
-				class="md:text-2xl text-xl font-bold md:mb-3 dark:text-yellow-200 text-yellow-500"
-			>
-				{i18n.ABOUT_ME.TITLE_1}
-			</h2>
-		</div>
-
-		<!-- Right col -->
-		<div>
-			<p class="dark:text-white text-black md:text-lg text-base">
-				{i18n.ABOUT_ME.PARAGRAPH_1}
-			</p>
-		</div>
-
-		<!-- Left col -->
-		<div>
-			<h2
-				class="md:text-2xl text-xl font-bold md:mb-3 dark:text-yellow-200 text-yellow-500"
-			>
-				{i18n.ABOUT_ME.TITLE_2}
-			</h2>
-		</div>
-
-		<!-- Right col -->
-		<div>
-			<p class="dark:text-white text-black md:text-lg text-base">
-				{i18n.ABOUT_ME.PARAGRAPH_2}
-			</p>
-		</div>
-
-		<!-- Left col -->
-		<div>
-			<h2
-				class="md:text-2xl text-xl font-bold md:mb-3 dark:text-yellow-200 text-yellow-500"
-			>
-				{i18n.ABOUT_ME.TITLE_3}
-			</h2>
-		</div>
-
-		<!-- Right col -->
-		<div>
-			<p class="dark:text-white text-black md:text-lg text-base">
-				{i18n.ABOUT_ME.PARAGRAPH_3}
-			</p>
-		</div>
+		{
+			content.map(item => (
+				<div>
+					<h2
+						class="md:text-2xl text-xl font-bold md:mb-3 dark:text-yellow-200 text-yellow-500"
+					>
+						{item.title}
+					</h2>
+				</div>
+				<div>
+					<p class="dark:text-white text-black md:text-lg text-base">
+						{item.paragraph}
+					</p>
+				</div>
+			))
+		}
 	</article>
 </section>
