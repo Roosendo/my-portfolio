@@ -13,56 +13,17 @@ import TypeScript from '@icons_s/TypeScript.astro'
 import AWS from '@icons_s/AWS.astro'
 
 export const SKILLS = [
-  {
-    name: 'HTML',
-    icon: HTML
-  },
-  {
-    name: 'CSS',
-    icon: CSS
-  },
-  {
-    name: 'JavaScript',
-    icon: JavaScript
-  },
-  {
-    name: 'Git',
-    icon: Git
-  },
-  {
-    name: 'MySql',
-    icon: MySql
-  },
-  {
-    name: 'PHP',
-    icon: PHP
-  },
-  {
-    name: 'Node',
-    icon: Node
-  },
-  {
-    name: 'TypeScript',
-    icon: TypeScript
-  },
-  {
-    name: 'Express',
-    icon: Express
-  },
-  {
-    name: 'Tailwind',
-    icon: Tailwind
-  },
-  {
-    name: 'React',
-    icon: React
-  },
-  {
-    name: 'Astro',
-    icon: AstroIcon
-  },
-  {
-    name: 'AWS',
-    icon: AWS
-  }
+  { name: 'HTML', icon: HTML },
+  { name: 'CSS', icon: CSS },
+  { name: 'JavaScript', icon: JavaScript },
+  { name: 'Git', icon: Git },
+  { name: 'MySql', icon: MySql },
+  { name: 'PHP', icon: PHP },
+  { name: 'Node', icon: Node },
+  { name: 'TypeScript', icon: TypeScript },
+  { name: 'Express', icon: Express },
+  { name: 'Tailwind', icon: Tailwind },
+  { name: 'React', icon: React },
+  { name: 'Astro', icon: AstroIcon },
+  { name: 'AWS', icon: AWS }
 ]
