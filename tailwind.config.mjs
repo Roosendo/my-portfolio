@@ -1,4 +1,4 @@
-import animations from 'tailwindcss-animated'
+import animations from '@midudev/tailwind-animations'
 
 /** @type {import('tailwindcss').Config} */
 export default {
