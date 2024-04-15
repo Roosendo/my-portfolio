@@ -45,16 +45,23 @@
   },
   "WORK_EXPERIENCE": {
     "LABEL": "Experiencia laboral",
-    "COMPANY_1": {
-      "TITLE": "Asesor de ventas en Par2",
-      "DESCRIPTION": "Participé en roles centrados en el cliente en una destacada tienda de zapatos. Enfocado principalmente en brindar un servicio excepcional, manejar consultas y facilitar ventas.",
-      "TIME": "Noviembre - Diciembre 2022"
-    },
-    "COMPANY_2": {
-      "TITLE": "Asesor de ventas en Estación de Gas Texaco",
-      "DESCRIPTION": "Manejé transacciones y brindé servicio al cliente en una bulliciosa gasolinera. Las responsabilidades incluyeron la dispensación de combustible, el procesamiento de pagos y garantizar una experiencia positiva para el cliente.",
-      "TIME": "Noviembre - Diciembre 2021"
-    }
+    "JOBS": [
+      {
+        "TITLE": "Censista del Banco Central de Reserva de El Salvador",
+        "DESCRIPTION": "Recopilé datos económicos y demográficos para el censo nacional. Realicé encuestas en hogares y empresas, garantizando la precisión y la confidencialidad de los datos recopilados.",
+        "TIME": "Abril 2024 - Presente"
+      },
+      {
+        "TITLE": "Asesor de ventas en Par2",
+        "DESCRIPTION": "Participé en roles centrados en el cliente en una destacada tienda de zapatos. Enfocado principalmente en brindar un servicio excepcional, manejar consultas y facilitar ventas.",
+        "TIME": "Noviembre - Diciembre 2022"
+      },
+      {
+        "TITLE": "Asesor de ventas en Estación de Gas Texaco",
+        "DESCRIPTION": "Manejé transacciones y brindé servicio al cliente en una bulliciosa gasolinera. Las responsabilidades incluyeron la dispensación de combustible, el procesamiento de pagos y garantizar una experiencia positiva para el cliente.",
+        "TIME": "Noviembre - Diciembre 2021"
+      }
+    ]
   },
   "ABOUT_ME": {
     "LABEL": "Sobre mí",
