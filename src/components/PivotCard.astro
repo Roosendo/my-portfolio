@@ -8,6 +8,8 @@ interface Props {
 	languages: string[];
 }
 
+import GitHub from '@icons/GitHub.astro'
+import Fire from '@icons/Fire.astro'
 import { SKILLS } from '@u/SKILLS';
 const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props;
 
@@ -60,6 +62,7 @@ import Pill from './Pill.astro';
 		{
 			projectLink && (
 				<Pill href={projectLink} class="cursor-pointer">
+					<Fire class="md:size-5 size-4" />
 					<span class="dark:text-white text-black md:text-base text-sm">
 						{i18n.PROJECTS.BUTTONS.LIVE}
 					</span>
@@ -67,6 +70,7 @@ import Pill from './Pill.astro';
 			)
 		}
 		<Pill href={githubUrl} class="cursor-pointer">
+			<GitHub class="md:size-5 size-4" />
 			<span class="dark:text-white text-black md:text-base text-sm"
 				>{i18n.PROJECTS.BUTTONS.GITHUB}</span>
 		</Pill>
