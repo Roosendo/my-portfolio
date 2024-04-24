@@ -24,8 +24,8 @@
   "PROJECTS": {
     "LABEL": "Últimos proyectos",
     "PROJECT_1": {
-      "TITLE": "Solución de Gestión Integral de Recursos FullStack",
-      "DESCRIPTION": "Proyecto colaborativo con Express y MySQL. Interfaz de usuario intuitiva con JavaScript puro para una asignación eficiente de recursos, seguimiento e informes. Utiliza tecnologías como Express, CORS y MySQL2 para una gestión eficiente."
+      "TITLE": "Money Minder, una Solución de Gestión Integral de Recursos FullStack",
+      "DESCRIPTION": "Proyecto personal con Astro, Tailwind y Turso. Interfaz de usuario intuitiva con Astro y Typescript para una asignación eficiente de recursos, seguimiento e informes. Utiliza tecnologías que ofrece Astro, más una base de datos de sqlite en el Edge con Turso para una gestión eficiente."
     },
     "PROJECT_2": {
       "TITLE": "Explorador de Pokémon: Consumo Asíncrono de API y Filtrado Dinámico",

@@ -12,9 +12,9 @@ export const getProjects = (currentLocale: string) => {
       title: i18n.PROJECTS.PROJECT_1.TITLE,
       body: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
       imgs: [FS2.src],
-      projectLink: '',
-      githubUrl: 'https://github.com/PaolaPaz1/proyecto-final-main',
-      languages: ['JavaScript', 'MySql', 'HTML', 'CSS', 'Express']
+      projectLink: 'https://money-minder-xi.vercel.app/',
+      githubUrl: 'https://github.com/Roosendo/money-minder',
+      languages: ['TypeScript', 'MySql', 'Tailwind', 'Astro']
     },
     {
       title: i18n.PROJECTS.PROJECT_2.TITLE,
