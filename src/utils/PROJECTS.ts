@@ -1,6 +1,12 @@
 import Php2 from '@imgs/crud2.webp'
-import Api1 from '@imgs/api1.webp'
-import FS2 from '@imgs/fullstack2.webp'
+
+import MMApiExample from '@imgs/money-minder/api-example.webp'
+import MMDashboard from '@imgs/money-minder/dashboard.webp'
+import MMGraphics from '@imgs/money-minder/graphics.webp'
+
+import PKXCodeExample from '@imgs/pokedex/code-example.webp'
+import PKXFilterExample from '@imgs/pokedex/filter-example.webp'
+import PKXweb from '@imgs/pokedex/pokedex-web.webp'
 
 import { getI18N } from '@c/i18n'
 
@@ -11,7 +17,7 @@ export const getProjects = (currentLocale: string) => {
     {
       title: i18n.PROJECTS.PROJECT_1.TITLE,
       body: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
-      imgs: [FS2.src],
+      imgs: [MMDashboard.src, MMApiExample.src, MMGraphics.src],
       projectLink: 'https://money-minder-xi.vercel.app/',
       githubUrl: 'https://github.com/Roosendo/money-minder',
       languages: ['TypeScript', 'MySql', 'Tailwind', 'Astro']
@@ -19,7 +25,7 @@ export const getProjects = (currentLocale: string) => {
     {
       title: i18n.PROJECTS.PROJECT_2.TITLE,
       body: i18n.PROJECTS.PROJECT_2.DESCRIPTION,
-      imgs: [Api1.src],
+      imgs: [PKXweb.src, PKXFilterExample.src, PKXCodeExample.src],
       projectLink: 'https://pokemon-api-iota.vercel.app/',
       githubUrl: 'https://github.com/Roosendo/pokemon-api',
       languages: ['HTML', 'CSS', 'TypeScript']
