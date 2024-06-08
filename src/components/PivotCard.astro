@@ -45,9 +45,9 @@ import Pill from './Pill.astro';
 	</div>
 	{
 		imgs && (
-			<div class="flex flex-col place-items-center">
+			<div class="flex flex-col w-full place-items-center">
 				<div class="relative">
-					<div class="max-w-lg rounded">
+					<div class="rounded">
 						<Carousel slides={imgs} autoSlide={true} client:visible />
 					</div>
 				</div>

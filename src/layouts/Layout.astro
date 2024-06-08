@@ -24,7 +24,7 @@ const { currentLocale } = Astro
 		<title>{title}</title>
 		<ViewTransitions />
 	</head>
-	<body class="flex flex-col place-items-center w-full justify-center">
+	<body class="flex flex-col place-items-center md:max-w-full max-w-md md:m-0 m-auto justify-center">
 		<Header />
 		<div class="absolute top-0 z-[-2] h-full w-full bg-inherit bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]">
 		</div>
@@ -148,7 +148,7 @@ const { currentLocale } = Astro
 	.animate-scroll {
 		animation: reveal linear both;
 		animation-timeline: view();
-		animation-range: entry 20% cover 40%;
+		animation-range: entry 10% cover 30%;
 	}
 
 	body.dark #header-nav {
