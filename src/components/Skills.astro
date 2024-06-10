@@ -19,7 +19,7 @@ const halfLength = Math.floor(length / 2)
   <div class="wrapper">
     {
       SKILLS.slice(0, halfLength).map((skill, index) => (
-        <div class=`cursor-default flex justify-center items-center flex-col itemLeft item${index} text-black/70 dark:text-white/90 border border-gray-500 m-auto text-xs md:text-base`>
+        <div class={`cursor-default flex justify-center items-center flex-col itemLeft item${index} text-black/70 dark:text-white/90 border border-gray-500 m-auto text-xs md:text-base`}>
           <skill.icon class="md:size-5 size-4" />
           <span class="dark:text-white/90 text-black/80 md:text-base text-sm">{skill.name}</span>
         </div>
@@ -29,7 +29,7 @@ const halfLength = Math.floor(length / 2)
   <div class="wrapper">
     {
       SKILLS.slice(halfLength, length).map((skill, index) => (
-        <div class=`cursor-default flex justify-center items-center flex-col itemRight item${index} text-black/70 dark:text-white/90 border border-gray-500 m-auto text-xs md:text-base`>
+        <div class={`cursor-default flex justify-center items-center flex-col itemRight item${index} text-black/70 dark:text-white/90 border border-gray-500 m-auto text-xs md:text-base`}>
           <skill.icon class="md:size-5 size-4" />
           <span class="dark:text-white/90 text-black/80 md:text-base text-sm">{skill.name}</span>
         </div>
