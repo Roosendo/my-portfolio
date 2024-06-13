@@ -20,7 +20,7 @@ export const getProjects = (currentLocale: string) => {
       imgs: [MMDashboard.src, MMApiExample.src, MMGraphics.src],
       projectLink: 'https://money-minder-xi.vercel.app/',
       githubUrl: 'https://github.com/Roosendo/money-minder',
-      languages: ['TypeScript', 'MySql', 'Tailwind', 'Astro']
+      languages: ['TypeScript', 'SQLite', 'Tailwind', 'Astro']
     },
     {
       title: i18n.PROJECTS.PROJECT_2.TITLE,
