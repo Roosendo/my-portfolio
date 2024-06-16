@@ -1,78 +1,78 @@
 ---
-import LanguageSelector from './LanguageSelector.astro';
-import ThemeToggle from './ThemeToggle.astro';
+import LanguageSelector from './LanguageSelector.astro'
+import ThemeToggle from './ThemeToggle.astro'
 
-import { getI18N } from '@c/i18n';
+import { getI18N } from '@c/i18n'
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 ---
 
 <header
-	id="header-nav"
-	class="flex justify-around items-center dark:text-white/80 text-black/80 text-sm mx-auto rounded sticky top-1 max-w-full z-10"
+  id='header-nav'
+  class='sticky top-1 z-10 mx-auto flex max-w-full items-center justify-around rounded text-sm text-black/80 dark:text-white/80'
 >
-	<nav class="flex flex-wrap items-center justify-around p-1 gap-3">
-		<a
-			class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto"
-			href="#projects"
-			aria-label="projects">{i18n.HEADER.PROJECTS}</a
-		>
-		<a
-			class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto"
-			href="#about-me"
-			aria-label="about-me">{i18n.HEADER.ABOUT_ME}</a
-		>
-		<a
-			class="hover:bg-white/10 rounded p-2 transition md:text-base text-sm sm:w-auto"
-			href="#contact"
-			aria-label="contact">{i18n.HEADER.CONTACT}</a
-		>
-		<ThemeToggle />
-		<LanguageSelector />
-	</nav>
+  <nav class='flex flex-wrap items-center justify-around gap-3 p-1'>
+    <a
+      class='rounded p-2 text-sm transition hover:bg-white/10 sm:w-auto md:text-base'
+      href='#projects'
+      aria-label='projects'>{i18n.HEADER.PROJECTS}</a
+    >
+    <a
+      class='rounded p-2 text-sm transition hover:bg-white/10 sm:w-auto md:text-base'
+      href='#about-me'
+      aria-label='about-me'>{i18n.HEADER.ABOUT_ME}</a
+    >
+    <a
+      class='rounded p-2 text-sm transition hover:bg-white/10 sm:w-auto md:text-base'
+      href='#contact'
+      aria-label='contact'>{i18n.HEADER.CONTACT}</a
+    >
+    <ThemeToggle />
+    <LanguageSelector />
+  </nav>
 </header>
 
 <script>
-	document.addEventListener('astro:page-load', () => {
-		const sections = document.querySelectorAll('section')
-		const navItems = document.querySelectorAll('header nav a')
+  document.addEventListener('astro:page-load', () => {
+    const sections = document.querySelectorAll('section')
+    const navItems = document.querySelectorAll('header nav a')
 
-		const callback = (entries: any[]) => {
-			entries.forEach((entry) => {
-				if (entry.isIntersecting) {
-					navItems.forEach((item) => {
-						if (item.getAttribute('aria-label') === entry.target.id) {
-							item.classList.add('dark:text-yellow-200')
+    const callback = (entries: any[]) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          navItems.forEach((item) => {
+            if (item.getAttribute('aria-label') === entry.target.id) {
+              item.classList.add('dark:text-yellow-200')
               item.classList.add('text-yellow-500')
-						} else {
-							item.classList.remove('dark:text-yellow-200')
+            } else {
+              item.classList.remove('dark:text-yellow-200')
               item.classList.remove('text-yellow-500')
-						}
-					})
-				}
-			})
-		}
+            }
+          })
+        }
+      })
+    }
 
-		const observer = new IntersectionObserver(callback, {
-			root: null,
-			rootMargin: '0px',
-			threshold: 0.3,
-		})
+    const observer = new IntersectionObserver(callback, {
+      root: null,
+      rootMargin: '0px',
+      threshold: 0.3
+    })
 
-		sections.forEach((section) => {
-			observer.observe(section);
-		})
+    sections.forEach((section) => {
+      observer.observe(section)
+    })
 
-		// Cleanup function
-		document.onvisibilitychange = () => {
-			if (document.visibilityState === 'hidden') {
-				observer.disconnect();
-			} else {
-				sections.forEach((section) => {
-					observer.observe(section);
-				})
-			}
-		}
-	})
+    // Cleanup function
+    document.onvisibilitychange = () => {
+      if (document.visibilityState === 'hidden') {
+        observer.disconnect()
+      } else {
+        sections.forEach((section) => {
+          observer.observe(section)
+        })
+      }
+    }
+  })
 </script>

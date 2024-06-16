@@ -7,7 +7,7 @@ export function showAndHideAlert (alertElement: HTMLElement, timeout: number = 2
   }, timeout)
 }
 
-export function copyToClipboard(text: string): boolean {
+export function copyToClipboard (text: string): boolean {
   const tempInput = document.createElement('textarea')
   tempInput.value = text
   document.body.appendChild(tempInput)

@@ -15,8 +15,8 @@ const WrapperTag = Astro.props.href ? 'a' : 'p'
     ${Astro.props.class}
   `}
   href={Astro.props.href}
-  target="_blank"
-  rel="noopener noreferrer"
+  target='_blank'
+  rel='noopener noreferrer'
 >
   <slot />
 </WrapperTag>

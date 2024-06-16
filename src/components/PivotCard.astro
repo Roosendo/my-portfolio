@@ -1,74 +1,73 @@
 ---
 interface Props {
-	title: string;
-	body: string;
-	imgs: string[];
-	projectLink: string;
-	githubUrl: string;
-	languages: string[];
+  title: string
+  body: string
+  imgs: string[]
+  projectLink: string
+  githubUrl: string
+  languages: string[]
 }
 
 import GitHub from '@icons/GitHub.astro'
 import Fire from '@icons/Fire.astro'
 import Carousel from '@c/Carousel.tsx'
-import { SKILLS } from '@u/SKILLS';
-const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props;
+import { SKILLS } from '@u/SKILLS'
+const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props
 
-import { getI18N } from '@c/i18n';
+import { getI18N } from '@c/i18n'
 
-const { currentLocale } = Astro;
-const i18n = getI18N({ currentLocale });
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
 
-import Pill from './Pill.astro';
+import Pill from './Pill.astro'
 ---
 
-<section class="flex flex-col gap-3 mb-3 animate-scroll" id="projects">
-	<h2 class="md:text-2xl text-xl dark:text-[#eea5ee] text-[#cc00cc]">
-		{title}
-	</h2>
-	<p class="md:text-lg text-base dark:text-white text-black">{body}</p>
-	<div class="flex flex-row flex-wrap gap-3">
-		{
-			languages.map((lang) => {
-				const skill = SKILLS.find((skill) => skill.name === lang);
+<section class='animate-scroll mb-3 flex flex-col gap-3' id='projects'>
+  <h2 class='text-xl text-[#cc00cc] dark:text-[#eea5ee] md:text-2xl'>
+    {title}
+  </h2>
+  <p class='text-base text-black dark:text-white md:text-lg'>{body}</p>
+  <div class='flex flex-row flex-wrap gap-3'>
+    {
+      languages.map((lang) => {
+        const skill = SKILLS.find((skill) => skill.name === lang)
 
-				return (
-					<Pill class="cursor-default">
-						{skill && <skill.icon class="md:size-5 size-4" />}
-						<span class="dark:text-white/80 text-black/80 md:text-base text-sm">
-							{lang}
-						</span>
-					</Pill>
-				);
-			})
-		}
-	</div>
-	{
-		imgs && (
-			<div class="flex flex-col w-full place-items-center">
-				<div class="relative">
-					<div class="rounded">
-						<Carousel slides={imgs} autoSlide={true} client:visible />
-					</div>
-				</div>
-			</div>
-		)
-	}
-	<div class="flex flex-row w-full justify-evenly gap-3">
-		{
-			projectLink && (
-				<Pill href={projectLink} class="cursor-pointer">
-					<Fire class="md:size-5 size-4" />
-					<span class="dark:text-white text-black md:text-base text-sm">
-						{i18n.PROJECTS.BUTTONS.LIVE}
-					</span>
-				</Pill>
-			)
-		}
-		<Pill href={githubUrl} class="cursor-pointer">
-			<GitHub class="md:size-5 size-4" />
-			<span class="dark:text-white text-black md:text-base text-sm"
-				>{i18n.PROJECTS.BUTTONS.GITHUB}</span>
-		</Pill>
-	</div>
+        return (
+          <Pill class='cursor-default'>
+            {skill && <skill.icon class='size-4 md:size-5' />}
+            <span class='text-sm text-black/80 dark:text-white/80 md:text-base'>{lang}</span>
+          </Pill>
+        )
+      })
+    }
+  </div>
+  {
+    imgs && (
+      <div class='flex w-full flex-col place-items-center'>
+        <div class='relative'>
+          <div class='rounded'>
+            <Carousel slides={imgs} autoSlide={true} client:visible />
+          </div>
+        </div>
+      </div>
+    )
+  }
+  <div class='flex w-full flex-row justify-evenly gap-3'>
+    {
+      projectLink && (
+        <Pill href={projectLink} class='cursor-pointer'>
+          <Fire class='size-4 md:size-5' />
+          <span class='text-sm text-black dark:text-white md:text-base'>
+            {i18n.PROJECTS.BUTTONS.LIVE}
+          </span>
+        </Pill>
+      )
+    }
+    <Pill href={githubUrl} class='cursor-pointer'>
+      <GitHub class='size-4 md:size-5' />
+      <span class='text-sm text-black dark:text-white md:text-base'
+        >{i18n.PROJECTS.BUTTONS.GITHUB}</span
+      >
+    </Pill>
+  </div>
 </section>

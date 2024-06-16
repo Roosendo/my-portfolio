@@ -7,35 +7,31 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 
 const content = [
-	{ title: i18n.ABOUT_ME.TITLE_1, paragraph: i18n.ABOUT_ME.PARAGRAPH_1, },
-	{ title: i18n.ABOUT_ME.TITLE_2, paragraph: i18n.ABOUT_ME.PARAGRAPH_2, },
-	{ title: i18n.ABOUT_ME.TITLE_3, paragraph: i18n.ABOUT_ME.PARAGRAPH_3, },
+  { title: i18n.ABOUT_ME.TITLE_1, paragraph: i18n.ABOUT_ME.PARAGRAPH_1 },
+  { title: i18n.ABOUT_ME.TITLE_2, paragraph: i18n.ABOUT_ME.PARAGRAPH_2 },
+  { title: i18n.ABOUT_ME.TITLE_3, paragraph: i18n.ABOUT_ME.PARAGRAPH_3 }
 ]
 ---
 
-<section class="mt-3 animate-scroll" id="about-me">
-	<div
-		class="flex flex-row items-center p-2 gap-3 dark:text-white/60 text-black/60"
-	>
-		<Fire class="md:size-5 size-4" />
-		<h3 class="md:text-base text-md">{i18n.ABOUT_ME.LABEL}</h3>
-	</div>
-	<article class="grid md:grid-cols-2 p-2 gap-2 md:gap-y-6 gap-y-4 w-full">
-		{
-			content.map(item => (
-				<div>
-					<h2
-						class="md:text-2xl text-xl font-bold md:mb-3 dark:text-yellow-200 text-yellow-500"
-					>
-						{item.title}
-					</h2>
-				</div>
-				<div>
-					<p class="dark:text-white text-black md:text-lg text-base">
-						{item.paragraph}
-					</p>
-				</div>
-			))
-		}
-	</article>
+<section class='animate-scroll mt-3' id='about-me'>
+  <div class='flex flex-row items-center gap-3 p-2 text-black/60 dark:text-white/60'>
+    <Fire class='size-4 md:size-5' />
+    <h3 class='text-md md:text-base'>{i18n.ABOUT_ME.LABEL}</h3>
+  </div>
+  <article class='grid w-full gap-2 gap-y-4 p-2 md:grid-cols-2 md:gap-y-6'>
+    {
+      content.map((item) => (
+        <>
+          <div>
+            <h2 class='text-xl font-bold text-yellow-500 dark:text-yellow-200 md:mb-3 md:text-2xl'>
+              {item.title}
+            </h2>
+          </div>
+          <div>
+            <p class='text-base text-black dark:text-white md:text-lg'>{item.paragraph}</p>
+          </div>
+        </>
+      ))
+    }
+  </article>
 </section>

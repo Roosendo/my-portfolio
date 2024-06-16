@@ -30,56 +30,81 @@ const htmlParagraph = unescapeHTML(paragraph)
 let CVfinal = currentLocale === 'es' ? CVes : CV
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-left w-full p-1 dark:text-white text-black">
-  <div class="flex flex-col justify-between">
-    <div class="flex flex-col gap-2">
-      <h1 class="md:text-3xl text-2xl">{i18n.PERSONAL_INFO.GREETING}</h1>
-      <a href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" target="_blank" class="text-blue-700 transition bg-slate-300 hover:text-white border border-blue-700 hover:bg-blue-800 font-medium rounded-lg md:text-sm text-xs px-2 py-1 w-max text-center mb-2">
+<div class='grid w-full grid-cols-1 gap-4 p-1 text-left text-black dark:text-white md:grid-cols-2'>
+  <div class='flex flex-col justify-between'>
+    <div class='flex flex-col gap-2'>
+      <h1 class='text-2xl md:text-3xl'>{i18n.PERSONAL_INFO.GREETING}</h1>
+      <a
+        href='https://www.linkedin.com/in/rosendo-garcia-a498b9279/'
+        target='_blank'
+        class='mb-2 w-max rounded-lg border border-blue-700 bg-slate-300 px-2 py-1 text-center text-xs font-medium text-blue-700 transition hover:bg-blue-800 hover:text-white md:text-sm'
+      >
         {i18n.PERSONAL_INFO.PILL_MESSAGE}
       </a>
     </div>
-    <p class="text-lg mt-4">{htmlParagraph}</p>
+    <p class='mt-4 text-lg'>{htmlParagraph}</p>
   </div>
 
-  <div class="flex justify-center md:justify-end m-auto">
-    <img src={Yo.src} loading="lazy" alt='It should be me' class="w-32 md:w-48 rounded md:rounded-lg" />
+  <div class='m-auto flex justify-center md:justify-end'>
+    <img
+      src={Yo.src}
+      loading='lazy'
+      alt='It should be me'
+      class='w-32 rounded md:w-48 md:rounded-lg'
+    />
   </div>
 
-  <nav class="flex gap-4 m-3 flex-wrap md:col-span-2 w-full place-items-center justify-center">
-    <Pill href="https://github.com/Roosendo" class="cursor-pointer">
-      <GitHub class="md:size-5 size-4 dark:text-emerald-400 text-emerald-600" />
-      <span class="dark:text-white/80 md:text-base text-sm">GitHub</span>
+  <nav class='m-3 flex w-full flex-wrap place-items-center justify-center gap-4 md:col-span-2'>
+    <Pill href='https://github.com/Roosendo' class='cursor-pointer'>
+      <GitHub class='size-4 text-emerald-600 dark:text-emerald-400 md:size-5' />
+      <span class='text-sm dark:text-white/80 md:text-base'>GitHub</span>
     </Pill>
-    <Pill href="https://www.linkedin.com/in/rosendo-garcia-a498b9279/" class="cursor-pointer">
-      <LinkedIn class="md:size-5 size-4 dark:text-emerald-400 text-emerald-600" />
-      <span class="dark:text-white/80 md:text-base text-sm">LinkedIn</span>
+    <Pill href='https://www.linkedin.com/in/rosendo-garcia-a498b9279/' class='cursor-pointer'>
+      <LinkedIn class='size-4 text-emerald-600 dark:text-emerald-400 md:size-5' />
+      <span class='text-sm dark:text-white/80 md:text-base'>LinkedIn</span>
     </Pill>
-    <Pill href={CVfinal} class="cursor-pointer">
-      <CVIcon class="md:size-5 size-4 dark:text-emerald-400 text-emerald-600" />
-      <span class="dark:text-white/80 md:text-base text-sm">CV</span>
+    <Pill href={CVfinal} class='cursor-pointer'>
+      <CVIcon class='size-4 text-emerald-600 dark:text-emerald-400 md:size-5' />
+      <span class='text-sm dark:text-white/80 md:text-base'>CV</span>
     </Pill>
   </nav>
 
   <AlertMessage type='success' message={i18n.PERSONAL_INFO.ALERTS.SUCCESS} divId='alert-ok' />
   <AlertMessage type='error' message={i18n.PERSONAL_INFO.ALERTS.ERROR} divId='alert-no' />
 
-  <div class="flex flex-row gap-3 mb-1 dark:text-white text-black items-center w-full mt-3 md:col-span-2">
-    <div class="flex items-center gap-2">
-      <At class="md:size-5 size-4" />
-      <h2 class="md:text-base text-md">{i18n.PERSONAL_INFO.EMAIL}</h2>
+  <div
+    class='mb-1 mt-3 flex w-full flex-row items-center gap-3 text-black dark:text-white md:col-span-2'
+  >
+    <div class='flex items-center gap-2'>
+      <At class='size-4 md:size-5' />
+      <h2 class='text-md md:text-base'>{i18n.PERSONAL_INFO.EMAIL}</h2>
     </div>
   </div>
 
-  <div class="flex gap-4 justify-center w-full mr-auto md:w-auto md:col-span-2">
-    <div class="inline-flex rounded-md shadow-sm w-full justify-center md:w-auto" role="group" id="container">
-      <div class="inline-flex items-center px-3 py-2 dark:text-white text-black bg-transparent border dark:border-gray-200 border-gray-400 rounded-s-lg">
-        <p class="md:text-base text-xs">rosendo.garcia73@outlook.com</p>
+  <div class='mr-auto flex w-full justify-center gap-4 md:col-span-2 md:w-auto'>
+    <div
+      class='inline-flex w-full justify-center rounded-md shadow-sm md:w-auto'
+      role='group'
+      id='container'
+    >
+      <div
+        class='inline-flex items-center rounded-s-lg border border-gray-400 bg-transparent px-3 py-2 text-black dark:border-gray-200 dark:text-white'
+      >
+        <p class='text-xs md:text-base'>rosendo.garcia73@outlook.com</p>
       </div>
-      <a href="mailto:rosendo.garcia73@outlook.com" class="inline-flex items-center md:px-3 md:py-2 px-2 py-1 gap-1 text-gray-900 bg-white/80 border dark:border-gray-200 border-gray-400 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
-        <Send class="md:size-5 size-4 text-[#2e2e2e]" /><span class="sr-only">Send an email</span>
+      <a
+        href='mailto:rosendo.garcia73@outlook.com'
+        class='inline-flex items-center gap-1 border border-gray-400 bg-white/80 px-2 py-1 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:ring-2 focus:ring-blue-700 dark:border-gray-200 md:px-3 md:py-2'
+      >
+        <Send class='size-4 text-[#2e2e2e] md:size-5' /><span class='sr-only'>Send an email</span>
       </a>
-      <button type="button" id="to-copy" aria-label="Button to copy the email" class="inline-flex items-center md:px-3 md:py-2 px-2 py-1 gap-1 text-gray-900 bg-white/80 border dark:border-gray-200 border-gray-400 rounded-e-lg hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-2 focus:ring-blue-700 focus:text-blue-700">
-        <Copy class="md:size-5 size-4 text-[#2e2e2e]" />
+      <button
+        type='button'
+        id='to-copy'
+        aria-label='Button to copy the email'
+        class='inline-flex items-center gap-1 rounded-e-lg border border-gray-400 bg-white/80 px-2 py-1 text-gray-900 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:text-blue-700 focus:ring-2 focus:ring-blue-700 dark:border-gray-200 md:px-3 md:py-2'
+      >
+        <Copy class='size-4 text-[#2e2e2e] md:size-5' />
       </button>
     </div>
   </div>
@@ -97,7 +122,9 @@ let CVfinal = currentLocale === 'es' ? CVes : CV
         const email = 'rosendo.garcia73@outlook.com'
         const successfull = copyToClipboard(email)
 
-        const alertElement = successfull ? document.querySelector('#alert-ok') as HTMLDivElement : document.querySelector('#alert-no') as HTMLDivElement
+        const alertElement = successfull
+          ? (document.querySelector('#alert-ok') as HTMLDivElement)
+          : (document.querySelector('#alert-no') as HTMLDivElement)
 
         if (alertElement) {
           showAndHideAlert(alertElement)
@@ -109,5 +136,4 @@ let CVfinal = currentLocale === 'es' ? CVes : CV
   } else {
     console.error('Container not found')
   }
-
 </script>
