@@ -8,6 +8,9 @@ import PKXCodeExample from '@imgs/pokedex/code-example.webp'
 import PKXFilterExample from '@imgs/pokedex/filter-example.webp'
 import PKXweb from '@imgs/pokedex/pokedex-web.webp'
 
+import NPExampleErros from '@imgs/node-package/example-errors.webp'
+import NPExampleFiles from '@imgs/node-package/files-example.webp'
+
 import { getI18N } from '@c/i18n'
 
 export const getProjects = (currentLocale: string) => {
@@ -37,6 +40,14 @@ export const getProjects = (currentLocale: string) => {
       projectLink: '',
       githubUrl: 'https://github.com/Roosendo/crud-php',
       languages: ['PHP', 'MySql', 'HTML', 'CSS']
+    },
+    {
+      title: i18n.PROJECTS.PROJECT_4.TITLE,
+      body: i18n.PROJECTS.PROJECT_4.DESCRIPTION,
+      imgs: [NPExampleFiles.src, NPExampleErros.src],
+      projectLink: '',
+      githubUrl: 'https://github.com/Roosendo/astro-ts-prettier-eslint',
+      languages: ['TypeScript']
     }
   ]
 }

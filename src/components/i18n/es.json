@@ -35,6 +35,10 @@
       "TITLE": "CRUD en PHP con Roles Administrativos y Sesiones Seguras",
       "DESCRIPTION": "Integración de base de datos, roles administrativos robustos y sesiones seguras. Permite a los administradores imprimir perfiles de usuario con permisos dependientes del rol, mejorando la gestión de personal."
     },
+    "PROJECT_4": {
+      "TITLE": "Configurador de Astro TypeScript Prettier ESLint",
+      "DESCRIPTION": "Un paquete de Node.js para configurar un entorno de desarrollo completo para proyectos de Astro con TypeScript, Prettier y ESLint. Simplifica el proceso de configuración automatizando la instalación de las dependencias necesarias y los archivos de configuración."
+    },
     "BUTTONS": {
       "LIVE": "Ver Proyecto",
       "GITHUB": "Ver Código"
