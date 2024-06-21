@@ -29,7 +29,7 @@ export const getProjects = (currentLocale: string) => {
       title: i18n.PROJECTS.PROJECT_2.TITLE,
       body: i18n.PROJECTS.PROJECT_2.DESCRIPTION,
       imgs: [PKXweb.src, PKXFilterExample.src, PKXCodeExample.src],
-      projectLink: 'https://pokemon-api-iota.vercel.app/',
+      projectLink: 'https://rosendo-pokedex.netlify.app/',
       githubUrl: 'https://github.com/Roosendo/pokemon-api',
       languages: ['HTML', 'CSS', 'TypeScript']
     },
