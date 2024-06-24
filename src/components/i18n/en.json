@@ -23,22 +23,28 @@
   },
   "PROJECTS": {
     "LABEL": "Latest projects",
-    "PROJECT_1": {
-      "TITLE": "Money Minder, a FullStack Resource Management Solution",
-      "DESCRIPTION": "Personal project with Astro, Tailwind and Turso. Intuitive user interface with Astro and Typescript for efficient resource allocation, tracking and reporting. It uses technologies offered by Astro, plus a SQLite database on the Edge with Turso for efficient management."
-    },
-    "PROJECT_2": {
-      "TITLE": "Pokémon Explorer: Async API Consumption and Dynamic Filtering",
-      "DESCRIPTION": "Fetches data from API using async/await, with customizable retrieval and a sleek progress bar. Filter Pokémon by type or name for a user-friendly exploration experience."
-    },
-    "PROJECT_3": {
-      "TITLE": "PHP CRUD with Administrative Roles and Secure Sessions",
-      "DESCRIPTION": "Integrated database, robust administrative roles, and secure sessions. Allows administrators to print user profiles with role-dependent permissions, enhancing personnel management."
-    },
-    "PROJECT_4": {
-      "TITLE": "Astro TypeScript Prettier ESLint Configurator",
-      "DESCRIPTION": "A Node.js package for setting up a comprehensive development environment for Astro projects with TypeScript, Prettier, and ESLint. It simplifies the setup process by automating the installation of necessary dependencies and configuration files."
-    },
+    "PROJECTS": [
+      {
+        "TITLE": "Money Minder, a FullStack Resource Management Solution",
+        "DESCRIPTION": "Personal project with Astro, Tailwind and Turso. Intuitive user interface with Astro and Typescript for efficient resource allocation, tracking and reporting. It uses technologies offered by Astro, plus a SQLite database on the Edge with Turso for efficient management."
+      },
+      {
+        "TITLE": "Money Minder API",
+        "DESCRIPTION": "Rest API for Money Minder using Express.JS and SQLite. It provides endpoints for managing resources, categories, and transactions, enabling seamless integration with the Money Minder frontend."
+      },
+      {
+        "TITLE": "Pokémon Explorer: Async API Consumption and Dynamic Filtering",
+        "DESCRIPTION": "Fetches data from API using async/await, with customizable retrieval and a sleek progress bar. Filter Pokémon by type or name for a user-friendly exploration experience."
+      },
+      {
+        "TITLE": "Astro TypeScript Prettier ESLint Configurator",
+        "DESCRIPTION": "A Node.js package for setting up a comprehensive development environment for Astro projects with TypeScript, Prettier, and ESLint. It simplifies the setup process by automating the installation of necessary dependencies and configuration files."
+      },
+      {
+        "TITLE": "PHP CRUD with Administrative Roles and Secure Sessions",
+        "DESCRIPTION": "Integrated database, robust administrative roles, and secure sessions. Allows administrators to print user profiles with role-dependent permissions, enhancing personnel management."
+      }
+    ],
     "BUTTONS": {
       "LIVE": "See Project",
       "GITHUB": "See Code"

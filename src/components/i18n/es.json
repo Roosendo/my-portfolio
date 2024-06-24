@@ -23,22 +23,28 @@
   },
   "PROJECTS": {
     "LABEL": "Últimos proyectos",
-    "PROJECT_1": {
-      "TITLE": "Money Minder, una Solución de Gestión Integral de Recursos FullStack",
-      "DESCRIPTION": "Proyecto personal con Astro, Tailwind y Turso. Interfaz de usuario intuitiva con Astro y Typescript para una asignación eficiente de recursos, seguimiento e informes. Utiliza tecnologías que ofrece Astro, más una base de datos de sqlite en el Edge con Turso para una gestión eficiente."
-    },
-    "PROJECT_2": {
-      "TITLE": "Explorador de Pokémon: Consumo Asíncrono de API y Filtrado Dinámico",
-      "DESCRIPTION": "Recupera datos de la API mediante async/await, con recuperación personalizada y una elegante barra de progreso. Filtra Pokémon por tipo o nombre para una experiencia de exploración fácil de usar."
-    },
-    "PROJECT_3": {
-      "TITLE": "CRUD en PHP con Roles Administrativos y Sesiones Seguras",
-      "DESCRIPTION": "Integración de base de datos, roles administrativos robustos y sesiones seguras. Permite a los administradores imprimir perfiles de usuario con permisos dependientes del rol, mejorando la gestión de personal."
-    },
-    "PROJECT_4": {
-      "TITLE": "Configurador de Astro TypeScript Prettier ESLint",
-      "DESCRIPTION": "Un paquete de Node.js para configurar un entorno de desarrollo completo para proyectos de Astro con TypeScript, Prettier y ESLint. Simplifica el proceso de configuración automatizando la instalación de las dependencias necesarias y los archivos de configuración."
-    },
+    "PROJECTS": [
+      {
+        "TITLE": "Money Minder, una Solución de Gestión Integral de Recursos FullStack",
+        "DESCRIPTION": "Proyecto personal con Astro, Tailwind y Turso. Interfaz de usuario intuitiva con Astro y Typescript para una asignación eficiente de recursos, seguimiento e informes. Utiliza tecnologías que ofrece Astro, más una base de datos de sqlite en el Edge con Turso para una gestión eficiente."
+      },
+      {
+        "TITLE": "API RESTful de Money Minder",
+        "DESCRIPTION": "API RESTful con Express y SQLite para la gestión de usuarios. Incluye rutas para la creación, lectura, actualización y eliminación de usuarios, con una base de datos SQLite para almacenar información de usuario."
+      },
+      {
+        "TITLE": "Explorador de Pokémon: Consumo Asíncrono de API y Filtrado Dinámico",
+        "DESCRIPTION": "Recupera datos de la API mediante async/await, con recuperación personalizada y una elegante barra de progreso. Filtra Pokémon por tipo o nombre para una experiencia de exploración fácil de usar."
+      },
+      {
+        "TITLE": "Configurador de Astro TypeScript Prettier ESLint",
+        "DESCRIPTION": "Un paquete de Node.js para configurar un entorno de desarrollo completo para proyectos de Astro con TypeScript, Prettier y ESLint. Simplifica el proceso de configuración automatizando la instalación de las dependencias necesarias y los archivos de configuración."
+      },
+      {
+        "TITLE": "CRUD en PHP con Roles Administrativos y Sesiones Seguras",
+        "DESCRIPTION": "Integración de base de datos, roles administrativos robustos y sesiones seguras. Permite a los administradores imprimir perfiles de usuario con permisos dependientes del rol, mejorando la gestión de personal."
+      }
+    ],
     "BUTTONS": {
       "LIVE": "Ver Proyecto",
       "GITHUB": "Ver Código"

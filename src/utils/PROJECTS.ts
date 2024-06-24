@@ -16,38 +16,50 @@ import { getI18N } from '@c/i18n'
 export const getProjects = (currentLocale: string) => {
   const i18n = getI18N({ currentLocale })
 
-  return [
-    {
-      title: i18n.PROJECTS.PROJECT_1.TITLE,
-      body: i18n.PROJECTS.PROJECT_1.DESCRIPTION,
-      imgs: [MMDashboard.src, MMApiExample.src, MMGraphics.src],
-      projectLink: 'https://money-minder-xi.vercel.app/',
-      githubUrl: 'https://github.com/Roosendo/money-minder',
-      languages: ['TypeScript', 'SQLite', 'Tailwind', 'Astro']
-    },
-    {
-      title: i18n.PROJECTS.PROJECT_2.TITLE,
-      body: i18n.PROJECTS.PROJECT_2.DESCRIPTION,
-      imgs: [PKXweb.src, PKXFilterExample.src, PKXCodeExample.src],
-      projectLink: 'https://rosendo-pokedex.netlify.app/',
-      githubUrl: 'https://github.com/Roosendo/pokemon-api',
-      languages: ['HTML', 'CSS', 'TypeScript']
-    },
-    {
-      title: i18n.PROJECTS.PROJECT_3.TITLE,
-      body: i18n.PROJECTS.PROJECT_3.DESCRIPTION,
-      imgs: [Php2.src],
-      projectLink: '',
-      githubUrl: 'https://github.com/Roosendo/crud-php',
-      languages: ['PHP', 'MySql', 'HTML', 'CSS']
-    },
-    {
-      title: i18n.PROJECTS.PROJECT_4.TITLE,
-      body: i18n.PROJECTS.PROJECT_4.DESCRIPTION,
-      imgs: [NPExampleFiles.src, NPExampleErros.src],
-      projectLink: '',
-      githubUrl: 'https://github.com/Roosendo/astro-ts-prettier-eslint',
-      languages: ['TypeScript']
+  return i18n.PROJECTS.PROJECTS.map((project, index) => {
+    const projectLinks = [
+      {
+        link: 'https://money-minder-xi.vercel.app/',
+        github: 'https://github.com/Roosendo/money-minder',
+        languages: ['TypeScript', 'SQLite', 'Tailwind', 'Astro']
+      },
+      {
+        link: 'https://money-minder-api.netlify.app/api/',
+        github: 'https://github.com/Roosendo/money-minder-api/',
+        languages: ['TypeScript', 'SQLite', 'Express']
+      },
+      {
+        link: 'https://rosendo-pokedex.netlify.app/',
+        github: 'https://github.com/Roosendo/pokemon-api',
+        languages: ['HTML', 'CSS', 'TypeScript']
+      },
+      {
+        link: '',
+        github: 'https://github.com/Roosendo/astro-ts-prettier-eslint',
+        languages: ['TypeScript']
+      },
+      {
+        link: '',
+        github: 'https://github.com/Roosendo/crud-php',
+        languages: ['PHP', 'MySql', 'HTML', 'CSS']
+      }
+    ]
+
+    const imgs = [
+      [MMDashboard.src, MMApiExample.src, MMGraphics.src],
+      [],
+      [PKXweb.src, PKXFilterExample.src, PKXCodeExample.src],
+      [NPExampleFiles.src, NPExampleErros.src],
+      [Php2.src]
+    ]
+
+    return {
+      title: project.TITLE,
+      body: project.DESCRIPTION,
+      imgs: imgs[index],
+      projectLink: projectLinks[index]?.link,
+      githubUrl: projectLinks[index]?.github,
+      languages: projectLinks[index]?.languages
     }
-  ]
+  })
 }
