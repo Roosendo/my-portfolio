@@ -3,7 +3,7 @@ import { ChevronLeft, ChevronRight } from 'react-feather'
 
 export default function Carousel ({
   autoSlide = false,
-  autoSlideInterval = 3000,
+  autoSlideInterval = 5000,
   slides
 }: {
   autoSlide?: boolean
@@ -37,6 +37,8 @@ export default function Carousel ({
             alt=''
             className='w-full flex-shrink-0'
             style={{ width: `${100 / slides.length}%` }}
+            decoding='async'
+            loading='lazy'
           />
         ))}
       </div>
