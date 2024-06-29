@@ -26,7 +26,7 @@ export const getProjects = (currentLocale: string) => {
       {
         link: 'https://money-minder-api.vercel.app/api/ping',
         github: 'https://github.com/Roosendo/money-minder-api/',
-        languages: ['TypeScript', 'SQLite', 'NestJS']
+        languages: ['TypeScript', 'SQLite', 'NestJS', 'Jest']
       },
       {
         link: 'https://rosendo-pokedex.netlify.app/',
