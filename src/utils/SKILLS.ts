@@ -13,6 +13,7 @@ import TypeScript from '@icons_s/TypeScript.astro'
 import AWS from '@icons_s/AWS.astro'
 import SQLite from '@icons_s/SQLite.astro'
 import Angular from '@icons_s/Angular.astro'
+import NestJS from '@icons_s/NestJS.astro'
 
 export const SKILLS = [
   { name: 'HTML', icon: HTML },
@@ -25,6 +26,7 @@ export const SKILLS = [
   { name: 'Node', icon: Node },
   { name: 'TypeScript', icon: TypeScript },
   { name: 'Express', icon: Express },
+  { name: 'NestJS', icon: NestJS },
   { name: 'Tailwind', icon: Tailwind },
   { name: 'React', icon: React },
   { name: 'Astro', icon: AstroIcon },

@@ -24,9 +24,9 @@ export const getProjects = (currentLocale: string) => {
         languages: ['TypeScript', 'SQLite', 'Tailwind', 'Astro']
       },
       {
-        link: 'https://money-minder-api.netlify.app/api/',
+        link: 'https://money-minder-api.vercel.app/api/ping',
         github: 'https://github.com/Roosendo/money-minder-api/',
-        languages: ['TypeScript', 'SQLite', 'Express']
+        languages: ['TypeScript', 'SQLite', 'NestJS']
       },
       {
         link: 'https://rosendo-pokedex.netlify.app/',
