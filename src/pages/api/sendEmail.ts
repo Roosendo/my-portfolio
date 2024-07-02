@@ -5,13 +5,14 @@ const resend = new Resend(import.meta.env.RESEND_TOKEN)
 
 interface EmailBody {
   name: string
+  email: string
   message: string
 }
 
 export const POST: APIRoute = async ({ request }) => {
-  const { name, message }: EmailBody = await request.json()
+  const { name, email, message }: EmailBody = await request.json()
 
-  if (!name || !message) {
+  if (!name || !message || !email) {
     return new Response('Missing email or message', { status: 400 })
   }
 
@@ -19,7 +20,7 @@ export const POST: APIRoute = async ({ request }) => {
     from: 'Acme <onboarding@resend.dev>',
     to: ['grosendoh73@gmail.com'],
     subject: `Message from ${name}`,
-    text: message
+    text: `Contact me to ${email}:\n\n${message}`
   })
 
   return new Response('success', { status: 200 })

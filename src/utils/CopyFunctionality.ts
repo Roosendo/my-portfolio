@@ -23,13 +23,13 @@ export function copyToClipboard (text: string): boolean {
   }
 }
 
-export async function sendEmail (name: string, message: string) {
+export async function sendEmail (name: string, email: string, message: string) {
   const apiUrl = '/api/sendEmail'
 
   const requestOptions = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({ name, message })
+    body: JSON.stringify({ name, email, message })
   }
 
   try {
