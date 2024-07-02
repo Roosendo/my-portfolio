@@ -86,6 +86,7 @@
     "INPUT_PLACEHOLDER": "Tu nombre",
     "INPUT_PLACEHOLDER_2": "Tu mensaje",
     "INPUT_PLACEHOLDER_3": "Deja un comentario...",
+    "INPUT_PLACEHOLDER_4": "Tu correo o número de teléfono",
     "BUTTON": "Enviar",
     "BUTTONLOADING": "Cargando ..."
   },
