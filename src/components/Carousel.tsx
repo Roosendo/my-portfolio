@@ -34,7 +34,7 @@ export default function Carousel ({
           <img
             key={index}
             src={img}
-            alt=''
+            alt='Some content to some project'
             className='w-full flex-shrink-0'
             style={{ width: `${100 / slides.length}%` }}
             decoding='async'
@@ -46,13 +46,13 @@ export default function Carousel ({
         <div className='absolute inset-0 flex items-center justify-between p-4'>
           <button
             onClick={prev}
-            className='rounded-full bg-white/80 p-1 text-gray-800 shadow hover:bg-white'
+            className='rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80'
           >
             <ChevronLeft size={40} />
           </button>
           <button
             onClick={next}
-            className='rounded-full bg-white/80 p-1 text-gray-800 shadow hover:bg-white'
+            className='rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80'
           >
             <ChevronRight size={40} />
           </button>
@@ -65,7 +65,7 @@ export default function Carousel ({
             {slides.map((_, i) => (
               <div
                 key={i}
-                className={`h-3 w-3 rounded-full bg-white transition-all ${curr === i ? 'p-2' : 'bg-opacity-50'} `}
+                className={`h-3 w-3 rounded-full bg-white/70 transition-all ${curr === i ? 'p-2' : 'bg-opacity-50'} `}
               />
             ))}
           </div>
