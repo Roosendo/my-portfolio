@@ -10,7 +10,7 @@ import Node from '@icons_s/Node.astro'
 import React from '@icons_s/React.astro'
 import Tailwind from '@icons_s/Tailwind.astro'
 import TypeScript from '@icons_s/TypeScript.astro'
-import AWS from '@icons_s/AWS.astro'
+import Angular from '@icons_s/Angular.astro'
 import SQLite from '@icons_s/SQLite.astro'
 import NestJS from '@icons_s/NestJS.astro'
 import Jest from '@icons/skills/Jest.astro'
@@ -30,6 +30,6 @@ export const SKILLS = [
   { name: 'Tailwind', icon: Tailwind },
   { name: 'React', icon: React },
   { name: 'Astro', icon: AstroIcon },
-  { name: 'AWS', icon: AWS },
+  { name: 'Angular', icon: Angular },
   { name: 'Jest', icon: Jest }
 ]
