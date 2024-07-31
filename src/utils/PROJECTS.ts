@@ -21,7 +21,7 @@ export const getProjects = (currentLocale: string) => {
       {
         link: 'https://money-minder-xi.vercel.app/',
         github: 'https://github.com/Roosendo/money-minder',
-        languages: ['TypeScript', 'SQLite', 'Tailwind', 'Astro']
+        languages: ['Tailwind', 'Angular', 'TypeScript']
       },
       {
         link: 'https://money-minder-api.vercel.app/api/ping',

@@ -26,7 +26,7 @@
     "PROJECTS": [
       {
         "TITLE": "Money Minder, a FullStack Resource Management Solution",
-        "DESCRIPTION": "Personal project with Astro, Tailwind and Turso. Intuitive user interface with Astro and Typescript for efficient resource allocation, tracking and reporting. It uses technologies offered by Astro, plus a SQLite database on the Edge with Turso for efficient management."
+        "DESCRIPTION": "Personal project with Angular and Tailwind. Intuitive user interface with Angular and Typescript for efficient resource allocation, tracking and reporting. It uses technologies offered by Angular, plus a SQLite database on the Edge with Turso for efficient management from the API."
       },
       {
         "TITLE": "Money Minder API",
