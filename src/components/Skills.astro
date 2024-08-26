@@ -20,7 +20,7 @@ const halfLength = Math.floor(length / 2)
     {
       SKILLS.slice(0, halfLength).map((skill, index) => (
         <div
-          class={`item itemLeft p-4 m-4 hover:scale-105 transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border border-gray-500 text-xs text-black/70 dark:text-white/90 md:text-base`}
+          class={`item itemLeft pt-2 mt-2 hover:scale-105 transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border border-gray-500 text-xs text-black/70 dark:text-white/90 md:text-base`}
         >
           <skill.icon class='size-4 md:size-5' />
           <span class='text-sm text-black/80 dark:text-white/90 md:text-base'>{skill.name}</span>
@@ -32,7 +32,7 @@ const halfLength = Math.floor(length / 2)
     {
       SKILLS.slice(halfLength, length).map((skill, index) => (
         <div
-          class={`item itemRight p-4 m-4 hover:scale-105 flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border border-gray-500 text-xs text-black/70 dark:text-white/90 md:text-base`}
+          class={`item itemRight pt-2 mt-2 hover:scale-105 hover:overflow-visible transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border border-gray-500 text-xs text-black/70 dark:text-white/90 md:text-base`}
         >
           <skill.icon class='size-4 md:size-5' />
           <span class='text-sm text-black/80 dark:text-white/90 md:text-base'>{skill.name}</span>
