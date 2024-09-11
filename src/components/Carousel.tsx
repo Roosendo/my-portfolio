@@ -1,71 +1,77 @@
-import { useState, useEffect } from 'react'
-import { ChevronLeft, ChevronRight } from 'react-feather'
+import { createSignal, onCleanup, createEffect } from 'solid-js'
 
-export default function Carousel ({
-  autoSlide = false,
-  autoSlideInterval = 5000,
-  slides
-}: {
+interface CarouselProps {
   autoSlide?: boolean
   autoSlideInterval?: number
   slides: string[]
-}) {
-  const [curr, setCurr] = useState(0)
+}
 
-  const prev = () => setCurr((curr) => (curr === 0 ? slides.length - 1 : curr - 1))
-  const next = () => setCurr((curr) => (curr === slides.length - 1 ? 0 : curr + 1))
+export default function Carousel (props: CarouselProps) {
+  const { autoSlide = false, autoSlideInterval = 5000, slides } = props
 
-  useEffect(() => {
+  const [curr, setCurr] = createSignal(0)
+
+  const prev = () => setCurr(curr() === 0 ? slides.length - 1 : curr() - 1)
+  const next = () => setCurr(curr() === slides.length - 1 ? 0 : curr() + 1)
+
+  createEffect(() => {
     if (!autoSlide) return
+
     const slideInterval = setInterval(next, autoSlideInterval)
-    return () => clearInterval(slideInterval)
-  }, [autoSlide, autoSlideInterval])
+
+    onCleanup(() => clearInterval(slideInterval))
+  })
 
   return (
-    <div className='relative overflow-hidden rounded-lg'>
+    <div class="relative overflow-hidden rounded-lg">
       <div
-        className='flex transition-transform duration-500 ease-out'
+        class="flex transition-transform duration-500 ease-out"
         style={{
           width: `${slides.length * 100}%`,
-          transform: `translateX(-${curr * (100 / slides.length)}%)`
+          transform: `translateX(-${curr() * (100 / slides.length)}%)`
         }}
       >
-        {slides.map((img, index) => (
+        {slides.map((img) => (
           <img
-            key={index}
             src={img}
-            alt='Some content to some project'
-            className='w-full flex-shrink-0'
+            alt="Some content to some project"
+            class="w-full flex-shrink-0"
             style={{ width: `${100 / slides.length}%` }}
-            decoding='async'
-            loading='lazy'
+            decoding="async"
+            loading="lazy"
           />
         ))}
       </div>
+
       {slides.length !== 1 ? (
-        <div className='absolute inset-0 flex items-center justify-between p-4'>
+        <div class="absolute inset-0 flex items-center justify-between p-4">
           <button
             onClick={prev}
-            className='rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80'
+            class="rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80"
           >
-            <ChevronLeft size={40} />
+            <svg class='opacity-80 transition-opacity hover:opacity-100' width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
           </button>
           <button
             onClick={next}
-            className='rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80'
+            class="rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80"
           >
-            <ChevronRight size={40} />
+            <svg class='opacity-80 transition-opacity hover:opacity-100' width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
           </button>
         </div>
       ) : null}
 
       {slides.length !== 1 ? (
-        <div className='absolute bottom-4 left-0 right-0'>
-          <div className='flex items-center justify-center gap-2'>
-            {slides.map((_, i) => (
+        <div class="absolute bottom-4 left-0 right-0">
+          <div class="flex items-center justify-center gap-2">
+            {slides.map((_src, i) => (
               <div
-                key={i}
-                className={`h-3 w-3 rounded-full bg-white/70 transition-all ${curr === i ? 'p-2' : 'bg-opacity-50'} `}
+                class={`h-3 w-3 rounded-full bg-white/70 transition-all ${
+                  curr() === i ? 'p-2' : 'bg-opacity-50'
+                } `}
               />
             ))}
           </div>
