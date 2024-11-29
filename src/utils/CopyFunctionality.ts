@@ -24,7 +24,7 @@ export function copyToClipboard (text: string): boolean {
 }
 
 export async function sendEmail (name: string, email: string, message: string) {
-  const apiUrl = 'https://money-minder-api.vercel.app/api/emails/send-email'
+  const apiUrl = 'https://money-minder-api.up.railway.app/api/emails/send-email'
 
   const requestOptions = {
     method: 'POST',
