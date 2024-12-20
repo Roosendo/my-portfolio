@@ -57,6 +57,11 @@
     "LABEL": "Experiencia laboral",
     "JOBS": [
       {
+        "TITLE": "Asistente Virtual de Atención al Cliente en Peter G",
+        "DESCRIPTION": "Brindar soporte y asistencia al cliente en un entorno virtual. Las responsabilidades incluyen responder a consultas, resolver problemas y garantizar una experiencia positiva para el cliente.",
+        "TIME": "Diciembre 2024 - Presente"
+      },
+      {
         "TITLE": "Asesor de ventas en Par2",
         "DESCRIPTION": "Participé en roles centrados en el cliente en una destacada tienda de zapatos. Enfocado principalmente en brindar un servicio excepcional, manejar consultas y facilitar ventas.",
         "TIME": "Noviembre - Diciembre 2022"

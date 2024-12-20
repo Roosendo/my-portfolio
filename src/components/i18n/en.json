@@ -57,6 +57,11 @@
     "LABEL": "Work experience",
     "JOBS": [
       {
+        "TITLE": "Virtual Customer Assistant at Peter G",
+        "DESCRIPTION": "Provided customer support and assistance in a virtual setting. Responsibilities included responding to inquiries, resolving issues, and ensuring a positive customer experience.",
+        "TIME": "December 2024 - Present"
+      },
+      {
         "TITLE": "Sales advisor at Par2",
         "DESCRIPTION": "Engaged in customer-centric roles at a prominent shoe store. Primarily focused on delivering exceptional service, handling inquiries, and facilitating sales.",
         "TIME": "November - December 2022"
