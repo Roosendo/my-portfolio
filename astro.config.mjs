@@ -1,11 +1,12 @@
 import { defineConfig } from 'astro/config'
-import tailwind from '@astrojs/tailwind'
+import tailwindcss from '@tailwindcss/vite'
 import vercel from '@astrojs/vercel'
 import solidJs from '@astrojs/solid-js'
 
 // https://astro.build/config
 export default defineConfig({
-  integrations: [tailwind(), solidJs()],
+  integrations: [solidJs()],
+
   i18n: {
     defaultLocale: 'en',
     locales: ['en', 'es'],
@@ -13,6 +14,11 @@ export default defineConfig({
       prefixDefaultLocale: false
     }
   },
+
   output: 'static',
-  adapter: vercel()
+  adapter: vercel(),
+
+  vite: {
+    plugins: [tailwindcss()]
+  }
 })

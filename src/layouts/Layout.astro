@@ -1,6 +1,7 @@
 ---
-import { ViewTransitions } from 'astro:transitions'
+import { ClientRouter } from 'astro:transitions'
 import '@fontsource-variable/onest'
+import '../styles/global.css'
 import Header from '@c/Header.astro'
 import Footer from '@c/Footer.astro'
 
@@ -22,7 +23,7 @@ const { currentLocale } = Astro
     <link rel='icon' type='image/x-icon' href='/portfolio.ico' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
-    <ViewTransitions />
+    <ClientRouter />
   </head>
   <body
     class='m-auto flex max-w-md flex-col place-items-center justify-center md:m-0 md:max-w-full'
