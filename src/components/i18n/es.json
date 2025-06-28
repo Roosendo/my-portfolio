@@ -47,7 +47,8 @@
     ],
     "BUTTONS": {
       "LIVE": "Ver Proyecto",
-      "GITHUB": "Ver Código"
+      "GITHUB": "Ver Código",
+      "MORE": "Más Proyectos"
     }
   },
   "SKILLS": {

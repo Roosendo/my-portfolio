@@ -1,6 +1,7 @@
 ---
 import Code from '@icons/Code.astro'
 import PivotCard from './PivotCard.astro'
+import BTTNGoTo from './BTTN-GoTo.astro'
 import { getProjects } from '@u/PROJECTS.ts'
 
 import { getI18N } from '@c/i18n'
@@ -21,11 +22,12 @@ const PROJECTS = getProjects(currentLocale || '')
       <PivotCard
         title={project.title}
         body={project.body}
-        imgs={project.imgs}
-        projectLink={project.projectLink}
-        githubUrl={project.githubUrl}
-        languages={project.languages}
+        imgs={project.imgs ?? []}
+        projectLink={project.projectLink ?? ''}
+        githubUrl={project.githubUrl ?? ''}
+        languages={project.languages ?? []}
       />
     ))
   }
+  <BTTNGoTo />
 </div>
