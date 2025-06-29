@@ -1,34 +1,30 @@
 ---
-import Yo from '@imgs/yo.webp'
-import Pill from './Pill.astro'
+import { getI18N } from '@c/i18n'
+import At from '@icons/At.astro'
+import Copy from '@icons/Copy.astro'
+import CVIcon from '@icons/CV.astro'
 import GitHub from '@icons/GitHub.astro'
 import LinkedIn from '@icons/LinkedIn.astro'
 import Send from '@icons/Send.astro'
-import Copy from '@icons/Copy.astro'
-import CVIcon from '@icons/CV.astro'
+import Yo from '@imgs/yo.webp'
 import AlertMessage from './AlertMessage.astro'
-import At from '@icons/At.astro'
-
-import { getI18N } from '@c/i18n'
-import { unescapeHTML } from 'astro/compiler-runtime'
+import Pill from './Pill.astro'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 
 let paragraph = i18n.PERSONAL_INFO.PARAGRAPH
-let phrases = i18n.PERSONAL_INFO.PHRASES
+const phrases = i18n.PERSONAL_INFO.PHRASES
 
-for (let phrase in phrases) {
-  let replacement = `<span class="${phrases[phrase as keyof typeof phrases]}">${phrase}</span>`
+for (const phrase in phrases) {
+  const replacement = `<span class="${phrases[phrase as keyof typeof phrases]}">${phrase}</span>`
   paragraph = paragraph.split(phrase).join(replacement)
 }
-
-const htmlParagraph = unescapeHTML(paragraph)
 
 const CV_EN = 'https://drive.google.com/file/d/10Mt4sCp3rd3ivFzubqjIxPtHNrTZS1_D/view?usp=sharing'
 const CV_ES = 'https://drive.google.com/file/d/1_zodBIs2C0HFRyNMNljfZua4NrNessX5/view?usp=sharing'
 
-let CVfinal = currentLocale === 'en' ? CV_EN : CV_ES
+const CVfinal = currentLocale === 'en' ? CV_EN : CV_ES
 ---
 
 <div class='grid w-full grid-cols-1 gap-4 p-1 text-left text-black dark:text-white md:grid-cols-2'>
@@ -43,7 +39,7 @@ let CVfinal = currentLocale === 'en' ? CV_EN : CV_ES
         {i18n.PERSONAL_INFO.PILL_MESSAGE}
       </a> -->
     </div>
-    <p class='mt-4 text-lg prose prose-invert'>{htmlParagraph}</p>
+    <p class='mt-4 text-lg prose prose-invert' set:html={paragraph}></p>
   </div>
 
   <div class='m-auto flex justify-center md:justify-end'>

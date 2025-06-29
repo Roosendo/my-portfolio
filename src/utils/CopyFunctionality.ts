@@ -17,7 +17,7 @@ export function copyToClipboard (text: string): boolean {
     const successful = document.execCommand('copy')
     document.body.removeChild(tempInput)
     return successful
-  } catch (err) {
+  } catch (_err) {
     console.error(`Failed to copy the value: ${text}`)
     return false
   }
@@ -40,7 +40,7 @@ export async function sendEmail (name: string, email: string, message: string) {
     }
 
     return true
-  } catch (err) {
+  } catch (_err) {
     return false
   }
 }

@@ -1,17 +1,13 @@
+import { getI18N } from '@c/i18n'
 import Php2 from '@imgs/crud2.webp'
-
 import MMApiExample from '@imgs/money-minder/api-example.webp'
 import MMDashboard from '@imgs/money-minder/dashboard.webp'
 import MMGraphics from '@imgs/money-minder/graphics.webp'
-
+import NPExampleErros from '@imgs/node-package/example-errors.webp'
+import NPExampleFiles from '@imgs/node-package/files-example.webp'
 import PKXCodeExample from '@imgs/pokedex/code-example.webp'
 import PKXFilterExample from '@imgs/pokedex/filter-example.webp'
 import PKXweb from '@imgs/pokedex/pokedex-web.webp'
-
-import NPExampleErros from '@imgs/node-package/example-errors.webp'
-import NPExampleFiles from '@imgs/node-package/files-example.webp'
-
-import { getI18N } from '@c/i18n'
 
 export const getProjects = (currentLocale: string) => {
   const i18n = getI18N({ currentLocale })
