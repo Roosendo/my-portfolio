@@ -35,7 +35,7 @@ export default function Carousel (props: CarouselProps) {
           <img
             src={img}
             alt="Some content to some project"
-            class="w-full flex-shrink-0"
+            class="w-full shrink-0"
             style={{ width: `${100 / slides.length}%` }}
             decoding="async"
             loading="lazy"

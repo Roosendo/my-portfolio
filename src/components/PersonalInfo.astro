@@ -11,6 +11,7 @@ import At from '@icons/At.astro'
 
 import { getI18N } from '@c/i18n'
 import { unescapeHTML } from 'astro/compiler-runtime'
+import { Image } from 'astro:assets'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
@@ -50,13 +51,7 @@ let CVfinal = currentLocale === 'en' ? CV_EN : CV_ES
   </div>
 
   <div class='m-auto flex justify-center md:justify-end'>
-    <img
-      src={Yo.src}
-      loading='lazy'
-      decoding='async'
-      alt='It should be me'
-      class='w-32 rounded md:w-48 md:rounded-lg'
-    />
+    <Image src={Yo} alt='It should be me' class='w-32 rounded md:w-48 md:rounded-lg' loading="eager" />
   </div>
 
   <nav class='m-3 flex w-full flex-wrap place-items-center justify-center gap-4 md:col-span-2'>

@@ -2,25 +2,20 @@
 import Yo from '@imgs/yo.webp'
 
 import { getI18N } from '@c/i18n'
+import { Image } from 'astro:assets'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
 <footer class='mt-3 w-full rounded-lg bg-transparent/10 shadow'>
-  <div class='mx-auto w-full max-w-screen-xl p-3 md:py-8'>
+  <div class='mx-auto w-full max-w-7-xl p-3 md:py-8'>
     <div class='sm:flex sm:items-center sm:justify-between'>
       <a
         href='https://www.linkedin.com/in/rosendoo-garcia'
         class='mb-4 flex items-center space-x-3 sm:mb-0 rtl:space-x-reverse'
       >
-        <img
-          src={Yo.src}
-          class='h-auto w-8 rounded'
-          alt='It should be me'
-          decoding='async'
-          loading='lazy'
-        />
+        <Image src={Yo} alt='It should be me' class='h-auto w-8 rounded' loading='lazy' />
         <span
           class='self-center whitespace-nowrap text-2xl font-semibold text-black dark:text-white'
         >Rosendo Garcia</span
