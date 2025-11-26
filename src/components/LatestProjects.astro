@@ -1,7 +1,6 @@
 ---
 import Code from '@icons/Code.astro'
 import PivotCard from './PivotCard.astro'
-import BTTNGoTo from './BTTN-GoTo.astro'
 import { getProjects } from '@u/PROJECTS.ts'
 
 import { getI18N } from '@c/i18n'
@@ -29,5 +28,4 @@ const PROJECTS = getProjects(currentLocale || '')
       />
     ))
   }
-  <BTTNGoTo />
 </div>
