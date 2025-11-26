@@ -8,7 +8,7 @@
   },
   "PERSONAL_INFO": {
     "GREETING": "Hola, soy Rosendo García",
-    "PILL_MESSAGE": "Disponible",
+    "PILL_MESSAGE": "Trabajando y estudiando",
     "PARAGRAPH": "¡Saludos desde San Miguel, El Salvador! Soy un desarrollador web que navega por el vertiginoso mundo de la tecnología, con un enfoque especial en soluciones ingeniosas en JavaScript utilizando Node.js. Ansioso por aprender y motivado por la innovación, diseño experiencias digitales que combinan funcionalidad con elegancia, como un chef experto mezclando los ingredientes perfectos para un festín tecnológico.",
     "PHRASES": {
       "¡Saludos desde San Miguel, El Salvador!": "dark:text-emerald-400 text-emerald-600",
@@ -47,8 +47,7 @@
     ],
     "BUTTONS": {
       "LIVE": "Ver Proyecto",
-      "GITHUB": "Ver Código",
-      "MORE": "Más Proyectos"
+      "GITHUB": "Ver Código"
     }
   },
   "SKILLS": {
@@ -61,6 +60,11 @@
         "TITLE": "Asistente Virtual de Atención al Cliente en Peter G",
         "DESCRIPTION": "Brindar soporte y asistencia al cliente en un entorno virtual. Las responsabilidades incluyen responder a consultas, resolver problemas y garantizar una experiencia positiva para el cliente.",
         "TIME": "Diciembre 2024 - Presente"
+      },
+      {
+        "TITLE": "Freelancer, clínica",
+        "DESCRIPTION": "Trabajé como desarrollador freelance para una clínica durante 4 meses. Mejoré su antiguo sistema basado en PHP tanto en el frontend como en el backend, solucionando problemas, optimizando el rendimiento y actualizando funciones clave para hacer la plataforma más confiable y fácil de usar.",
+        "TIME": "Mayo 2025 - Agosto 2025"
       },
       {
         "TITLE": "Asesor de ventas en Par2",
@@ -79,9 +83,9 @@
     "TITLE_1": "Quién soy",
     "TITLE_2": "Educación",
     "TITLE_3": "Experiencia",
-    "PARAGRAPH_1": "Soy Rosendo, un desarrollador web de San Miguel, El Salvador. Me centro en crear soluciones backend en JavaScript, fusionando funcionalidad con elegancia. Mi viaje está impulsado por la curiosidad, la innovación y el compromiso con el aprendizaje continuo.",
-    "PARAGRAPH_2": "Obtuve un Título Asociado en Ingeniería de Desarrollo de Software de ITCA Fepade San Miguel, formando mi base educativa. Impulsado por la pasión por aprender, amplié mis conocimientos de forma independiente, profundizando en los fundamentos de JavaScript y construyendo APIs RESTful con Express a través de tutoriales en GitHub y YouTube, incluyendo los cursos de Midudev. Esta combinación de educación formal y aprendizaje en línea mejora mi comprensión del desarrollo de software.",
-    "PARAGRAPH_3": "Aunque carezco de experiencia laboral formal en desarrollo web, he emprendido proyectos personales, tanto dentro como fuera de ITCA. Estos proyectos, utilizando tecnologías clave como Astro, Express y Tailwind, han sido fundamentales para dar forma a mi comprensión del dominio del desarrollo web. Sirven como experiencias prácticas de aprendizaje, contribuyendo a mi destreza en este campo dinámico."
+    "PARAGRAPH_1": "Soy Rosendo, un desarrollador web de San Miguel, El Salvador. Me especializo en desarrollo backend con JavaScript y disfruto crear soluciones funcionales, limpias y confiables.",
+    "PARAGRAPH_2": "Obtuve un Técnico en Ingeniería de Desarrollo de Software en ITCA Fepade San Miguel. Además, amplié mis conocimientos de forma autodidacta a través de tutoriales en GitHub y YouTube —especialmente los de Midudev— aprendiendo fundamentos de JavaScript y creando APIs REST con Express.",
+    "PARAGRAPH_3": "He trabajado en múltiples proyectos reales y personales utilizando tecnologías como Angular, PHP, Nest y Tailwind. Estos proyectos han fortalecido mi comprensión práctica del desarrollo web y me han ayudado a construir soluciones confiables y centradas en el usuario."
   },
   "CONTACT": {
     "LABEL": "Contacto",

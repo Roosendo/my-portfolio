@@ -8,7 +8,7 @@
   },
   "PERSONAL_INFO": {
     "GREETING": "Hey, I'm Rosendo Garcia",
-    "PILL_MESSAGE": "Available for hire",
+    "PILL_MESSAGE": "Currently working and studying",
     "PARAGRAPH": "Greetings from San Miguel, El Salvador!, I'm a web developer navigating the dizzying world of technology, with a special focus on clever solutions in JavaScript using Node.js. Eager to learn and motivated by innovation, I design digital experiences that blend functionality with elegance, like an expert chef mixing the perfect ingredients for a technological feast!",
     "PHRASES": {
       "Greetings from San Miguel, El Salvador!": "dark:text-emerald-400 text-emerald-600",
@@ -47,8 +47,7 @@
     ],
     "BUTTONS": {
       "LIVE": "See Project",
-      "GITHUB": "See Code",
-      "MORE": "More Projects"
+      "GITHUB": "See Code"
     }
   },
   "SKILLS": {
@@ -61,6 +60,11 @@
         "TITLE": "Virtual Customer Assistant at Peter G",
         "DESCRIPTION": "Provided customer support and assistance in a virtual setting. Responsibilities included responding to inquiries, resolving issues, and ensuring a positive customer experience.",
         "TIME": "December 2024 - Present"
+      },
+      {
+        "TITLE": "Freelancer, clinic",
+        "DESCRIPTION": "Worked as a freelance developer for a clinic for 4 months. Improved their old PHP-based system across both frontend and backend, fixing issues, optimizing performance, and updating key features to make the platform more reliable and easier to user.",
+        "TIME": "May 2025 - August 2025"
       },
       {
         "TITLE": "Sales advisor at Par2",
@@ -79,9 +83,9 @@
     "TITLE_1": "Who I Am",
     "TITLE_2": "Education",
     "TITLE_3": "Experience",
-    "PARAGRAPH_1": "I'm Rosendo, a web developer from San Miguel, El Salvador. I focus on crafting JavaScript backend solutions, blending functionality with elegance. My journey is fueled by curiosity, innovation, and a commitment to continuous learning.",
-    "PARAGRAPH_2": "I earned an Associate Degree in Software Development Engineering from ITCA Fepade San Miguel, forming my educational foundation. Fueled by a passion for learning, I expanded my knowledge independently, delving into JavaScript fundamentals and building RESTful APIs with Express through GitHub and YouTube tutorials, including Midudev's courses. This mix of formal education and online learning enhances my grasp of software development.",
-    "PARAGRAPH_3": "While I lack formal work experience in web development, I've undertaken personal projects, both within and outside ITCA. These endeavors, utilizing key technologies like Astro, Express, and Tailwind, have been instrumental in shaping my understanding of the web development domain. They serve as practical learning experiences, contributing to my proficiency in this dynamic field."
+    "PARAGRAPH_1": "I'm Rosendo, a web developer from San Miguel, El Salvador. I specialize in JavaScript backend development and enjoy building functional, clean, and reliable solutions.",
+    "PARAGRAPH_2": "I earned an Associate Degree in Software Development Engineering at ITCA Fepade San Miguel. Beyond that, I expanded my skills independently through GitHub and YouTube tutorials—especially Midudev—learning JavaScript fundamentals and building REST APIs with Express.",
+    "PARAGRAPH_3": "I’ve worked on multiple real-world and personal projects using technologies like Angular, PHP, Nest, and Tailwind. These projects have strengthened my practical understanding of web development and helped me build reliable, user-focused solutions."
   },
   "CONTACT": {
     "LABEL": "Contact",
