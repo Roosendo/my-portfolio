@@ -4,6 +4,7 @@ import '@fontsource-variable/onest'
 import '../styles/global.css'
 import Header from '@c/Header.astro'
 import Footer from '@c/Footer.astro'
+import { ThemeScript } from 'astro-theme-toggle'
 
 interface Props {
   title: string
@@ -23,6 +24,7 @@ const { currentLocale } = Astro
     <link rel='icon' type='image/x-icon' href='/portfolio.ico' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+    <ThemeScript />
     <ClientRouter />
   </head>
   <body
@@ -83,6 +85,11 @@ const { currentLocale } = Astro
         font-display: swap;
         font-size: 16px;
         font-weight: 500;
+        background-color: #f8f9fa;
+      }
+
+      html.dark {
+        background-color: #121212;
       }
 
       @media (prefers-reduced-motion: reduce) {
@@ -108,11 +115,6 @@ const { currentLocale } = Astro
         min-height: 100vh;
         overflow-x: hidden;
         overflow: auto;
-        background-color: #f5f5f5;
-      }
-
-      body.dark {
-        background-color: #2e2e2e;
       }
 
       #header-nav {

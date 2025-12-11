@@ -1,6 +1,6 @@
 ---
+import { Toggle } from 'astro-theme-toggle'
 import LanguageSelector from './LanguageSelector.astro'
-import ThemeToggle from './ThemeToggle.astro'
 
 import { getI18N } from '@c/i18n'
 
@@ -10,28 +10,35 @@ const i18n = getI18N({ currentLocale })
 
 <header
   id='header-nav'
-  class='sticky top-1 z-10 mx-auto flex max-w-full items-center justify-around rounded text-sm text-black/80 dark:text-white/80'
+  class='sticky top-1 z-10 mx-auto flex max-w-full items-center justify-around rounded text-sm text-black/90 dark:text-white/90'
 >
   <nav class='flex flex-wrap items-center justify-around gap-3 p-1'>
     <a
-      class='rounded p-2 text-sm transition hover:bg-white/10 sm:w-auto md:text-base'
+      class='rounded-lg p-2 text-sm transition hover:bg-black/5 sm:w-auto text-[#212121] dark:text-[#f8f9fa] md:text-base dark:hover:bg-white/10 dark:hover:text-white'
       href='#projects'
       aria-label='projects'>{i18n.HEADER.PROJECTS}</a
     >
     <a
-      class='rounded p-2 text-sm transition hover:bg-white/10 sm:w-auto md:text-base'
+      class='rounded-lg p-2 text-sm transition hover:bg-black/5 sm:w-auto text-[#212121] dark:text-[#f8f9fa] md:text-base dark:hover:bg-white/10 dark:hover:text-white'
       href='#about-me'
       aria-label='about-me'>{i18n.HEADER.ABOUT_ME}</a
     >
     <a
-      class='rounded p-2 text-sm transition hover:bg-white/10 sm:w-auto md:text-base'
+      class='rounded-lg p-2 text-sm transition hover:bg-black/5 sm:w-auto text-[#212121] dark:text-[#f8f9fa] md:text-base dark:hover:bg-white/10 dark:hover:text-white'
       href='#contact'
       aria-label='contact'>{i18n.HEADER.CONTACT}</a
     >
-    <ThemeToggle />
+    <Toggle class='theme-toggle' />
     <LanguageSelector />
   </nav>
 </header>
+
+<style>
+  .theme-toggle {
+    width: 1rem;
+    height: 1rem;
+  }
+</style>
 
 <script>
   document.addEventListener('astro:page-load', () => {
@@ -44,10 +51,12 @@ const i18n = getI18N({ currentLocale })
           navItems.forEach((item) => {
             if (item.getAttribute('aria-label') === entry.target.id) {
               item.classList.add('dark:text-yellow-200')
-              item.classList.add('text-yellow-500')
+              item.classList.add('text-yellow-600')
+              item.classList.add('font-semibold')
             } else {
               item.classList.remove('dark:text-yellow-200')
-              item.classList.remove('text-yellow-500')
+              item.classList.remove('text-yellow-600')
+              item.classList.remove('font-semibold')
             }
           })
         }
@@ -64,7 +73,6 @@ const i18n = getI18N({ currentLocale })
       observer.observe(section)
     })
 
-    // Cleanup function
     document.onvisibilitychange = () => {
       if (document.visibilityState === 'hidden') {
         observer.disconnect()

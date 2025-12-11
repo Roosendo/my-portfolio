@@ -12,12 +12,13 @@
     "lint": "prettier --write  \"**/*.{js,jsx,ts,tsx,md,mdx,astro}\" && eslint --fix \"src/**/*.{js,ts,jsx,tsx,astro}\""
   },
   "dependencies": {
-    "@astrojs/solid-js": "^5.1.0",
-    "@astrojs/vercel": "^9.0.1",
+    "@astrojs/solid-js": "5.1.3",
+    "@astrojs/vercel": "^9.0.2",
     "@fontsource-variable/onest": "^5.1.0",
     "@midudev/tailwind-animations": "^0.2.0",
     "@tailwindcss/vite": "^4.1.10",
-    "astro": "5.16.0",
+    "astro": "5.16.5",
+    "astro-theme-toggle": "^0.8.0",
     "react-feather": "^2.0.10",
     "resend": "6.5.2",
     "solid-js": "^1.9.3",

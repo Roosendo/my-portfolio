@@ -21,11 +21,11 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<section class='animate-scroll mb-3 flex flex-col gap-3 prose prose-invert' id='projects'>
+<section class='animate-scroll mb-3 flex flex-col gap-3' id='projects'>
   <h2 class='text-xl text-[#cc00cc] dark:text-[#eea5ee] md:text-2xl'>
     {title}
   </h2>
-  <p class='text-base text-black dark:text-white md:text-lg'>{body}</p>
+  <p class='text-base text-[#212121] dark:text-[#f8f9fa] md:text-lg'>{body}</p>
   <div class='flex flex-row flex-wrap gap-3'>
     {
       languages.map((lang) => {
