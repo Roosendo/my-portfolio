@@ -11,7 +11,7 @@ const length = SKILLS.length
 const halfLength = Math.floor(length / 2)
 ---
 
-<section class='animate-scroll w-full'>
+<section class='animate-scroll w-full' id='skills-section' data-pause-animation-outside-viewport>
   <div class='flex w-full flex-row items-center gap-3 p-2 text-black/60 dark:text-white/60'>
     <Trophy class='size-4 md:size-5' />
     <h3 class='text-md md:text-base'>{i18n.SKILLS.LABEL}</h3>
@@ -20,7 +20,7 @@ const halfLength = Math.floor(length / 2)
     {
       SKILLS.slice(0, halfLength).map((skill, index) => (
         <div
-          class={`item itemLeft pt-2 mt-2 hover:scale-105 transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border border-gray-500 text-xs text-black/70 dark:text-white/90 md:text-base`}
+          class={`item itemLeft pt-2 mt-2 hover:scale-105 transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border text-xs text-black/70 dark:text-white/90 md:text-base ${skill.featured ? 'skill-item--featured' : 'border-gray-500'}`}
         >
           <skill.icon class='size-4 md:size-5' />
           <span class='text-sm text-black/80 dark:text-white/90 md:text-base'>{skill.name}</span>
@@ -32,7 +32,7 @@ const halfLength = Math.floor(length / 2)
     {
       SKILLS.slice(halfLength, length).map((skill, index) => (
         <div
-          class={`item itemRight pt-2 mt-2 hover:scale-105 hover:overflow-visible transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border border-gray-500 text-xs text-black/70 dark:text-white/90 md:text-base`}
+          class={`item itemRight pt-2 mt-2 hover:scale-105 hover:overflow-visible transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border text-xs text-black/70 dark:text-white/90 md:text-base ${skill.featured ? 'skill-item--featured' : 'border-gray-500'}`}
         >
           <skill.icon class='size-4 md:size-5' />
           <span class='text-sm text-black/80 dark:text-white/90 md:text-base'>{skill.name}</span>
@@ -41,6 +41,21 @@ const halfLength = Math.floor(length / 2)
     }
   </div>
 </section>
+
+<script>
+  const section = document.querySelector('[data-pause-animation-outside-viewport]')
+  if (section) {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          entry.target.classList.toggle('animation-paused', !entry.isIntersecting)
+        }
+      },
+      { threshold: 0, rootMargin: '50px' }
+    )
+    observer.observe(section)
+  }
+</script>
 
 <style>
   .wrapper {
@@ -89,6 +104,12 @@ const halfLength = Math.floor(length / 2)
     animation-play-state: paused;
   }
 
+  /* Pause animations when section is outside viewport */
+  .animation-paused .itemLeft,
+  .animation-paused .itemRight {
+    animation-play-state: paused;
+  }
+
   .itemLeft {
     left: max(calc(200px * 8), 100%);
     animation-name: scrollLeft;
@@ -129,5 +150,16 @@ const halfLength = Math.floor(length / 2)
 
   .item8 {
     animation-delay: calc(30s / 8 * (8 - 8) * -1);
+  }
+
+  .skill-item--featured {
+    border-width: 2px;
+    border-color: rgb(59 130 246);
+    box-shadow: 0 0 0 1px rgb(59 130 246 / 0.3), 0 0 12px rgb(59 130 246 / 0.2);
+  }
+
+  .dark .skill-item--featured {
+    border-color: rgb(96 165 250);
+    box-shadow: 0 0 0 1px rgb(96 165 250 / 0.3), 0 0 12px rgb(96 165 250 / 0.25);
   }
 </style>

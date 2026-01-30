@@ -11,25 +11,31 @@ import React from '@icons_s/React.astro'
 import Tailwind from '@icons_s/Tailwind.astro'
 import TypeScript from '@icons_s/TypeScript.astro'
 import Angular from '@icons_s/Angular.astro'
-import SQLite from '@icons_s/SQLite.astro'
 import NestJS from '@icons_s/NestJS.astro'
-import Jest from '@icons/skills/Jest.astro'
+import CSharp from '@icons_s/CSharp.astro'
+import DotNet from '@icons_s/DotNet.astro'
 
-export const SKILLS = [
+interface Skill {
+  name: string
+  icon: any
+  featured?: boolean
+}
+
+export const SKILLS: Skill[] = [
+  { name: 'TypeScript', icon: TypeScript, featured: true },
+  { name: 'Express', icon: Express, featured: true },
   { name: 'HTML', icon: HTML },
   { name: 'CSS', icon: CSS },
   { name: 'JavaScript', icon: JavaScript },
   { name: 'Git', icon: Git },
   { name: 'MySql', icon: MySql },
-  { name: 'SQLite', icon: SQLite },
-  { name: 'PHP', icon: PHP },
+  { name: 'PHP', icon: PHP }, //
+  { name: 'Angular', icon: Angular, featured: true },
+  { name: '.NET', icon: DotNet, featured: true },
   { name: 'Node', icon: Node },
-  { name: 'TypeScript', icon: TypeScript },
-  { name: 'Express', icon: Express },
-  { name: 'NestJS', icon: NestJS },
+  { name: 'Nest', icon: NestJS },
   { name: 'Tailwind', icon: Tailwind },
   { name: 'React', icon: React },
   { name: 'Astro', icon: AstroIcon },
-  { name: 'Angular', icon: Angular },
-  { name: 'Jest', icon: Jest }
+  { name: 'C#', icon: CSharp }
 ]

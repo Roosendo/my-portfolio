@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, createEffect } from 'solid-js'
+import { createSignal, onCleanup, createEffect, onMount } from 'solid-js'
 
 interface CarouselProps {
   autoSlide?: boolean
@@ -10,12 +10,30 @@ export default function Carousel (props: CarouselProps) {
   const { autoSlide = false, autoSlideInterval = 5000, slides } = props
 
   const [curr, setCurr] = createSignal(0)
+  const [isInViewport, setIsInViewport] = createSignal(true)
+  let carouselRef: HTMLDivElement | undefined
 
   const prev = () => setCurr(curr() === 0 ? slides.length - 1 : curr() - 1)
   const next = () => setCurr(curr() === slides.length - 1 ? 0 : curr() + 1)
 
+  onMount(() => {
+    const el = carouselRef
+    if (!el) return
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          setIsInViewport(entry.isIntersecting)
+        }
+      },
+      { threshold: 0, rootMargin: '50px' }
+    )
+    observer.observe(el)
+    onCleanup(() => observer.disconnect())
+  })
+
   createEffect(() => {
-    if (!autoSlide) return
+    if (!autoSlide || !isInViewport()) return
 
     const slideInterval = setInterval(next, autoSlideInterval)
 
@@ -23,7 +41,7 @@ export default function Carousel (props: CarouselProps) {
   })
 
   return (
-    <div class="relative overflow-hidden rounded-lg">
+    <div ref={carouselRef} class="relative overflow-hidden rounded-lg" data-pause-animation-outside-viewport>
       <div
         class="flex transition-transform duration-500 ease-out"
         style={{
