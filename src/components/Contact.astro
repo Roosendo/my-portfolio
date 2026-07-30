@@ -8,75 +8,60 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<section class='animate-scroll mt-3 w-full' id='contact'>
-  <article class='flex flex-col place-items-center'>
-    <AlertMessage type='success' message={i18n.CONTACT.ALERTS.SUCCESS} divId='success' />
-    <AlertMessage type='error' message={i18n.CONTACT.ALERTS.ERROR} divId='not-success' />
-  </article>
-  <div class='flex flex-row items-center gap-3 p-1 text-black/60 dark:text-white/60'>
-    <Mail class='size-4 md:size-5' />
-    <h3 class='text-md md:text-base'>{i18n.CONTACT.LABEL}</h3>
+<div class='flex flex-col gap-6'>
+  <div class='flex items-center gap-2 text-ink-2'>
+    <Mail class='size-4' />
+    <h2 class='font-display text-lg font-semibold tracking-tight text-ink'>{i18n.CONTACT.LABEL}</h2>
   </div>
-  <form class='max-w-md mb-3' id='contactForm'>
-    <div class='group relative z-0 mb-3 w-full'>
+  <AlertMessage type='success' message={i18n.CONTACT.ALERTS.SUCCESS} divId='success' />
+  <AlertMessage type='error' message={i18n.CONTACT.ALERTS.ERROR} divId='not-success' />
+  <form class='flex flex-col gap-4' id='contactForm'>
+    <div>
       <input
         type='text'
         autocomplete='off'
         id='floating_name'
-        class='peer block w-full appearance-none border-0 border-b-2 border-gray-500 bg-transparent px-0 py-2.5 text-lg tracking-wide text-gray-500 focus:border-green-600 focus:outline-none focus:ring-0 dark:border-gray-300 dark:text-gray-100 dark:focus:border-green-400 md:text-sm'
-        placeholder=' '
+        placeholder={i18n.CONTACT.INPUT_PLACEHOLDER}
+        class='w-full rounded-xl border border-rule bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-3 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent'
         required
       />
-      <label
-        for='floating_name'
-        class='absolute top-3 -z-10 origin-left -translate-y-6 scale-75 transform text-base text-gray-600 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-green-600 dark:text-gray-400 dark:peer-focus:text-green-400 md:text-sm rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4'
-      >{i18n.CONTACT.INPUT_PLACEHOLDER}</label
-      >
     </div>
-    <div class='group relative z-0 mb-3 w-full'>
+    <div>
       <input
         type='text'
         autocomplete='off'
         id='floating_name_email'
-        class='peer block w-full appearance-none border-0 border-b-2 border-gray-500 bg-transparent px-0 py-2.5 text-lg tracking-wide text-gray-500 focus:border-green-600 focus:outline-none focus:ring-0 dark:border-gray-300 dark:text-gray-100 dark:focus:border-green-400 md:text-sm'
-        placeholder=' '
+        placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_4}
+        class='w-full rounded-xl border border-rule bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-3 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent'
         required
       />
-      <label
-        for='floating_name_email'
-        class='absolute top-3 -z-10 origin-left -translate-y-6 scale-75 transform text-base text-gray-600 duration-300 peer-placeholder-shown:translate-y-0 peer-placeholder-shown:scale-100 peer-focus:start-0 peer-focus:-translate-y-6 peer-focus:scale-75 peer-focus:font-medium peer-focus:text-green-600 dark:text-gray-400 dark:peer-focus:text-green-400 md:text-sm rtl:peer-focus:left-auto rtl:peer-focus:translate-x-1/4'
-      >{i18n.CONTACT.INPUT_PLACEHOLDER_4}</label
-      >
     </div>
-    <div class='group relative z-0 my-9 w-full'>
+    <div>
       <textarea
         id='message'
         rows='4'
-        class='peer block w-full resize-none rounded-lg border-2 border-gray-500 bg-transparent p-2.5 text-lg tracking-wide text-gray-500 outline-none focus:border-green-600 dark:border-gray-300 dark:text-gray-100 dark:focus:border-green-400 md:text-sm'
-        placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_3}></textarea>
-      <label
-        for='message'
-        class='absolute -translate-y-40 text-base font-medium text-gray-600 duration-300 peer-focus:text-green-600 dark:text-gray-400 dark:peer-focus:text-green-400 md:-translate-y-32 md:text-sm'
-      >{i18n.CONTACT.INPUT_PLACEHOLDER_2}</label
-      >
+        placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_3}
+        class='w-full resize-none rounded-xl border border-rule bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-3 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent'
+      ></textarea>
     </div>
     <button
       type='submit'
       id='buttonF'
-      class='-my-5 w-full rounded-lg bg-transparent px-5 py-2.5 text-center text-sm font-medium text-green-600 ring-2 ring-green-600 transition-colors hover:bg-green-600 hover:text-[#2e2e2e] focus:outline-none dark:bg-[#2e2e2e] dark:text-green-400 dark:ring-green-400 dark:hover:bg-green-400 dark:hover:text-[#2e2e2e] sm:w-auto'
-    >{i18n.CONTACT.BUTTON}</button
-    >
+      class='w-fit rounded-xl bg-accent px-6 py-2.5 text-sm font-medium text-paper transition-all hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
+    >{i18n.CONTACT.BUTTON}</button>
     <button
       disabled
       type='button'
       id='buttonL'
-      class='-my-5 hidden w-full items-center rounded-lg bg-green-600 px-5 py-2.5 text-center text-sm font-medium text-[#2e2e2e] hover:bg-green-700 dark:bg-green-400 dark:hover:bg-green-500 sm:w-auto'
+      class='hidden w-fit items-center gap-2 rounded-xl bg-accent px-6 py-2.5 text-sm font-medium text-paper'
     >
-      <svg fill="none" aria-hidden="true" class="animate-rotate-360 animate-iteration-count-infinite me-3 inline h-4 w-4 text-[#2e2e2e]" role="status" viewBox="0 0 100 101"><path fill="#3e3e3e" d="M100 50.59c0 27.615-22.386 50.001-50 50.001s-50-22.386-50-50 22.386-50 50-50 50 22.386 50 50m-90.919 0c0 22.6 18.32 40.92 40.919 40.92s40.919-18.32 40.919-40.92c0-22.598-18.32-40.918-40.919-40.918S9.081 27.992 9.081 50.591"/><path fill="currentColor" d="M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344s3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165"/></svg>
+      <svg fill='none' aria-hidden='true' class='size-4 animate-spin' role='status' viewBox='0 0 100 101'>
+        <path fill='currentColor' d='M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344s3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165'/>
+      </svg>
       {i18n.CONTACT.BUTTONLOADING}
     </button>
   </form>
-</section>
+</div>
 
 <script>
   import { showAndHideAlert, sendEmail } from '@u/CopyFunctionality'
@@ -103,7 +88,6 @@ const i18n = getI18N({ currentLocale })
 
       if (!response) {
         showAndHideAlert(notSuccess)
-        return
       } else {
         showAndHideAlert(success)
       }

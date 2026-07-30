@@ -4,15 +4,11 @@ const WrapperTag = Astro.props.href ? 'a' : 'p'
 
 <WrapperTag
   class={`
-  bg-white/5 
-    border dark:border-white/10 border-gray-400 rounded-full
-    flex justify-center items-center gap-x-2
-    py-1 px-2 md:py-2 md:px-4
-    text-xs md:text-base
-    text-black/70 dark:text-white/90
-    transition
-    hover:scale-110 hover:bg-white/10
-    ${Astro.props.class}
+    inline-flex items-center gap-2 rounded-full border border-rule
+    px-3 py-1.5 text-sm text-ink-2
+    transition-all
+    hover:border-accent hover:text-accent hover:bg-paper-2
+    ${Astro.props.class ?? ''}
   `}
   href={Astro.props.href}
   target='_blank'

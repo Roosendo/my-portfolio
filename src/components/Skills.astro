@@ -6,160 +6,29 @@ import { getI18N } from '@c/i18n'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
-
-const length = SKILLS.length
-const halfLength = Math.floor(length / 2)
 ---
 
-<section class='animate-scroll w-full' id='skills-section' data-pause-animation-outside-viewport>
-  <div class='flex w-full flex-row items-center gap-3 p-2 text-black/60 dark:text-white/60'>
-    <Trophy class='size-4 md:size-5' />
-    <h3 class='text-md md:text-base'>{i18n.SKILLS.LABEL}</h3>
+<div class='flex flex-col gap-4'>
+  <div class='flex items-center gap-2 text-ink-2'>
+    <Trophy class='size-4' />
+    <h2 class='font-display text-lg font-semibold tracking-tight text-ink'>{i18n.SKILLS.LABEL}</h2>
   </div>
-  <div class='wrapper'>
+  <div class='flex flex-wrap gap-2'>
     {
-      SKILLS.slice(0, halfLength).map((skill, index) => (
+      SKILLS.map((skill) => (
         <div
-          class={`item itemLeft pt-2 mt-2 hover:scale-105 transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border text-xs text-black/70 dark:text-white/90 md:text-base ${skill.featured ? 'skill-item--featured' : 'border-gray-500'}`}
+          class={`
+            inline-flex items-center gap-2 rounded-full border px-3 py-1.5 text-sm transition-all
+            ${skill.featured
+              ? 'border-accent text-accent bg-accent/5'
+              : 'border-rule text-ink-2 hover:border-accent hover:text-accent hover:bg-paper-2'
+            }
+          `}
         >
-          <skill.icon class='size-4 md:size-5' />
-          <span class='text-sm text-black/80 dark:text-white/90 md:text-base'>{skill.name}</span>
+          <skill.icon class='size-4' />
+          <span>{skill.name}</span>
         </div>
       ))
     }
   </div>
-  <div class='wrapper'>
-    {
-      SKILLS.slice(halfLength, length).map((skill, index) => (
-        <div
-          class={`item itemRight pt-2 mt-2 hover:scale-105 hover:overflow-visible transition-transform flex cursor-default flex-col items-center justify-center item${index + 1} m-auto border text-xs text-black/70 dark:text-white/90 md:text-base ${skill.featured ? 'skill-item--featured' : 'border-gray-500'}`}
-        >
-          <skill.icon class='size-4 md:size-5' />
-          <span class='text-sm text-black/80 dark:text-white/90 md:text-base'>{skill.name}</span>
-        </div>
-      ))
-    }
-  </div>
-</section>
-
-<script>
-  const section = document.querySelector('[data-pause-animation-outside-viewport]')
-  if (section) {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        for (const entry of entries) {
-          entry.target.classList.toggle('animation-paused', !entry.isIntersecting)
-        }
-      },
-      { threshold: 0, rootMargin: '50px' }
-    )
-    observer.observe(section)
-  }
-</script>
-
-<style>
-  .wrapper {
-    margin-top: 2rem;
-    width: 90%;
-    max-width: 1536px;
-    margin-inline: auto;
-    height: 125px;
-    position: relative;
-    overflow: hidden;
-    mask-image: linear-gradient(
-      to right,
-      rgba(0, 0, 0, 0),
-      rgba(0, 0, 0, 1) 20%,
-      rgba(0, 0, 0, 1) 80%,
-      rgba(0, 0, 0, 0)
-    );
-  }
-
-  @keyframes scrollLeft {
-    to {
-      left: -200px;
-    }
-  }
-
-  @keyframes scrollRight {
-    to {
-      right: -200px;
-    }
-  }
-
-  .itemLeft,
-  .itemRight {
-    width: 200px;
-    height: 100px;
-    border-radius: 6px;
-    background-color: transparent;
-    position: absolute;
-    animation-timing-function: linear;
-    animation-duration: 30s;
-    animation-iteration-count: infinite;
-  }
-
-  .wrapper:hover .itemLeft,
-  .wrapper:hover .itemRight {
-    animation-play-state: paused;
-  }
-
-  /* Pause animations when section is outside viewport */
-  .animation-paused .itemLeft,
-  .animation-paused .itemRight {
-    animation-play-state: paused;
-  }
-
-  .itemLeft {
-    left: max(calc(200px * 8), 100%);
-    animation-name: scrollLeft;
-  }
-
-  .itemRight {
-    right: max(calc(200px * 8), 100%);
-    animation-name: scrollRight;
-  }
-
-  .item1 {
-    animation-delay: calc(30s / 8 * (8 - 1) * -1);
-  }
-
-  .item2 {
-    animation-delay: calc(30s / 8 * (8 - 2) * -1);
-  }
-
-  .item3 {
-    animation-delay: calc(30s / 8 * (8 - 3) * -1);
-  }
-
-  .item4 {
-    animation-delay: calc(30s / 8 * (8 - 4) * -1);
-  }
-
-  .item5 {
-    animation-delay: calc(30s / 8 * (8 - 5) * -1);
-  }
-
-  .item6 {
-    animation-delay: calc(30s / 8 * (8 - 6) * -1);
-  }
-
-  .item7 {
-    animation-delay: calc(30s / 8 * (8 - 7) * -1);
-  }
-
-  .item8 {
-    animation-delay: calc(30s / 8 * (8 - 8) * -1);
-  }
-
-  .skill-item--featured {
-    border-width: 2px;
-    border-color: rgb(59 130 246);
-    box-shadow: 0 0 0 1px rgb(59 130 246 / 0.3), 0 0 12px rgb(59 130 246 / 0.2);
-  }
-
-  .dark .skill-item--featured {
-    border-color: rgb(96 165 250);
-    box-shadow: 0 0 0 1px rgb(96 165 250 / 0.3), 0 0 12px rgb(96 165 250 / 0.25);
-  }
-</style>
+</div>

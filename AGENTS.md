@@ -16,6 +16,9 @@ pnpm lint           # prettier --write + eslint --fix
 - **SolidJS** for interactive islands (`Carousel.tsx` is the only `.tsx` component). JSX preserved, import source `solid-js`.
 - **Tailwind CSS v4** via `@tailwindcss/vite`. Uses `@import "tailwindcss"` (not legacy `@tailwind` directives) and `@custom-variant dark`.
 - **pnpm** only (lockfile: `pnpm-lock.yaml`). Never use npm.
+- **Design theme**: Hum (playful genre) — warm cream paper, pear-green accent, sky-cyan secondary. Defined via `@theme` in `src/styles/global.css`.
+- **Fonts**: Satoshi (display) + Geist (body) via Fontsource variables. Onest no longer used.
+- **Sharp** required as a dependency for `astro:assets` image optimization.
 - No tests configured.
 
 ## i18n
@@ -55,6 +58,7 @@ Sends POST to `https://money-minder-api.up.railway.app/api/emails/send-email` (e
 
 - `.astro/` directory is generated (gitignored). Run `pnpm astro sync` to regenerate types.
 - No `.env.example` — create `.env` / `.env.production` if needed (both gitignored).
-- Scroll-driven CSS animations defined in `Layout.astro` (`animate-scroll` class).
+- Scroll-driven CSS animations defined in `Layout.astro` (`reveal` class with IntersectionObserver).
 - Theme toggle via `astro-theme-toggle`.
 - SVG icons are `.astro` components (not React/Solid components).
+- CV PDFs are in `/public/`: `Rosendo-Garcia-Resume.pdf` (en), `Rosendo-Garcia-Resume-ES.pdf` (es).

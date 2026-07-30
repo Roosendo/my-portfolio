@@ -1,2 +1,106 @@
 @import "tailwindcss";
 @custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-paper: oklch(97% 0.012 85);
+  --color-paper-2: oklch(93% 0.015 85);
+  --color-paper-3: oklch(89% 0.018 85);
+  --color-ink: oklch(18% 0.012 70);
+  --color-ink-2: oklch(45% 0.008 70);
+  --color-ink-3: oklch(62% 0.006 70);
+  --color-rule: oklch(82% 0.008 80);
+  --color-accent: oklch(65% 0.18 130);
+  --color-accent-2: oklch(65% 0.15 200);
+  --color-focus: oklch(60% 0.2 30);
+  --color-surface: oklch(99% 0.003 85);
+
+  --font-display: "Satoshi", sans-serif;
+  --font-body: "Geist", sans-serif;
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+}
+
+.dark {
+  --color-paper: oklch(15% 0.012 70);
+  --color-paper-2: oklch(19% 0.015 70);
+  --color-paper-3: oklch(23% 0.015 70);
+  --color-ink: oklch(92% 0.006 80);
+  --color-ink-2: oklch(72% 0.006 80);
+  --color-ink-3: oklch(55% 0.006 80);
+  --color-rule: oklch(30% 0.008 70);
+  --color-accent: oklch(72% 0.14 130);
+  --color-accent-2: oklch(70% 0.12 200);
+  --color-focus: oklch(65% 0.18 30);
+  --color-surface: oklch(13% 0.008 70);
+}
+
+html {
+  overflow-x: clip;
+  scroll-behavior: smooth;
+  font-family: var(--font-body);
+  background-color: var(--color-paper);
+  color: var(--color-ink);
+}
+
+body {
+  overflow-x: clip;
+  min-height: 100dvh;
+  margin: 0;
+}
+
+::selection {
+  background: var(--color-accent);
+  color: var(--color-paper);
+}
+
+@keyframes reveal {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes reveal-reduced {
+  to { opacity: 1; }
+}
+
+.reveal {
+  opacity: 0;
+  animation: reveal var(--dur-long) var(--ease-out) forwards;
+}
+
+.reveal.is-visible {
+  opacity: 1;
+  animation: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal {
+    animation: reveal-reduced 150ms linear forwards;
+  }
+}
+
+.surface-card {
+  background: var(--color-surface);
+  border-radius: 12px;
+  border: 1px solid var(--color-rule);
+  transition: transform var(--dur-short) var(--ease-out),
+              box-shadow var(--dur-short) var(--ease-out);
+}
+
+.surface-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px -10px oklch(20% 0.02 70 / 0.08);
+}
+
+.dark .surface-card:hover {
+  box-shadow: 0 8px 24px -10px oklch(0% 0 0 / 0.3);
+}

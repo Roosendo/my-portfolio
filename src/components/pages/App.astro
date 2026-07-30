@@ -14,12 +14,12 @@ const i18n = getI18N({ currentLocale })
 ---
 
 <Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>
-  <div class='my-5 grid w-[320px] grid-cols-1 place-items-center gap-2 sm:w-[618px] md:w-[746px]'>
-    <PersonalInfo />
-    <LatestProjects />
-    <Skills />
-    <WorkExperience />
-    <About />
-    <Contact />
+  <div class='flex flex-col gap-16'>
+    <section class='reveal' style='--i: 0'><PersonalInfo /></section>
+    <section class='reveal' style='--i: 1' id='projects'><LatestProjects /></section>
+    <section class='reveal' style='--i: 2'><Skills /></section>
+    <section class='reveal' style='--i: 3'><WorkExperience /></section>
+    <section class='reveal' style='--i: 4' id='about-me'><About /></section>
+    <section class='reveal' style='--i: 5' id='contact'><Contact /></section>
   </div>
 </Layout>

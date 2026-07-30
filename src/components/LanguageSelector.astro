@@ -37,34 +37,29 @@ const otherLocales = Object.values(LOCALES).filter((locale) => locale.code !== c
 const currentPath = url.pathname.replace(currentLocaleData!.href, '')
 ---
 
-<div class='relative flex w-auto text-left'>
-  <div
-    class='group rounded bg-white/30 text-sm transition-all hover:bg-white/70 md:text-base dark:bg-black/30 dark:hover:bg-black/70'
-  >
+<div class='relative'>
+  <div class='group'>
     <button
       type='button'
-      class='inline-flex w-full items-center justify-start gap-x-1 px-2 py-1 text-[#212121] dark:text-[#f8f9fa]'
+      class='inline-flex items-center gap-1 text-ink-2 hover:text-accent transition-colors text-sm'
       aria-expanded='true'
       aria-haspopup='true'
     >
-      {currentLocaleData?.flag && <currentLocaleData.flag class='size-5 md:size-4' />}
-      <span class='hidden text-[#212121] md:block dark:text-[#f8f9fa]'
-        >{currentLocaleData?.name}</span
-      >
-      <ChevronIcon class='duration-200 group-hover:rotate-180' />
+      {currentLocaleData?.flag && <currentLocaleData.flag class='size-4' />}
+      <ChevronIcon class='size-3 duration-200 group-hover:rotate-180' />
     </button>
     <ul
-      class='group-hover:animate-fade-in-down group-hover:animate-duration-200 absolute hidden w-full pt-0.5 group-hover:block'
+      class='absolute right-0 top-full mt-1 hidden w-max rounded-lg border border-rule bg-surface p-1 shadow-sm group-hover:block'
     >
       {
         otherLocales.map((locale) => (
           <li>
             <a
-              class='inline-flex w-full items-center justify-start gap-x-2 rounded bg-white/30 px-2 py-1 whitespace-nowrap text-[#212121] hover:bg-white/70 dark:bg-black/30 dark:text-[#f8f9fa] dark:hover:bg-black/70'
+              class='inline-flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-ink hover:bg-paper-2 transition-colors'
               href={`${locale.href}${currentPath}`}
             >
-              <locale.flag class='size-5 md:size-4' />
-              <span class='hidden md:block'>{locale.name}</span>
+              <locale.flag class='size-4' />
+              {locale.name}
             </a>
           </li>
         ))
@@ -72,12 +67,3 @@ const currentPath = url.pathname.replace(currentLocaleData!.href, '')
     </ul>
   </div>
 </div>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const observer = new MutationObserver(() => {
-      // Forzar re-render cuando el tema cambia
-    })
-    observer.observe(document.body, { attributes: true })
-  })
-</script>

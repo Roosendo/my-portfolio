@@ -1,0 +1,1 @@
+import{c,s as t}from"./CopyFunctionality.tp-0ygNu.js";const o=document.querySelector("#to-copy");o&&o.addEventListener("click",async()=>{const e=c("rosendo.garcia73@outlook.com")?document.querySelector("#alert-ok"):document.querySelector("#alert-no");e&&t(e)});

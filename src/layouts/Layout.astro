@@ -1,6 +1,5 @@
 ---
 import { ClientRouter } from 'astro:transitions'
-import '@fontsource-variable/onest'
 import '../styles/global.css'
 import Header from '@c/Header.astro'
 import Footer from '@c/Footer.astro'
@@ -27,148 +26,31 @@ const { currentLocale } = Astro
     <ThemeScript />
     <ClientRouter />
   </head>
-  <body
-    class='m-auto flex max-w-md flex-col place-items-center justify-center md:m-0 md:max-w-full'
-  >
+  <body>
     <Header />
-    <div
-      class='absolute top-0 z-[-2] h-full w-full bg-inherit bg-[radial-gradient(ellipse_80%_80%_at_50%_-20%,rgba(120,119,198,0.3),rgba(255,255,255,0))]'
-    >
-    </div>
-    <slot />
+    <main class='mx-auto max-w-3xl px-4 py-8 md:py-12 lg:py-16'>
+      <slot />
+    </main>
     <Footer />
-    <style is:global>
-      :root {
-        color-scheme: light dark;
-      }
-
-      * {
-        min-width: 0;
-        font: inherit;
-      }
-
-      *,
-      *::before,
-      *::after {
-        box-sizing: border-box;
-      }
-
-      img,
-      video,
-      svg {
-        display: block;
-        height: auto;
-        max-width: 100%;
-      }
-
-      body {
-        margin: 0;
-        min-height: 100dvh;
-      }
-
-      h1,
-      h2,
-      h3,
-      h4,
-      h5,
-      h6 {
-        text-wrap: balance;
-      }
-
-      p {
-        text-wrap: pretty;
-      }
-
-      html {
-        scroll-behavior: smooth;
-        font-family: 'Onest Variable', sans-serif, system-ui;
-        font-display: swap;
-        font-size: 16px;
-        font-weight: 500;
-        background-color: #f8f9fa;
-      }
-
-      html.dark {
-        background-color: #121212;
-      }
-
-      @media (prefers-reduced-motion: reduce) {
-        html {
-          scroll-behavior: auto;
-        }
-      }
-
-      ::-webkit-scrollbar {
-        width: 5px;
-      }
-
-      ::-webkit-scrollbar-thumb {
-        border-radius: 7px;
-        background-color: #09f;
-      }
-
-      ::-webkit-scrollbar-track {
-        background-color: transparent;
-      }
-
-      body {
-        min-height: 100vh;
-        overflow-x: hidden;
-        overflow: auto;
-      }
-
-      #header-nav {
-        animation: blurLight linear both;
-        animation-timeline: scroll();
-        animation-range: 0 500px;
-      }
-
-      @keyframes blur {
-        to {
-          box-shadow:
-            0px 5px 50px -5px rgba(0, 0, 0, 0.1),
-            0px 0px 0 1px rgba(0, 0, 0, 0.3);
-          background: rgba(0, 0, 0, 0.3);
-          backdrop-filter: blur(10px);
-        }
-      }
-
-      @keyframes blurLight {
-        to {
-          box-shadow:
-            0px 5px 50px -5px rgba(250, 250, 250, 0.1),
-            0px 0px 0 1px rgba(250, 250, 250, 0.3);
-          background: rgba(250, 250, 250, 0.3);
-          backdrop-filter: blur(10px);
-        }
-      }
-
-      @keyframes reveal {
-        from {
-          opacity: 0;
-          translate: 0 100px;
-          scale: 0.3;
-          rotate: 20deg;
-        }
-
-        to {
-          opacity: 1;
-          translate: 0 0;
-          scale: 1;
-        }
-      }
-
-      .animate-scroll {
-        animation: reveal linear both;
-        animation-timeline: view();
-        animation-range: entry 10% cover 30%;
-      }
-
-      body.dark #header-nav {
-        animation: blur linear both;
-        animation-timeline: scroll();
-        animation-range: 0 500px;
-      }
-    </style>
   </body>
 </html>
+
+<script>
+  document.addEventListener('astro:page-load', () => {
+    const reveals = document.querySelectorAll('.reveal')
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('is-visible')
+            observer.unobserve(entry.target)
+          }
+        }
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -40px 0px' }
+    )
+    for (const el of reveals) {
+      observer.observe(el)
+    }
+  })
+</script>

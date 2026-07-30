@@ -7,27 +7,21 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<section class='animate-scroll mt-3 p-2'>
-  <div class='mb-3 flex w-full flex-row items-center gap-3 text-black/60 dark:text-white/60'>
-    <Briefcase class='size-4 md:size-5' />
-    <h3 class='text-md md:text-base'>{i18n.WORK_EXPERIENCE.LABEL}</h3>
+<div class='flex flex-col gap-6'>
+  <div class='flex items-center gap-2 text-ink-2'>
+    <Briefcase class='size-4' />
+    <h2 class='font-display text-lg font-semibold tracking-tight text-ink'>{i18n.WORK_EXPERIENCE.LABEL}</h2>
   </div>
-  <ol class='relative border-s border-gray-400 dark:border-gray-200 prose prose-invert'>
+  <div class='relative border-l-2 border-accent/30 pl-6 space-y-8'>
     {
       i18n.WORK_EXPERIENCE.JOBS.map((job) => (
-        <li class='ms-4'>
-          <div class='absolute -start-1.5 mt-1.5 size-3 rounded-full border border-emerald-600 bg-emerald-600 dark:border-emerald-400 dark:bg-emerald-400' />
-          <time class='mb-1 text-sm font-normal leading-none text-black/80 dark:text-white/80'>
-            {job.TIME}
-          </time>
-          <h3 class='text-xl font-semibold text-emerald-600 dark:text-emerald-400 md:text-2xl'>
-            {job.TITLE}
-          </h3>
-          <p class='mb-4 text-base font-normal text-black dark:text-white md:text-lg'>
-            {job.DESCRIPTION}
-          </p>
-        </li>
+        <div class='relative'>
+          <div class='absolute -left-[calc(1.5rem+5px)] top-1.5 size-2.5 rounded-full bg-accent ring-2 ring-paper' />
+          <time class='block text-xs font-medium text-ink-3 uppercase tracking-wider'>{job.TIME}</time>
+          <h3 class='mt-1 font-display text-lg font-bold tracking-tight text-ink'>{job.TITLE}</h3>
+          <p class='mt-1 text-base leading-relaxed text-ink-2'>{job.DESCRIPTION}</p>
+        </div>
       ))
     }
-  </ol>
-</section>
+  </div>
+</div>

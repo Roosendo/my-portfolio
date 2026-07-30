@@ -8,28 +8,18 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<header
-  id='header-nav'
-  class='sticky top-1 z-10 mx-auto flex max-w-full items-center justify-around rounded text-sm text-black/90 dark:text-white/90'
->
-  <nav class='flex flex-wrap items-center justify-around gap-3 p-1'>
-    <a
-      class='rounded-lg p-2 text-sm transition hover:bg-black/5 sm:w-auto text-[#212121] dark:text-[#f8f9fa] md:text-base dark:hover:bg-white/10 dark:hover:text-white'
-      href='#projects'
-      aria-label='projects'>{i18n.HEADER.PROJECTS}</a
-    >
-    <a
-      class='rounded-lg p-2 text-sm transition hover:bg-black/5 sm:w-auto text-[#212121] dark:text-[#f8f9fa] md:text-base dark:hover:bg-white/10 dark:hover:text-white'
-      href='#about-me'
-      aria-label='about-me'>{i18n.HEADER.ABOUT_ME}</a
-    >
-    <a
-      class='rounded-lg p-2 text-sm transition hover:bg-black/5 sm:w-auto text-[#212121] dark:text-[#f8f9fa] md:text-base dark:hover:bg-white/10 dark:hover:text-white'
-      href='#contact'
-      aria-label='contact'>{i18n.HEADER.CONTACT}</a
-    >
-    <Toggle class='theme-toggle' />
-    <LanguageSelector />
+<header class='sticky top-0 z-50 border-b border-rule bg-paper/80 backdrop-blur-sm'>
+  <nav class='mx-auto flex max-w-3xl items-center gap-4 px-4 py-3' aria-label='Primary'>
+    <a href='/' class='font-display text-lg font-bold tracking-tight text-ink hover:text-accent transition-colors'>
+      Rosendo Garcia
+    </a>
+    <div class='ml-auto flex items-center gap-2 text-sm'>
+      <a href='#projects' class='whitespace-nowrap text-ink-2 hover:text-accent transition-colors'>{i18n.HEADER.PROJECTS}</a>
+      <a href='#about-me' class='whitespace-nowrap text-ink-2 hover:text-accent transition-colors'>{i18n.HEADER.ABOUT_ME}</a>
+      <a href='#contact' class='whitespace-nowrap text-ink-2 hover:text-accent transition-colors'>{i18n.HEADER.CONTACT}</a>
+      <Toggle class='size-4 text-ink-2 hover:text-accent transition-colors' />
+      <LanguageSelector />
+    </div>
   </nav>
 </header>
 
@@ -39,48 +29,3 @@ const i18n = getI18N({ currentLocale })
     height: 1rem;
   }
 </style>
-
-<script>
-  document.addEventListener('astro:page-load', () => {
-    const sections = document.querySelectorAll('section')
-    const navItems = document.querySelectorAll('header nav a')
-
-    const callback = (entries: any[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          navItems.forEach((item) => {
-            if (item.getAttribute('aria-label') === entry.target.id) {
-              item.classList.add('dark:text-yellow-200')
-              item.classList.add('text-yellow-600')
-              item.classList.add('font-semibold')
-            } else {
-              item.classList.remove('dark:text-yellow-200')
-              item.classList.remove('text-yellow-600')
-              item.classList.remove('font-semibold')
-            }
-          })
-        }
-      })
-    }
-
-    const observer = new IntersectionObserver(callback, {
-      root: null,
-      rootMargin: '0px',
-      threshold: 0.3
-    })
-
-    sections.forEach((section) => {
-      observer.observe(section)
-    })
-
-    document.onvisibilitychange = () => {
-      if (document.visibilityState === 'hidden') {
-        observer.disconnect()
-      } else {
-        sections.forEach((section) => {
-          observer.observe(section)
-        })
-      }
-    }
-  })
-</script>

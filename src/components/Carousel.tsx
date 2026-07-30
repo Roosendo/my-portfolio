@@ -41,9 +41,9 @@ export default function Carousel (props: CarouselProps) {
   })
 
   return (
-    <div ref={carouselRef} class="relative overflow-hidden rounded-lg" data-pause-animation-outside-viewport>
+    <div ref={carouselRef} class='relative overflow-hidden rounded-xl'>
       <div
-        class="flex transition-transform duration-500 ease-out"
+        class='flex transition-transform duration-500 ease-out'
         style={{
           width: `${slides.length * 100}%`,
           transform: `translateX(-${curr() * (100 / slides.length)}%)`
@@ -52,44 +52,44 @@ export default function Carousel (props: CarouselProps) {
         {slides.map((img) => (
           <img
             src={img}
-            alt="Some content to some project"
-            class="w-full shrink-0"
+            alt='Project screenshot'
+            class='w-full shrink-0 aspect-video object-cover'
             style={{ width: `${100 / slides.length}%` }}
-            decoding="async"
-            loading="lazy"
+            decoding='async'
+            loading='lazy'
           />
         ))}
       </div>
 
       {slides.length !== 1 ? (
-        <div class="absolute inset-0 flex items-center justify-between p-4">
+        <div class='absolute inset-0 flex items-center justify-between p-2'>
           <button
             onClick={prev}
-            class="rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80"
+            class='rounded-full bg-surface/80 p-1.5 text-ink shadow-sm hover:bg-surface transition-colors'
           >
-            <svg class='opacity-80 transition-opacity hover:opacity-100' width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="15 18 9 12 15 6"></polyline>
+            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+              <polyline points='15 18 9 12 15 6' />
             </svg>
           </button>
           <button
             onClick={next}
-            class="rounded-full bg-white/40 p-1 text-gray-800 shadow hover:bg-white/80"
+            class='rounded-full bg-surface/80 p-1.5 text-ink shadow-sm hover:bg-surface transition-colors'
           >
-            <svg class='opacity-80 transition-opacity hover:opacity-100' width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <polyline points="9 18 15 12 9 6"></polyline>
+            <svg width='20' height='20' viewBox='0 0 24 24' fill='none' stroke='currentColor' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'>
+              <polyline points='9 18 15 12 9 6' />
             </svg>
           </button>
         </div>
       ) : null}
 
       {slides.length !== 1 ? (
-        <div class="absolute bottom-4 left-0 right-0">
-          <div class="flex items-center justify-center gap-2">
+        <div class='absolute bottom-3 left-0 right-0'>
+          <div class='flex items-center justify-center gap-1.5'>
             {slides.map((_src, i) => (
               <div
-                class={`h-3 w-3 rounded-full bg-white/70 transition-all ${
-                  curr() === i ? 'p-2' : 'bg-opacity-50'
-                } `}
+                class={`rounded-full transition-all ${
+                  curr() === i ? 'h-2 w-4 bg-accent' : 'h-2 w-2 bg-ink-3/50'
+                }`}
               />
             ))}
           </div>

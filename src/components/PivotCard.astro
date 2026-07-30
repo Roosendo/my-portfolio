@@ -2,8 +2,8 @@
 import { getI18N } from '@c/i18n'
 import { SKILLS } from '@u/SKILLS'
 import Carousel from './Carousel'
-import Fire from '@icons/Fire.astro'
 import GitHub from '@icons/GitHub.astro'
+import Fire from '@icons/Fire.astro'
 import Pill from './Pill.astro'
 
 interface Props {
@@ -21,52 +21,46 @@ const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
 ---
 
-<section class='animate-scroll mb-3 flex flex-col gap-3' id='projects'>
-  <h2 class='text-xl text-[#cc00cc] dark:text-[#eea5ee] md:text-2xl'>
-    {title}
-  </h2>
-  <p class='text-base text-[#212121] dark:text-[#f8f9fa] md:text-lg'>{body}</p>
-  <div class='flex flex-row flex-wrap gap-3'>
-    {
-      languages.map((lang) => {
-        const skill = SKILLS.find((skill) => skill.name === lang)
+<article class='surface-card overflow-hidden'>
+  <div class='p-5 md:p-6'>
+    <h3 class='font-display text-xl font-bold tracking-tight text-ink md:text-2xl'>
+      {title}
+    </h3>
+    <p class='mt-2 text-base leading-relaxed text-ink-2 md:text-lg'>{body}</p>
+    <div class='mt-4 flex flex-wrap gap-2'>
+      {
+        languages.map((lang) => {
+          const skill = SKILLS.find((skill) => skill.name === lang)
 
-        return (
-          <Pill class='cursor-default'>
-            {skill && <skill.icon class='size-4 md:size-5' />}
-            <span class='text-sm text-black/80 dark:text-white/80 md:text-base'>{lang}</span>
-          </Pill>
-        )
-      })
-    }
-  </div>
-  {
-    imgs && (
-      <div class='flex w-full flex-col place-items-center'>
-        <div class='relative'>
-          <div class='rounded'>
-            <Carousel slides={imgs} autoSlide={true} client:visible />
-          </div>
-        </div>
-      </div>
-    )
-  }
-  <div class='flex w-full flex-row justify-evenly gap-3'>
+          return (
+            <Pill class='cursor-default text-xs'>
+              {skill && <skill.icon class='size-3.5' />}
+              <span>{lang}</span>
+            </Pill>
+          )
+        })
+      }
+    </div>
     {
-      projectLink && (
-        <Pill href={projectLink} class='cursor-pointer'>
-          <Fire class='size-4 md:size-5' />
-          <span class='text-sm text-black dark:text-white md:text-base'>
-            {i18n.PROJECTS.BUTTONS.LIVE}
-          </span>
-        </Pill>
+      imgs && imgs.length > 0 && (
+        <div class='mt-4'>
+          <Carousel slides={imgs} autoSlide={imgs.length > 1} client:visible />
+        </div>
       )
     }
-    <Pill href={githubUrl} class='cursor-pointer'>
-      <GitHub class='size-4 md:size-5' />
-      <span class='text-sm text-black dark:text-white md:text-base'
-      >{i18n.PROJECTS.BUTTONS.GITHUB}</span
-      >
-    </Pill>
+    <div class='mt-4 flex gap-3'>
+      {
+        projectLink && (
+          <Pill href={projectLink}>
+            <Fire class='size-4' />
+            <span>{i18n.PROJECTS.BUTTONS.LIVE}</span>
+          </Pill>
+        )
+      }
+      <Pill href={githubUrl}>
+        <GitHub class='size-4' />
+        <span>{i18n.PROJECTS.BUTTONS.GITHUB}</span>
+      </Pill>
+    </div>
   </div>
-</section>
+</article>
