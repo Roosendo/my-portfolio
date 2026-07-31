@@ -30,7 +30,6 @@
     "tailwindcss-animated": "2.1.0"
   },
   "devDependencies": {
-    "@astrojs/check": "^0.9.10",
     "@typescript-eslint/parser": "8.65.0",
     "eslint": "10.8.0",
     "eslint-config-ts-standard": "1.0.5",
