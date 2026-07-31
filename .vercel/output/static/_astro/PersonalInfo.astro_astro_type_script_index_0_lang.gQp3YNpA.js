@@ -1,0 +1,1 @@
+import{r as e,t}from"./CopyFunctionality.cVUSG9n7.js";var n=document.querySelector(`#to-copy`);n&&n.addEventListener(`click`,async()=>{let n=await t(`rosendo.garcia73@outlook.com`)?document.querySelector(`#alert-ok`):document.querySelector(`#alert-no`);n&&e(n)});
