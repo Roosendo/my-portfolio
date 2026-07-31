@@ -14,8 +14,8 @@
   --color-focus: oklch(60% 0.2 30);
   --color-surface: oklch(99% 0.003 85);
 
-  --font-display: 'Satoshi', sans-serif;
-  --font-body: 'Geist', sans-serif;
+  --font-display: 'Sora Variable', sans-serif;
+  --font-body: 'Geist Variable', sans-serif;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
