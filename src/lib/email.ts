@@ -1,3 +1,4 @@
+import { CONTACT_EMAIL, RESEND_FROM_EMAIL, getSecret } from 'astro:env/server'
 import { Resend } from 'resend'
 import type { ContactMessage } from './contact'
 
@@ -86,8 +87,8 @@ const buildEmailHtml = (message: ContactMessage): string => {
 }
 
 export async function sendContactEmail(message: ContactMessage): Promise<void> {
-  const apiKey = import.meta.env.RESEND_API_KEY
-  const recipient = import.meta.env.CONTACT_EMAIL
+  const apiKey = getSecret('RESEND_API_KEY')
+  const recipient = CONTACT_EMAIL
 
   if (!apiKey || !recipient) {
     throw new EmailServiceError('Email service is not configured')
@@ -95,7 +96,7 @@ export async function sendContactEmail(message: ContactMessage): Promise<void> {
 
   const resend = new Resend(apiKey)
   const { error } = await resend.emails.send({
-    from: import.meta.env.RESEND_FROM_EMAIL ?? DEFAULT_FROM_EMAIL,
+    from: RESEND_FROM_EMAIL ?? DEFAULT_FROM_EMAIL,
     to: recipient,
     replyTo: message.email,
     subject: `New contact message from ${message.name}`,
