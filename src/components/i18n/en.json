@@ -12,11 +12,11 @@
   "PERSONAL_INFO": {
     "GREETING": "Hey, I'm Rosendo Garcia",
     "PILL_MESSAGE": "Currently working and studying",
-    "PARAGRAPH": "Greetings from San Miguel, El Salvador!, I'm a web developer navigating the dizzying world of technology, with a special focus on clever solutions in JavaScript using Node.js. Eager to learn and motivated by innovation, I design digital experiences that blend functionality with elegance, like an expert chef mixing the perfect ingredients for a technological feast!",
+    "PARAGRAPH": "Software Developer focused on backend solutions using Node.js and C#. I currently work in customer support for a U.S.-based digital platform, providing support entirely in English and assisting with basic technical issues. My passion for technology and clear communication allows me to adapt to both software development and digital support roles. I am committed to continuous professional growth by combining my technical expertise with hands-on customer support experience.",
     "PHRASES": {
-      "Greetings from San Miguel, El Salvador!": "dark:text-emerald-400 text-emerald-600",
-      "JavaScript using Node.js": "dark:text-yellow-200 text-yellow-500",
-      "I design digital experiences that blend functionality with elegance": "dark:text-[#eea5ee] text-[#cc00cc]"
+      "Software Developer": "dark:text-emerald-400 text-emerald-600",
+      "Node.js and C#": "dark:text-yellow-200 text-yellow-500",
+      "I am committed to continuous professional growth": "dark:text-[#eea5ee] text-[#cc00cc]"
     },
     "ALERTS": {
       "SUCCESS": "Copied successfully!",
@@ -29,11 +29,11 @@
     "PROJECTS": [
       {
         "TITLE": "Money Minder, a FullStack Resource Management Solution",
-        "DESCRIPTION": "Personal project with Angular and Tailwind. Intuitive user interface with Angular and Typescript for efficient resource allocation, tracking and reporting. It uses technologies offered by Angular, plus a SQLite database on the Edge with Turso for efficient management from the API."
+        "DESCRIPTION": "A personal finance management application built with Angular, featuring an intuitive user interface, efficient resource management, transaction tracking, reporting, and a PostgreSQL database."
       },
       {
         "TITLE": "Money Minder API",
-        "DESCRIPTION": "Rest API for Money Minder using Express.JS and SQLite. It provides endpoints for managing resources, categories, and transactions, enabling seamless integration with the Money Minder frontend."
+        "DESCRIPTION": "A RESTful API built with NestJS and PostgreSQL, providing endpoints for managing resources, categories, and transactions. Developed using software design principles and patterns such as dependency injection, the Singleton pattern, and decorators."
       },
       {
         "TITLE": "Pokémon Explorer: Async API Consumption and Dynamic Filtering",
@@ -61,12 +61,12 @@
     "JOBS": [
       {
         "TITLE": "Virtual Customer Service Assistant",
-        "DESCRIPTION": "Provide real-time customer support in English for a U.S. digital platform. Handled user onboarding, payments, top-ups, withdrawals, and basic technical issues. Reported bugs and suggested improvements, using basic programming knowledge to identify potential problems. Maintained fast, empathetic, and professional communication.",
+        "DESCRIPTION": "Provided real-time customer support in English to U.S.-based clients through a digital platform. Resolved customer issues, reported software bugs, and collaborated on service improvements. Delivered prompt, professional, and effective customer communication.",
         "TIME": "November 2024 - Present"
       },
       {
         "TITLE": "Freelancer, clinic",
-        "DESCRIPTION": "Worked as a freelance developer for a clinic for 4 months. Improved their old PHP-based system across both frontend and backend, fixing issues, optimizing performance, and updating key features to make the platform more reliable and easier to use.",
+        "DESCRIPTION": "Maintained and enhanced a PHP application used daily by clinical and administrative staff. Administered and maintained a Windows-based XAMPP server running Apache, PHP, and MariaDB. Replicated the production environment locally to validate changes before deployment, reducing operational risks and minimizing downtime. Performed database backups prior to deployments, optimized SQL queries, and updated table structures based on business requirements. Reviewed Apache logs and adjusted PHP server configuration to meet application requirements. Delivered both frontend and backend implementations while supporting the daily operations of multiple physicians and administrative staff.",
         "TIME": "May 2025 - August 2025"
       },
       {

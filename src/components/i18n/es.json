@@ -12,11 +12,11 @@
   "PERSONAL_INFO": {
     "GREETING": "Hola, soy Rosendo García",
     "PILL_MESSAGE": "Trabajando y estudiando",
-    "PARAGRAPH": "¡Saludos desde San Miguel, El Salvador! Soy un desarrollador web que navega por el vertiginoso mundo de la tecnología, con un enfoque especial en soluciones ingeniosas en JavaScript utilizando Node.js. Ansioso por aprender y motivado por la innovación, diseño experiencias digitales que combinan funcionalidad con elegancia, como un chef experto mezclando los ingredientes perfectos para un festín tecnológico.",
+    "PARAGRAPH": "Desarrollador de Software orientado a soluciones backend utilizando Node y C#. Actualmente trabajo en atención al cliente para una plataforma digital estadounidense, brindando soporte 100% en Inglés y asistiendo problemas técnicos básicos. Mi pasión por la tecnología y comunicación clara me permite adaptarme a ambos entornos de desarrollo y roles digitales de soporte. Me entusiasma seguir creciendo profesionalmente combinando mis habilidades técnicas con experiencia en atención al cliente",
     "PHRASES": {
-      "¡Saludos desde San Miguel, El Salvador!": "dark:text-emerald-400 text-emerald-600",
-      "JavaScript utilizando Node.js": "dark:text-yellow-200 text-yellow-500",
-      "diseño experiencias digitales que combinan funcionalidad con elegancia": "dark:text-[#eea5ee] text-[#cc00cc]"
+      "Desarrollador de Software": "dark:text-emerald-400 text-emerald-600",
+      "Node y C#": "dark:text-yellow-200 text-yellow-500",
+      "Me entusiasma seguir creciendo profesionalmente": "dark:text-[#eea5ee] text-[#cc00cc]"
     },
     "ALERTS": {
       "SUCCESS": "¡Copiado exitosamente!",
@@ -29,11 +29,11 @@
     "PROJECTS": [
       {
         "TITLE": "Money Minder, una Solución de Gestión Integral de Recursos FullStack",
-        "DESCRIPTION": "Proyecto personal con Angular y Tailwind. Interfaz de usuario intuitiva con Angular y Typescript para una asignación eficiente de recursos, seguimiento e informes. Utiliza tecnologías que ofrece Astro, más una base de datos de sqlite en el Edge con Turso para una gestión eficiente con nuestra API."
+        "DESCRIPTION": "Aplicación de gestión de finanzas hecha con Angular con una interfaz de usuario Intuitiva; gestión de recursos eficiente, registro y reportes con una base de datos PostgreSQL"
       },
       {
         "TITLE": "API RESTful de Money Minder",
-        "DESCRIPTION": "API RESTful con Express y SQLite para la gestión de usuarios. Incluye rutas para la creación, lectura, actualización y eliminación de usuarios, con una base de datos SQLite para almacenar información de usuario."
+        "DESCRIPTION": "API del proyecto Money Minder utilizando NestJS y PostgreSQL. Provee endpoints para manejar recursos, categorías, transacciones con diferentes prácticas y patrones de diseño como inyección de dependencias, Singleton y decoradores"
       },
       {
         "TITLE": "Explorador de Pokémon: Consumo Asíncrono de API y Filtrado Dinámico",
@@ -66,7 +66,7 @@
       },
       {
         "TITLE": "Freelancer, clínica",
-        "DESCRIPTION": "Trabajé como desarrollador freelance para una clínica durante 4 meses. Mejoré su antiguo sistema basado en PHP tanto en el frontend como en el backend, solucionando problemas, optimizando el rendimiento y actualizando funciones clave para hacer la plataforma más confiable y fácil de usar.",
+        "DESCRIPTION": "Mantener y mejorar una aplicación PHP usada diaramente por staff clínico. Administrar y mantener un servidor XAMPP en Windows con Apache, PHP y MariaDB. Replicar el entorno de producción localmente para validar cambios antes de desplegarlos, minimizando el tiempo perdido y riesgos de operación. Realizar backups de la base de datos antes de actualizar cambios, optimizar consultas SQL, estructuras de tablas según requerimientos. Revisar logs de Apache y ajustar el servidor desde la configuración de PHP según requerimientos. Entregar implementaciones de frontend y backend mientras se mantienen operaciones diarias por múltiples doctores y staff administrativo.",
         "TIME": "Mayo 2025 - Agosto 2025"
       },
       {
