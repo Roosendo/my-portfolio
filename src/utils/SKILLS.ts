@@ -14,6 +14,8 @@ import Angular from '@icons_s/Angular.astro'
 import NestJS from '@icons_s/NestJS.astro'
 import CSharp from '@icons_s/CSharp.astro'
 import DotNet from '@icons_s/DotNet.astro'
+import SQLite from '@icons/skills/SQLite.astro'
+import Jest from '@icons/skills/Jest.astro'
 
 interface Skill {
   name: string
@@ -33,9 +35,11 @@ export const SKILLS: Skill[] = [
   { name: 'Angular', icon: Angular, featured: true },
   { name: '.NET', icon: DotNet, featured: true },
   { name: 'Node', icon: Node },
-  { name: 'Nest', icon: NestJS },
+  { name: 'NestJS', icon: NestJS },
   { name: 'Tailwind', icon: Tailwind },
   { name: 'React', icon: React },
   { name: 'Astro', icon: AstroIcon },
-  { name: 'C#', icon: CSharp }
+  { name: 'C#', icon: CSharp },
+  { name: 'SQLite', icon: SQLite },
+  { name: 'Jest', icon: Jest }
 ]
