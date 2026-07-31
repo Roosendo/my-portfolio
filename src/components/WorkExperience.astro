@@ -8,18 +8,22 @@ const i18n = getI18N({ currentLocale })
 ---
 
 <div class='flex flex-col gap-6'>
-  <div class='flex items-center gap-2 text-ink-2'>
+  <div class='text-ink-2 flex items-center gap-2'>
     <Briefcase class='size-4' />
-    <h2 class='font-display text-lg font-semibold tracking-tight text-ink'>{i18n.WORK_EXPERIENCE.LABEL}</h2>
+    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>
+      {i18n.WORK_EXPERIENCE.LABEL}
+    </h2>
   </div>
-  <div class='relative border-l-2 border-accent/30 pl-6 space-y-8'>
+  <div class='border-accent/30 relative space-y-8 border-l-2 pl-6'>
     {
       i18n.WORK_EXPERIENCE.JOBS.map((job) => (
         <div class='relative'>
-          <div class='absolute -left-[calc(1.5rem+5px)] top-1.5 size-2.5 rounded-full bg-accent ring-2 ring-paper' />
-          <time class='block text-xs font-medium text-ink-3 uppercase tracking-wider'>{job.TIME}</time>
-          <h3 class='mt-1 font-display text-lg font-bold tracking-tight text-ink'>{job.TITLE}</h3>
-          <p class='mt-1 text-base leading-relaxed text-ink-2'>{job.DESCRIPTION}</p>
+          <div class='bg-accent ring-paper absolute top-1.5 -left-[calc(1.5rem+5px)] size-2.5 rounded-full ring-2' />
+          <time class='text-ink-3 block text-xs font-medium tracking-wider uppercase'>
+            {job.TIME}
+          </time>
+          <h3 class='font-display text-ink mt-1 text-lg font-bold tracking-tight'>{job.TITLE}</h3>
+          <p class='text-ink-2 mt-1 text-base leading-relaxed'>{job.DESCRIPTION}</p>
         </div>
       ))
     }

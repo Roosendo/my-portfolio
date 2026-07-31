@@ -99,7 +99,8 @@
     "INPUT_PLACEHOLDER": "Your name",
     "INPUT_PLACEHOLDER_2": "Your message",
     "INPUT_PLACEHOLDER_3": "Leave a comment...",
-    "INPUT_PLACEHOLDER_4": "Your email or phone number",
+    "INPUT_PLACEHOLDER_4": "Your email",
+    "INPUT_PLACEHOLDER_5": "Your phone number (optional)",
     "BUTTON": "Submit",
     "BUTTONLOADING": "Loading ..."
   },

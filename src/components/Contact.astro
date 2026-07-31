@@ -41,6 +41,17 @@ const i18n = getI18N({ currentLocale })
       />
     </div>
     <div>
+      <label for='floating_name_phone' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_5}</label>
+      <input
+        type='tel'
+        name='phone'
+        autocomplete='tel'
+        id='floating_name_phone'
+        placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_5}
+        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
+      />
+    </div>
+    <div>
       <label for='message' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_3}</label>
       <textarea
         id='message'
@@ -53,7 +64,7 @@ const i18n = getI18N({ currentLocale })
     <button
       type='submit'
       id='buttonF'
-      class='bg-accent text-paper focus:ring-accent w-fit rounded-xl px-6 py-2.5 text-sm font-medium transition-all hover:brightness-110 focus:ring-2 focus:ring-offset-2 focus:outline-none'
+      class='bg-accent text-paper focus:ring-accent w-fit rounded-xl px-6 py-2.5 text-sm font-medium transition-all hover:brightness-110 focus:ring-2 focus:ring-offset-2 focus:outline-none cursor-pointer'
       >{i18n.CONTACT.BUTTON}</button
     >
     <button
@@ -80,36 +91,38 @@ const i18n = getI18N({ currentLocale })
 </div>
 
 <script>
-  import { showAndHideAlert, sendEmail } from '@u/CopyFunctionality'
+  import { showAndHideAlert } from '@u/alert'
+  import { sendEmail } from '@u/sendEmail'
 
   document.addEventListener('astro:page-load', () => {
-    const success = document.querySelector('#success') as HTMLDivElement
-    const notSuccess = document.querySelector('#not-success') as HTMLDivElement
-    const form = document.querySelector('#contactForm') as HTMLFormElement
+    const form = document.querySelector<HTMLFormElement>('#contactForm')
+    const success = document.querySelector<HTMLElement>('#success')
+    const notSuccess = document.querySelector<HTMLElement>('#not-success')
+    const buttonPrimary = document.querySelector<HTMLElement>('#buttonF')
+    const buttonLoading = document.querySelector<HTMLElement>('#buttonL')
 
-    form.addEventListener('submit', async (e) => {
-      e.preventDefault()
+    if (!form || !success || !notSuccess || !buttonPrimary || !buttonLoading) return
 
-      const name = (document.querySelector('#floating_name') as HTMLInputElement).value
-      const email = (document.querySelector('#floating_name_email') as HTMLInputElement).value
-      const message = (document.querySelector('#message') as HTMLTextAreaElement).value
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault()
 
-      const buttonPrimary = document.querySelector('#buttonF') as HTMLButtonElement
-      const buttonLoading = document.querySelector('#buttonL') as HTMLButtonElement
+      const data = new FormData(form)
+      const phone = String(data.get('phone') ?? '').trim()
+      const message = {
+        name: String(data.get('name') ?? ''),
+        email: String(data.get('email') ?? ''),
+        message: String(data.get('message') ?? ''),
+        ...(phone !== '' && { phone })
+      }
 
       buttonPrimary.classList.add('hidden')
       buttonLoading.classList.remove('hidden')
 
-      const response = await sendEmail(name, email, message)
+      const result = await sendEmail(message)
 
-      if (!response) {
-        showAndHideAlert(notSuccess)
-      } else {
-        showAndHideAlert(success)
-      }
+      showAndHideAlert(result.ok ? success : notSuccess)
 
-      ;(e.target as HTMLFormElement).reset()
-
+      form.reset()
       buttonLoading.classList.add('hidden')
       buttonPrimary.classList.remove('hidden')
     })

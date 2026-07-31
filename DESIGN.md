@@ -25,13 +25,13 @@ src/pages/{index,es/index}.astro
 
 Defined in `src/styles/global.css` via Tailwind v4 `@theme`:
 
-| Token | Light | Dark |
-|---|---|---|
-| `--color-paper` | `oklch(97% 0.012 85)` | `oklch(15% 0.012 70)` |
-| `--color-accent` | `oklch(65% 0.18 130)` — pear green | `oklch(72% 0.14 130)` |
-| `--color-accent-2` | `oklch(65% 0.15 200)` — sky cyan | `oklch(70% 0.12 200)` |
-| `--color-surface` | `oklch(99% 0.003 85)` | `oklch(13% 0.008 70)` |
-| `--color-ink` | `oklch(18% 0.012 70)` | `oklch(92% 0.006 80)` |
+| Token              | Light                              | Dark                  |
+| ------------------ | ---------------------------------- | --------------------- |
+| `--color-paper`    | `oklch(97% 0.012 85)`              | `oklch(15% 0.012 70)` |
+| `--color-accent`   | `oklch(65% 0.18 130)` — pear green | `oklch(72% 0.14 130)` |
+| `--color-accent-2` | `oklch(65% 0.15 200)` — sky cyan   | `oklch(70% 0.12 200)` |
+| `--color-surface`  | `oklch(99% 0.003 85)`              | `oklch(13% 0.008 70)` |
+| `--color-ink`      | `oklch(18% 0.012 70)`              | `oklch(92% 0.006 80)` |
 
 Reusable classes: `.surface-card` (rounded card with hover-lift), `.reveal` (scroll-triggered fade-up animation).
 
@@ -50,15 +50,15 @@ Reusable classes: `.surface-card` (rounded card with hover-lift), `.reveal` (scr
 
 ## Key interaction patterns
 
-| Pattern | Implementation |
-|---|---|
+| Pattern                     | Implementation                                                                                                          |
+| --------------------------- | ----------------------------------------------------------------------------------------------------------------------- |
 | **Scroll-triggered reveal** | IntersectionObserver in `Layout.astro` adds `.is-visible` to `.reveal` elements. CSS animation: fade-up 420ms ease-out. |
-| **Sticky nav blur** | `backdrop-filter: blur-sm` + `bg-paper/80` on sticky `<header>`. No JS needed. |
-| **Skills chips** | Flat inline `flex-wrap` grid. Featured skills get `border-accent` + `bg-accent/5`. No marquee animation. |
-| **Card hover lift** | `.surface-card` CSS class: `translateY(-2px)` + softer shadow on hover. |
-| **Carousel auto-slide** | SolidJS `createEffect` with `setInterval`. Pauses when out of viewport via IntersectionObserver. |
-| **Active nav highlight** | CSS `:hover` transitions via `hover:text-accent`. No IntersectionObserver active tracking. |
-| **Contact form submit** | `fetch` POST to external NestJS API. Loading/disabled button swap. Alert toasts via `showAndHideAlert`. |
+| **Sticky nav blur**         | `backdrop-filter: blur-sm` + `bg-paper/80` on sticky `<header>`. No JS needed.                                          |
+| **Skills chips**            | Flat inline `flex-wrap` grid. Featured skills get `border-accent` + `bg-accent/5`. No marquee animation.                |
+| **Card hover lift**         | `.surface-card` CSS class: `translateY(-2px)` + softer shadow on hover.                                                 |
+| **Carousel auto-slide**     | SolidJS `createEffect` with `setInterval`. Pauses when out of viewport via IntersectionObserver.                        |
+| **Active nav highlight**    | CSS `:hover` transitions via `hover:text-accent`. No IntersectionObserver active tracking.                              |
+| **Contact form submit**     | `fetch` POST to external NestJS API. Loading/disabled button swap. Alert toasts via `showAndHideAlert`.                 |
 
 ## Asset patterns
 

@@ -29,16 +29,16 @@ pnpm lint           # prettier --write + eslint --fix
 
 ## Path aliases (tsconfig paths)
 
-| Alias | Maps to |
-|---|---|
-| `@c/` | `src/components/` |
-| `@l/` | `src/layouts/` |
-| `@p/` | `src/pages/` |
-| `@u/` | `src/utils/` |
-| `@icons/` | `src/assets/icons/` |
-| `@icons_f/` | `src/assets/icons/flags/` |
+| Alias       | Maps to                    |
+| ----------- | -------------------------- |
+| `@c/`       | `src/components/`          |
+| `@l/`       | `src/layouts/`             |
+| `@p/`       | `src/pages/`               |
+| `@u/`       | `src/utils/`               |
+| `@icons/`   | `src/assets/icons/`        |
+| `@icons_f/` | `src/assets/icons/flags/`  |
 | `@icons_s/` | `src/assets/icons/skills/` |
-| `@imgs/` | `src/assets/imgs/` |
+| `@imgs/`    | `src/assets/imgs/`         |
 
 ## Page structure
 
@@ -52,12 +52,12 @@ pnpm lint           # prettier --write + eslint --fix
 
 ## Contact form
 
-Sends POST to `https://money-minder-api.up.railway.app/api/emails/send-email` (external NestJS API). The `resend` package is declared as a dependency but not used directly in this repo. Form logic in `src/components/Contact.astro` with script in `src/utils/CopyFunctionality.ts`.
+POSTs to the Astro endpoint `src/pages/api/send-email.ts` (on-demand, `export const prerender = false`), which validates the payload in `src/lib/contact.ts` and sends the email via Resend in `src/lib/email.ts`. Requires `RESEND_API_KEY` and `CONTACT_EMAIL` env vars (see `.env.example`); `RESEND_FROM_EMAIL` is optional. Client logic lives in `src/components/Contact.astro` (form + alert handling) and `src/utils/sendEmail.ts` (fetch wrapper). Shared helpers: `src/utils/alert.ts`, `src/utils/clipboard.ts`.
 
 ## Notable
 
 - `.astro/` directory is generated (gitignored). Run `pnpm astro sync` to regenerate types.
-- No `.env.example` — create `.env` / `.env.production` if needed (both gitignored).
+- Env vars live in `.env` / `.env.production` (gitignored); `.env.example` documents them.
 - Scroll-driven CSS animations defined in `Layout.astro` (`reveal` class with IntersectionObserver).
 - Theme toggle via `astro-theme-toggle`.
 - SVG icons are `.astro` components (not React/Solid components).

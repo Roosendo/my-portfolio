@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://rosendo-garcia.vercel.app/sitemap-index.xml

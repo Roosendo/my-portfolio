@@ -79,7 +79,7 @@ const CVfinal =
   <AlertMessage type='success' message={i18n.PERSONAL_INFO.ALERTS.SUCCESS} divId='alert-ok' />
   <AlertMessage type='error' message={i18n.PERSONAL_INFO.ALERTS.ERROR} divId='alert-no' />
 
-  <div class='text-ink-2 flex items-center gap-2 text-sm' transition:persist="main-content">
+  <div class='text-ink-2 flex items-center gap-2 text-sm' transition:persist='main-content'>
     <At class='size-4' />
     <span>rosendo.garcia73@outlook.com</span>
     <a
@@ -92,7 +92,7 @@ const CVfinal =
       type='button'
       id='to-copy'
       aria-label='Copy email'
-      class='border-rule text-ink-2 hover:bg-paper-2 rounded-lg border px-3 py-1.5 text-sm transition-colors cursor-pointer'
+      class='border-rule text-ink-2 hover:bg-paper-2 cursor-pointer rounded-lg border px-3 py-1.5 text-sm transition-colors'
     >
       <Copy class='size-4' />
     </button>
@@ -100,7 +100,8 @@ const CVfinal =
 </div>
 
 <script>
-  import { copyToClipboard, showAndHideAlert } from '@u/CopyFunctionality'
+  import { showAndHideAlert } from '@u/alert'
+  import { copyToClipboard } from '@u/clipboard'
 
   const container = document.querySelector('#to-copy') as HTMLButtonElement
 
