@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 @custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
@@ -14,8 +14,8 @@
   --color-focus: oklch(60% 0.2 30);
   --color-surface: oklch(99% 0.003 85);
 
-  --font-display: "Satoshi", sans-serif;
-  --font-body: "Geist", sans-serif;
+  --font-display: 'Satoshi', sans-serif;
+  --font-body: 'Geist', sans-serif;
 
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
   --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
@@ -69,7 +69,9 @@ body {
 }
 
 @keyframes reveal-reduced {
-  to { opacity: 1; }
+  to {
+    opacity: 1;
+  }
 }
 
 .reveal {
@@ -88,12 +90,20 @@ body {
   }
 }
 
+@media (scripting: none) {
+  .reveal {
+    opacity: 1;
+    animation: none;
+  }
+}
+
 .surface-card {
   background: var(--color-surface);
   border-radius: 12px;
   border: 1px solid var(--color-rule);
-  transition: transform var(--dur-short) var(--ease-out),
-              box-shadow var(--dur-short) var(--ease-out);
+  transition:
+    transform var(--dur-short) var(--ease-out),
+    box-shadow var(--dur-short) var(--ease-out);
 }
 
 .surface-card:hover {

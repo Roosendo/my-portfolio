@@ -1,4 +1,4 @@
-export function showAndHideAlert (alertElement: HTMLElement, timeout: number = 2000) {
+export function showAndHideAlert(alertElement: HTMLElement, timeout: number = 2000) {
   alertElement.classList.remove('hidden')
   alertElement.classList.add('flex')
   setTimeout(() => {
@@ -7,23 +7,32 @@ export function showAndHideAlert (alertElement: HTMLElement, timeout: number = 2
   }, timeout)
 }
 
-export function copyToClipboard (text: string): boolean {
-  const tempInput = document.createElement('textarea')
-  tempInput.value = text
-  document.body.appendChild(tempInput)
-  tempInput.select()
-
-  try {
+export async function copyToClipboard(text: string): Promise<boolean> {
+  const legacyCopy = (): boolean => {
+    const tempInput = document.createElement('textarea')
+    tempInput.value = text
+    tempInput.setAttribute('readonly', '')
+    tempInput.style.position = 'fixed'
+    tempInput.style.top = '-9999px'
+    tempInput.style.opacity = '0'
+    document.body.appendChild(tempInput)
+    tempInput.select()
     const successful = document.execCommand('copy')
     document.body.removeChild(tempInput)
     return successful
-  } catch (err) {
-    console.error(`Failed to copy the value: ${text}`)
-    return false
   }
+
+  if (typeof navigator !== 'undefined' && navigator.clipboard && window.isSecureContext) {
+    return navigator.clipboard
+      .writeText(text)
+      .then(() => true)
+      .catch(() => legacyCopy())
+  }
+
+  return Promise.resolve(legacyCopy())
 }
 
-export async function sendEmail (name: string, email: string, message: string) {
+export async function sendEmail(name: string, email: string, message: string): Promise<boolean> {
   const apiUrl = 'https://money-minder-api.up.railway.app/api/emails/send-email'
 
   const requestOptions = {

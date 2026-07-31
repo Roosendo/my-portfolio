@@ -13,7 +13,16 @@ import NPExampleFiles from '@imgs/node-package/files-example.webp'
 
 import { getI18N } from '@c/i18n'
 
-export const getProjects = (currentLocale: string) => {
+export interface Project {
+  title: string
+  body: string
+  imgs: string[]
+  projectLink: string
+  githubUrl: string
+  languages: string[]
+}
+
+export const getProjects = (currentLocale: string): Project[] => {
   const i18n = getI18N({ currentLocale })
 
   return i18n.PROJECTS.PROJECTS.map((project, index) => {
@@ -56,10 +65,10 @@ export const getProjects = (currentLocale: string) => {
     return {
       title: project.TITLE,
       body: project.DESCRIPTION,
-      imgs: imgs[index],
-      projectLink: projectLinks[index]?.link,
-      githubUrl: projectLinks[index]?.github,
-      languages: projectLinks[index]?.languages
+      imgs: imgs[index] ?? [],
+      projectLink: projectLinks[index]?.link ?? '',
+      githubUrl: projectLinks[index]?.github ?? '',
+      languages: projectLinks[index]?.languages ?? []
     }
   })
 }

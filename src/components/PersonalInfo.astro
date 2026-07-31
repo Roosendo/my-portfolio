@@ -26,32 +26,36 @@ for (let phrase in phrases) {
 
 const htmlParagraph = unescapeHTML(paragraph)
 
-const CVfinal = currentLocale === 'en' ? '/Rosendo-Garcia-Resume.pdf' : '/Rosendo-Garcia-Resume-ES.pdf'
+const CVfinal =
+  currentLocale === 'en' ? '/Rosendo-Garcia-Resume.pdf' : '/Rosendo-Garcia-Resume-ES.pdf'
 ---
 
 <div class='flex flex-col gap-6'>
   <div class='flex flex-col gap-4 md:flex-row md:items-start md:justify-between'>
     <div class='flex flex-col gap-3'>
-      <h1 class='font-display text-3xl font-bold tracking-tight text-ink md:text-4xl'>
+      <h1 class='font-display text-ink text-3xl font-bold tracking-tight md:text-4xl'>
         {i18n.PERSONAL_INFO.GREETING}
       </h1>
       <a
-        href="https://www.linkedin.com/in/rosendoo-garcia"
-        target="_blank"
-        rel="noopener noreferrer"
+        href='https://www.linkedin.com/in/rosendoo-garcia'
+        target='_blank'
+        rel='noopener noreferrer'
         aria-label={i18n.PERSONAL_INFO.PILL_MESSAGE}
-        class="inline-flex w-fit items-center gap-2 rounded-full border border-accent px-3 py-1 text-sm font-medium text-accent transition-all hover:bg-accent hover:text-paper"
+        class='border-accent text-accent hover:bg-accent hover:text-paper inline-flex w-fit items-center gap-2 rounded-full border px-3 py-1 text-sm font-medium transition-all'
       >
-        <LinkedIn class="size-4" />
+        <LinkedIn class='size-4' />
         {i18n.PERSONAL_INFO.PILL_MESSAGE}
       </a>
-      <div class='max-w-prose text-base leading-relaxed text-ink-2 md:text-lg' set:html={htmlParagraph} />
+      <div
+        class='text-ink-2 max-w-prose text-base leading-relaxed md:text-lg'
+        set:html={htmlParagraph}
+      />
     </div>
     <div class='shrink-0 md:pt-2'>
       <Image
         src={Yo}
         alt='Rosendo Garcia'
-        class='size-24 rounded-full border-2 border-paper-2 object-cover shadow-sm md:size-32'
+        class='border-paper-2 size-24 rounded-full border-2 object-cover shadow-sm md:size-32'
         loading='eager'
       />
     </div>
@@ -59,15 +63,15 @@ const CVfinal = currentLocale === 'en' ? '/Rosendo-Garcia-Resume.pdf' : '/Rosend
 
   <div class='flex flex-wrap items-center gap-3'>
     <Pill href='https://github.com/Roosendo'>
-      <GitHub class='size-4 text-accent' />
+      <GitHub class='text-accent size-4' />
       <span class='text-sm'>GitHub</span>
     </Pill>
     <Pill href='https://www.linkedin.com/in/rosendoo-garcia'>
-      <LinkedIn class='size-4 text-accent' />
+      <LinkedIn class='text-accent size-4' />
       <span class='text-sm'>LinkedIn</span>
     </Pill>
     <Pill href={CVfinal}>
-      <CVIcon class='size-4 text-accent' />
+      <CVIcon class='text-accent size-4' />
       <span class='text-sm'>CV</span>
     </Pill>
   </div>
@@ -75,12 +79,12 @@ const CVfinal = currentLocale === 'en' ? '/Rosendo-Garcia-Resume.pdf' : '/Rosend
   <AlertMessage type='success' message={i18n.PERSONAL_INFO.ALERTS.SUCCESS} divId='alert-ok' />
   <AlertMessage type='error' message={i18n.PERSONAL_INFO.ALERTS.ERROR} divId='alert-no' />
 
-  <div class='flex items-center gap-2 text-sm text-ink-2'>
+  <div class='text-ink-2 flex items-center gap-2 text-sm'>
     <At class='size-4' />
     <span>rosendo.garcia73@outlook.com</span>
     <a
       href='mailto:rosendo.garcia73@outlook.com'
-      class='ml-auto rounded-lg border border-rule px-3 py-1.5 text-sm text-accent transition-colors hover:bg-paper-2'
+      class='border-rule text-accent hover:bg-paper-2 ml-auto rounded-lg border px-3 py-1.5 text-sm transition-colors'
     >
       <Send class='inline size-4' />
     </a>
@@ -88,7 +92,7 @@ const CVfinal = currentLocale === 'en' ? '/Rosendo-Garcia-Resume.pdf' : '/Rosend
       type='button'
       id='to-copy'
       aria-label='Copy email'
-      class='rounded-lg border border-rule px-3 py-1.5 text-sm text-ink-2 transition-colors hover:bg-paper-2'
+      class='border-rule text-ink-2 hover:bg-paper-2 rounded-lg border px-3 py-1.5 text-sm transition-colors'
     >
       <Copy class='size-4' />
     </button>
@@ -103,7 +107,7 @@ const CVfinal = currentLocale === 'en' ? '/Rosendo-Garcia-Resume.pdf' : '/Rosend
   if (container) {
     container.addEventListener('click', async () => {
       const email = 'rosendo.garcia73@outlook.com'
-      const successfull = copyToClipboard(email)
+      const successfull = await copyToClipboard(email)
 
       const alertElement = successfull
         ? (document.querySelector('#alert-ok') as HTMLDivElement)

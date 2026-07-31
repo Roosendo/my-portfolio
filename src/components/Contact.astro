@@ -9,54 +9,70 @@ const i18n = getI18N({ currentLocale })
 ---
 
 <div class='flex flex-col gap-6'>
-  <div class='flex items-center gap-2 text-ink-2'>
+  <div class='text-ink-2 flex items-center gap-2'>
     <Mail class='size-4' />
-    <h2 class='font-display text-lg font-semibold tracking-tight text-ink'>{i18n.CONTACT.LABEL}</h2>
+    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>{i18n.CONTACT.LABEL}</h2>
   </div>
   <AlertMessage type='success' message={i18n.CONTACT.ALERTS.SUCCESS} divId='success' />
   <AlertMessage type='error' message={i18n.CONTACT.ALERTS.ERROR} divId='not-success' />
   <form class='flex flex-col gap-4' id='contactForm'>
     <div>
+      <label for='floating_name' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER}</label>
       <input
         type='text'
-        autocomplete='off'
+        name='name'
+        autocomplete='name'
         id='floating_name'
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER}
-        class='w-full rounded-xl border border-rule bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-3 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent'
+        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
         required
       />
     </div>
     <div>
+      <label for='floating_name_email' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_4}</label>
       <input
-        type='text'
-        autocomplete='off'
+        type='email'
+        name='email'
+        autocomplete='email'
         id='floating_name_email'
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_4}
-        class='w-full rounded-xl border border-rule bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-3 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent'
+        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
         required
       />
     </div>
     <div>
+      <label for='message' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_3}</label>
       <textarea
         id='message'
+        name='message'
         rows='4'
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_3}
-        class='w-full resize-none rounded-xl border border-rule bg-surface px-4 py-3 text-sm text-ink placeholder:text-ink-3 outline-none transition-colors focus:border-accent focus:ring-1 focus:ring-accent'
+        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full resize-none rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
       ></textarea>
     </div>
     <button
       type='submit'
       id='buttonF'
-      class='w-fit rounded-xl bg-accent px-6 py-2.5 text-sm font-medium text-paper transition-all hover:brightness-110 focus:outline-none focus:ring-2 focus:ring-accent focus:ring-offset-2'
-    >{i18n.CONTACT.BUTTON}</button>
+      class='bg-accent text-paper focus:ring-accent w-fit rounded-xl px-6 py-2.5 text-sm font-medium transition-all hover:brightness-110 focus:ring-2 focus:ring-offset-2 focus:outline-none'
+      >{i18n.CONTACT.BUTTON}</button
+    >
     <button
       disabled
       type='button'
       id='buttonL'
-      class='hidden w-fit items-center gap-2 rounded-xl bg-accent px-6 py-2.5 text-sm font-medium text-paper'
+      class='bg-accent text-paper hidden w-fit items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-medium'
     >
-      <svg fill='none' aria-hidden='true' class='size-4 animate-spin' role='status' viewBox='0 0 100 101'>
-        <path fill='currentColor' d='M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344s3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165'/>
+      <svg
+        fill='none'
+        aria-hidden='true'
+        class='size-4 animate-spin'
+        role='status'
+        viewBox='0 0 100 101'
+      >
+        <path
+          fill='currentColor'
+          d='M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344s3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165'
+        ></path>
       </svg>
       {i18n.CONTACT.BUTTONLOADING}
     </button>

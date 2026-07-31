@@ -23,10 +23,10 @@ const i18n = getI18N({ currentLocale })
 
 <article class='surface-card overflow-hidden'>
   <div class='p-5 md:p-6'>
-    <h3 class='font-display text-xl font-bold tracking-tight text-ink md:text-2xl'>
+    <h3 class='font-display text-ink text-xl font-bold tracking-tight md:text-2xl'>
       {title}
     </h3>
-    <p class='mt-2 text-base leading-relaxed text-ink-2 md:text-lg'>{body}</p>
+    <p class='text-ink-2 mt-2 text-base leading-relaxed md:text-lg'>{body}</p>
     <div class='mt-4 flex flex-wrap gap-2'>
       {
         languages.map((lang) => {
@@ -44,7 +44,12 @@ const i18n = getI18N({ currentLocale })
     {
       imgs && imgs.length > 0 && (
         <div class='mt-4'>
-          <Carousel slides={imgs} autoSlide={imgs.length > 1} client:visible />
+          <Carousel
+            slides={imgs}
+            alts={imgs.map((_img, i) => `${title} - screenshot ${i + 1}`)}
+            autoSlide={imgs.length > 1}
+            client:visible
+          />
         </div>
       )
     }

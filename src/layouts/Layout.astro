@@ -4,6 +4,8 @@ import '../styles/global.css'
 import Header from '@c/Header.astro'
 import Footer from '@c/Footer.astro'
 import { ThemeScript } from 'astro-theme-toggle'
+import Yo from '@imgs/yo.webp'
+import { getI18N } from '@c/i18n'
 
 interface Props {
   title: string
@@ -12,6 +14,16 @@ interface Props {
 
 const { title, description } = Astro.props
 const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+
+const site = new URL(Astro.site ?? 'https://rosendo-garcia.vercel.app/')
+const path = Astro.url.pathname === '/es' ? '/es/' : Astro.url.pathname
+const canonical = new URL(path, site).href
+
+const enPath = path === '/' ? '/' : path.startsWith('/es') ? path.replace(/^\/es/, '') || '/' : path
+const esPath = enPath === '/' ? '/es/' : `/es${enPath}`
+
+const ogImage = new URL(Yo.src, site).href
 ---
 
 <!doctype html>
@@ -19,21 +31,96 @@ const { currentLocale } = Astro
   <head>
     <meta charset='UTF-8' />
     <meta name='description' content={description} />
-    <meta name='viewport' content='width=device-width' />
+    <meta name='viewport' content='width=device-width, initial-scale=1' />
     <link rel='icon' type='image/x-icon' href='/portfolio.ico' />
     <meta name='generator' content={Astro.generator} />
     <title>{title}</title>
+
+    <link rel='canonical' href={canonical} />
+    <link rel='alternate' hreflang='en' href={new URL(enPath, site).href} />
+    <link rel='alternate' hreflang='es' href={new URL(esPath, site).href} />
+    <link rel='alternate' hreflang='x-default' href={new URL(enPath, site).href} />
+
+    <meta property='og:type' content='website' />
+    <meta property='og:site_name' content='Rosendo Garcia' />
+    <meta property='og:locale' content={currentLocale === 'es' ? 'es_SV' : 'en_US'} />
+    <meta property='og:url' content={canonical} />
+    <meta property='og:title' content={title} />
+    <meta property='og:description' content={description} />
+    <meta property='og:image' content={ogImage} />
+
+    <meta name='twitter:card' content='summary' />
+    <meta name='twitter:title' content={title} />
+    <meta name='twitter:description' content={description} />
+
+    <script
+      type='application/ld+json'
+      set:html={JSON.stringify({
+        '@context': 'https://schema.org',
+        '@type': 'Person',
+        name: 'Rosendo Garcia',
+        url: site.href,
+        image: ogImage,
+        jobTitle: 'Web Developer',
+        email: 'mailto:rosendo.garcia73@outlook.com',
+        address: {
+          '@type': 'PostalAddress',
+          addressLocality: 'San Miguel',
+          addressCountry: 'SV'
+        },
+        sameAs: [
+          'https://github.com/Roosendo',
+          'https://www.linkedin.com/in/rosendoo-garcia',
+          'https://x.com/callmerosendo'
+        ]
+      })}
+    />
+
     <ThemeScript />
     <ClientRouter />
   </head>
   <body>
+    <a
+      href='#main-content'
+      class='focus:bg-accent focus:text-paper sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:rounded-lg focus:px-4 focus:py-2 focus:text-sm focus:font-medium'
+    >
+      {i18n.HEADER.SKIP}
+    </a>
     <Header />
-    <main class='mx-auto max-w-3xl px-4 py-8 md:py-12 lg:py-16'>
+    <main id='main-content' class='mx-auto max-w-3xl px-4 py-8 md:py-12 lg:py-16'>
       <slot />
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  :target,
+  :focus {
+    scroll-margin-top: 5rem;
+    scroll-margin-bottom: 3.75rem;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-focus);
+    outline-offset: 2px;
+    border-radius: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+</style>
 
 <script>
   document.addEventListener('astro:page-load', () => {

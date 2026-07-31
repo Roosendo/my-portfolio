@@ -17,7 +17,7 @@ import DotNet from '@icons_s/DotNet.astro'
 
 interface Skill {
   name: string
-  icon: any
+  icon: typeof TypeScript
   featured?: boolean
 }
 
@@ -29,7 +29,7 @@ export const SKILLS: Skill[] = [
   { name: 'JavaScript', icon: JavaScript },
   { name: 'Git', icon: Git },
   { name: 'MySql', icon: MySql },
-  { name: 'PHP', icon: PHP }, //
+  { name: 'PHP', icon: PHP },
   { name: 'Angular', icon: Angular, featured: true },
   { name: '.NET', icon: DotNet, featured: true },
   { name: 'Node', icon: Node },

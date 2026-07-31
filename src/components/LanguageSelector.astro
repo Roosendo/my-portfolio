@@ -2,8 +2,10 @@
 import SpainFlag from '../assets/icons/flags/SPAIN.astro'
 import UsaFlag from '../assets/icons/flags/USA.astro'
 import ChevronIcon from '../assets/icons/Chevron.astro'
+import { getI18N } from '@c/i18n'
 
 const { currentLocale = 'en', url } = Astro
+const i18n = getI18N({ currentLocale })
 
 const pathname = url.pathname
 
@@ -41,21 +43,22 @@ const currentPath = url.pathname.replace(currentLocaleData!.href, '')
   <div class='group'>
     <button
       type='button'
-      class='inline-flex items-center gap-1 text-ink-2 hover:text-accent transition-colors text-sm'
-      aria-expanded='true'
-      aria-haspopup='true'
+      class='text-ink-2 hover:text-accent inline-flex items-center gap-1 p-1 text-sm transition-colors'
+      aria-label={i18n.HEADER.LANGUAGE}
     >
       {currentLocaleData?.flag && <currentLocaleData.flag class='size-4' />}
-      <ChevronIcon class='size-3 duration-200 group-hover:rotate-180' />
+      <ChevronIcon
+        class='size-3 duration-200 group-focus-within:rotate-180 group-hover:rotate-180'
+      />
     </button>
     <ul
-      class='absolute right-0 top-full mt-1 hidden w-max rounded-lg border border-rule bg-surface p-1 shadow-sm group-hover:block'
+      class='border-rule bg-surface absolute top-full right-0 mt-1 hidden w-max rounded-lg border p-1 shadow-sm group-focus-within:block group-hover:block'
     >
       {
         otherLocales.map((locale) => (
           <li>
             <a
-              class='inline-flex items-center gap-2 rounded-md px-2 py-1.5 text-sm text-ink hover:bg-paper-2 transition-colors'
+              class='text-ink hover:bg-paper-2 inline-flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors'
               href={`${locale.href}${currentPath}`}
             >
               <locale.flag class='size-4' />

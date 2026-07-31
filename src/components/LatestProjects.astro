@@ -12,9 +12,11 @@ const PROJECTS = getProjects(currentLocale || '')
 ---
 
 <div class='flex flex-col gap-6'>
-  <div class='flex items-center gap-2 text-ink-2'>
+  <div class='text-ink-2 flex items-center gap-2'>
     <Code class='size-4' />
-    <h2 class='font-display text-lg font-semibold tracking-tight text-ink'>{i18n.PROJECTS.LABEL}</h2>
+    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>
+      {i18n.PROJECTS.LABEL}
+    </h2>
   </div>
   <div class='flex flex-col gap-6'>
     {
@@ -22,10 +24,10 @@ const PROJECTS = getProjects(currentLocale || '')
         <PivotCard
           title={project.title}
           body={project.body}
-          imgs={project.imgs ?? []}
-          projectLink={project.projectLink ?? ''}
-          githubUrl={project.githubUrl ?? ''}
-          languages={project.languages ?? []}
+          imgs={project.imgs}
+          projectLink={project.projectLink}
+          githubUrl={project.githubUrl}
+          languages={project.languages}
         />
       ))
     }

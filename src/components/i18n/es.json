@@ -4,7 +4,10 @@
   "HEADER": {
     "PROJECTS": "Proyectos",
     "ABOUT_ME": "Sobre mí",
-    "CONTACT": "Contacto"
+    "CONTACT": "Contacto",
+    "SKIP": "Saltar al contenido principal",
+    "THEME": "Cambiar tema",
+    "LANGUAGE": "Cambiar idioma"
   },
   "PERSONAL_INFO": {
     "GREETING": "Hola, soy Rosendo García",
