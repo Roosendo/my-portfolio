@@ -1,7 +1,6 @@
 ---
-import Briefcase from '@icons/Briefcase.astro'
-
 import { getI18N } from '@c/i18n'
+import Briefcase from '@icons/Briefcase.astro'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })
@@ -18,7 +17,7 @@ const i18n = getI18N({ currentLocale })
     {
       i18n.WORK_EXPERIENCE.JOBS.map((job) => (
         <div class='relative'>
-          <div class='bg-accent ring-paper absolute top-1.5 -left-[calc(1.5rem+5px)] size-2.5 rounded-full ring-2' />
+          <div class='bg-accent ring-paper absolute top-1.5 -left-7.25 size-2.5 rounded-full ring-2' />
           <time class='text-ink-3 block text-xs font-medium tracking-wider uppercase'>
             {job.TIME}
           </time>

@@ -1,8 +1,8 @@
 ---
+import { getI18N } from '@c/i18n'
+import ChevronIcon from '../assets/icons/Chevron.astro'
 import SpainFlag from '../assets/icons/flags/SPAIN.astro'
 import UsaFlag from '../assets/icons/flags/USA.astro'
-import ChevronIcon from '../assets/icons/Chevron.astro'
-import { getI18N } from '@c/i18n'
 
 const { currentLocale = 'en', url } = Astro
 const i18n = getI18N({ currentLocale })
@@ -13,7 +13,7 @@ let restUrl: string
 
 if (pathname.startsWith('/es')) {
   const segments = pathname.split('/').slice(2)
-  restUrl = '/' + segments.join('/').replace(/\/+$/, '')
+  restUrl = `/${segments.join('/').replace(/\/+$/, '')}`
 } else {
   restUrl = pathname.replace(/\/+$/, '')
 }

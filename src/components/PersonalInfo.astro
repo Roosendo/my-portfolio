@@ -1,17 +1,16 @@
 ---
-import Yo from '@imgs/yo.webp'
-import Pill from './Pill.astro'
+import { Image } from 'astro:assets'
+import { getI18N } from '@c/i18n'
+import At from '@icons/At.astro'
+import Copy from '@icons/Copy.astro'
+import CVIcon from '@icons/CV.astro'
 import GitHub from '@icons/GitHub.astro'
 import LinkedIn from '@icons/LinkedIn.astro'
 import Send from '@icons/Send.astro'
-import Copy from '@icons/Copy.astro'
-import CVIcon from '@icons/CV.astro'
-import AlertMessage from './AlertMessage.astro'
-import At from '@icons/At.astro'
-
-import { getI18N } from '@c/i18n'
+import Yo from '@imgs/yo.webp'
 import { unescapeHTML } from 'astro/compiler-runtime'
-import { Image } from 'astro:assets'
+import AlertMessage from './AlertMessage.astro'
+import Pill from './Pill.astro'
 
 const { currentLocale } = Astro
 const i18n = getI18N({ currentLocale })

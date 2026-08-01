@@ -1,5 +1,5 @@
-import spanish from './es.json'
 import english from './en.json'
+import spanish from './es.json'
 
 const LANGUAGES = {
   SPANISH: 'es',
@@ -7,7 +7,7 @@ const LANGUAGES = {
 }
 
 export const getI18N = ({ currentLocale = 'en' }: { currentLocale: string | undefined }) => {
-  if (currentLocale === LANGUAGES.ENGLISH) return english
-  if (currentLocale === LANGUAGES.SPANISH) return spanish
+  if (currentLocale === LANGUAGES.ENGLISH) {  return english }
+  if (currentLocale === LANGUAGES.SPANISH) { return spanish }
   return english
 }

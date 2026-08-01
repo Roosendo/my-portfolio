@@ -1,4 +1,4 @@
-import { createSignal, onCleanup, createEffect, onMount } from 'solid-js'
+import { createEffect, createSignal, onCleanup, onMount } from 'solid-js'
 
 interface CarouselProps {
   autoSlide?: boolean
@@ -19,13 +19,17 @@ export default function Carousel(props: CarouselProps) {
   const next = () => setCurr(curr() === slides.length - 1 ? 0 : curr() + 1)
 
   const getAlt = (index: number): string => {
-    if (props.alts?.[index]) return props.alts[index]
+    if (props.alts?.[index]) {
+      return props.alts[index]
+    }
     return `Project screenshot ${index + 1}`
   }
 
   onMount(() => {
     const el = carouselRef
-    if (!el) return
+    if (!el) {
+      return
+    }
 
     const observer = new IntersectionObserver(
       (entries) => {
@@ -41,7 +45,9 @@ export default function Carousel(props: CarouselProps) {
 
   createEffect(() => {
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (!autoSlide || !isInViewport() || isPaused() || reduceMotion) return
+    if (!autoSlide || !isInViewport() || isPaused() || reduceMotion) {
+      return
+    }
 
     const slideInterval = setInterval(next, autoSlideInterval)
 

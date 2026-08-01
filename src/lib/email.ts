@@ -1,4 +1,4 @@
-import { CONTACT_EMAIL, RESEND_FROM_EMAIL, getSecret } from 'astro:env/server'
+import { CONTACT_EMAIL, getSecret, RESEND_FROM_EMAIL } from 'astro:env/server'
 import { Resend } from 'resend'
 import type { ContactMessage } from './contact'
 
