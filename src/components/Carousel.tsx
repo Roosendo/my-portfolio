@@ -13,7 +13,7 @@ export default function Carousel(props: CarouselProps) {
   const [curr, setCurr] = createSignal(0)
   const [isInViewport, setIsInViewport] = createSignal(true)
   const [isPaused, setIsPaused] = createSignal(false)
-  let carouselRef: HTMLDivElement | undefined
+  let carouselRef: HTMLDivElement | undefined = undefined
 
   const prev = () => setCurr(curr() === 0 ? slides.length - 1 : curr() - 1)
   const next = () => setCurr(curr() === slides.length - 1 ? 0 : curr() + 1)
