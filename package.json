@@ -10,10 +10,8 @@
     "preview": "astro preview",
     "astro": "astro",
     "check": "astro check",
-    "format": "biome format --write .",
-    "format:check": "biome format .",
-    "lint": "biome check --write .",
-    "lint:check": "biome check ."
+    "lint": "oxlint",
+    "lint:fix": "oxlint --fix"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -33,7 +31,7 @@
     "tailwindcss-animated": "2.1.0"
   },
   "devDependencies": {
-    "@biomejs/biome": "2.5.6",
+    "oxlint": "^1.86.0",
     "typescript": "7.0.2"
   }
 }
