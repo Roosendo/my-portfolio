@@ -431,8 +431,8 @@ body {
   color: var(--color-ink);
   font-family: var(--font-body);
   font-feature-settings:
-    'ss01' on,
-    'cv11' on;
+    "ss01" on,
+    "cv11" on;
   font-variant-numeric: tabular-nums;
 }
 

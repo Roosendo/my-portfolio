@@ -41,21 +41,21 @@
 ```tsx
 function ProductCard({ product }: { product: Product }) {
   return (
-    <div className='overflow-hidden rounded-lg bg-white shadow-lg sm:flex sm:max-w-2xl'>
+    <div className="overflow-hidden rounded-lg bg-white shadow-lg sm:flex sm:max-w-2xl">
       <img
-        className='h-48 w-full object-cover sm:h-auto sm:w-48'
+        className="h-48 w-full object-cover sm:h-auto sm:w-48"
         src={product.image}
         alt={product.name}
       />
-      <div className='p-6'>
-        <h3 className='text-lg font-semibold text-gray-900'>{product.name}</h3>
-        <p className='mt-2 text-gray-600'>{product.description}</p>
-        <button className='mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-white transition hover:bg-indigo-700'>
+      <div className="p-6">
+        <h3 className="text-lg font-semibold text-gray-900">{product.name}</h3>
+        <p className="mt-2 text-gray-600">{product.description}</p>
+        <button className="mt-4 rounded-lg bg-indigo-600 px-4 py-2 text-white transition hover:bg-indigo-700">
           Add to Cart
         </button>
       </div>
     </div>
-  )
+  );
 }
 ```
 
@@ -76,33 +76,33 @@ Enable dark mode in tailwind.config.js:
 
 ```javascript
 module.exports = {
-  darkMode: 'class' // or 'media'
+  darkMode: "class", // or 'media'
   // ...
-}
+};
 ```
 
 ### Dark Mode Toggle (React)
 
 ```tsx
 function ThemeToggle() {
-  const [darkMode, setDarkMode] = useState(false)
+  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     if (darkMode) {
-      document.documentElement.classList.add('dark')
+      document.documentElement.classList.add("dark");
     } else {
-      document.documentElement.classList.remove('dark')
+      document.documentElement.classList.remove("dark");
     }
-  }, [darkMode])
+  }, [darkMode]);
 
   return (
     <button
       onClick={() => setDarkMode(!darkMode)}
-      className='rounded-lg bg-gray-200 p-2 dark:bg-gray-800'
+      className="rounded-lg bg-gray-200 p-2 dark:bg-gray-800"
     >
-      {darkMode ? '🌙' : '☀️'}
+      {darkMode ? "🌙" : "☀️"}
     </button>
-  )
+  );
 }
 ```
 

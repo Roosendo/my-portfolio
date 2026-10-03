@@ -148,9 +148,9 @@ See [`export-formats.md`](../export-formats.md) for the canonical mapping.
   --color-accent-ink: oklch(<L> <C> <H>);
   --color-focus: oklch(<L> <C> <H>);
 
-  --font-display: '<face>', ...;
-  --font-body: '<face>', ...;
-  --font-outlier: '<face>', ...;
+  --font-display: "<face>", ...;
+  --font-body: "<face>", ...;
+  --font-outlier: "<face>", ...;
 
   --space-3xs: 0.25rem;
   --space-2xs: 0.5rem;
@@ -184,8 +184,8 @@ See [`export-formats.md`](../export-formats.md) for the canonical mapping.
   --color-paper: oklch(<L> <C> <H>);
   --color-ink: oklch(<L> <C> <H>);
   --color-accent: oklch(<L> <C> <H>);
-  --font-display: '<face>', sans-serif;
-  --font-body: '<face>', sans-serif;
+  --font-display: "<face>", sans-serif;
+  --font-body: "<face>", sans-serif;
   --spacing-md: 1.5rem;
   --text-md: 1.125rem;
   --ease-out: cubic-bezier(0.16, 1, 0.3, 1);

@@ -161,18 +161,18 @@ Trigger: data loaded. Counter increments from 0 to value over 400ms with `--ease
 Trigger: click. Changes: button label swaps to "Copied" with a check icon; revert after 2.5s. **No toast.** The label change _is_ the feedback. Restore on `mouseleave` if user moves away sooner.
 
 ```js
-btn.addEventListener('click', async () => {
-  await navigator.clipboard.writeText(value)
-  btn.dataset.state = 'copied'
-  setTimeout(() => delete btn.dataset.state, 2500)
-})
+btn.addEventListener("click", async () => {
+  await navigator.clipboard.writeText(value);
+  btn.dataset.state = "copied";
+  setTimeout(() => delete btn.dataset.state, 2500);
+});
 ```
 
 ```css
-.copy-btn[data-state='copied'] .copy-btn__label::after {
-  content: '  ✓  Copied';
+.copy-btn[data-state="copied"] .copy-btn__label::after {
+  content: "  ✓  Copied";
 }
-.copy-btn[data-state='copied'] .copy-btn__label > * {
+.copy-btn[data-state="copied"] .copy-btn__label > * {
   opacity: 0;
 }
 ```
@@ -186,15 +186,15 @@ Trigger: hover (after **1–2s delay** — Notion's pattern). Changes: handle re
 Trigger: any action with a known-correct local prediction (toggle, like, archive, reorder). Changes: state mutates immediately; the row visibly updates. Async request fires. On success: nothing happens — silent success is the marker of taste. On failure: 200ms colour rollback animation + a toast with one Undo button. The toast does not auto-dismiss while the user might still want it.
 
 ```js
-const prevState = item.completed
-item.completed = !prevState
-render()
+const prevState = item.completed;
+item.completed = !prevState;
+render();
 try {
-  await api.update(item)
+  await api.update(item);
 } catch {
-  item.completed = prevState
-  render()
-  toast({ tone: 'error', message: "Couldn't save.", action: { label: 'Try again', run: retry } })
+  item.completed = prevState;
+  render();
+  toast({ tone: "error", message: "Couldn't save.", action: { label: "Try again", run: retry } });
 }
 ```
 

@@ -96,10 +96,10 @@ A watercolor file as a full-bleed section accent. One section per page, never gl
   isolation: isolate;
 }
 .section--wash::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background: url('https://www.usehallmark.com/imagery/watercolor/watercolor-warm-01.webp') center /
+  background: url("https://www.usehallmark.com/imagery/watercolor/watercolor-warm-01.webp") center /
     cover no-repeat;
   opacity: 0.6;
   z-index: -1;
@@ -138,7 +138,7 @@ Grain over a solid colour. Always opacity-capped at `0.15`.
 
 ```css
 .texture-grain {
-  background-image: url('…/imagery/texture/texture-grain-paper-01.webp'), var(--paper-fill);
+  background-image: url("…/imagery/texture/texture-grain-paper-01.webp"), var(--paper-fill);
   background-size:
     256px 256px,
     cover;

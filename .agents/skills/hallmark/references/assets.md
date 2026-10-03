@@ -64,20 +64,20 @@ When imagery is needed _and_ the user hasn't supplied real assets, pick from thi
 
 ```jsx
 // Lucide — React (most common)
-import { ArrowRight, Check, X } from 'lucide-react'
-;<ArrowRight size={20} strokeWidth={2} />
+import { ArrowRight, Check, X } from "lucide-react";
+<ArrowRight size={20} strokeWidth={2} />;
 
 // Phosphor — React, with weight prop
-import { ArrowRight } from '@phosphor-icons/react'
-;<ArrowRight size={20} weight='regular' />
+import { ArrowRight } from "@phosphor-icons/react";
+<ArrowRight size={20} weight="regular" />;
 
 // Heroicons — React or static HTML
-import { ArrowRightIcon } from '@heroicons/react/24/outline'
+import { ArrowRightIcon } from "@heroicons/react/24/outline";
 
 // Tabler — vanilla HTML via CDN
-;<svg width='20' height='20'>
-  <use href='https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/arrow-right.svg' />
-</svg>
+<svg width="20" height="20">
+  <use href="https://cdn.jsdelivr.net/npm/@tabler/icons@latest/icons/arrow-right.svg" />
+</svg>;
 ```
 
 ### Avoid
@@ -352,7 +352,7 @@ When budget and timeline force a shortcut and even Tier C is overkill.
 }
 
 .hero::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='n'><feTurbulence baseFrequency='0.9' numOctaves='2'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>");
