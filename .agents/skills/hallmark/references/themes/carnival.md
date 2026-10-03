@@ -306,7 +306,7 @@ h1,
 h2 {
   font-family: var(--font-display);
   font-weight: 800;
-  font-variation-settings: 'wdth' 110;
+  font-variation-settings: "wdth" 110;
   letter-spacing: 0.02em;
   line-height: 0.92;
   text-transform: uppercase;

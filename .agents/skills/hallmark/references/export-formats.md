@@ -49,7 +49,7 @@ If the page introduces _additional_ tokens, name them by role and add to `tokens
 The source. Plain CSS custom properties at `:root`. Every Hallmark page CSS imports this file at the top:
 
 ```css
-@import 'tokens.css';
+@import "tokens.css";
 /* page CSS continues — uses var(--color-paper), never raw values */
 ```
 
@@ -72,9 +72,9 @@ Or, if the project uses a CSS bundler / framework that doesn't honour bare `@imp
   --color-accent-ink: oklch(98% 0.012 75);
   --color-focus: oklch(58% 0.16 60);
 
-  --font-display: 'Fraunces', 'Cardo', ui-serif, Georgia, serif;
-  --font-body: 'Geist', 'Söhne', ui-sans-serif, system-ui, sans-serif;
-  --font-outlier: 'Geist Mono', 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: "Fraunces", "Cardo", ui-serif, Georgia, serif;
+  --font-body: "Geist", "Söhne", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", "JetBrains Mono", ui-monospace, monospace;
 
   --display-weight: 400;
   --display-style: italic;
@@ -133,9 +133,9 @@ Or, if the project uses a CSS bundler / framework that doesn't honour bare `@imp
   --color-accent-ink: oklch(100% 0 0);
   --color-focus: oklch(60% 0.1 240);
 
-  --font-display: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-body: 'Geist', 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-outlier: 'Geist Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+  --font-display: "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-body: "Geist", "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
 
   --display-weight: 600;
   --display-style: normal;
@@ -169,9 +169,9 @@ Tailwind v4 reads CSS variables inside `@theme` and generates utilities (`bg-pap
   --color-focus: oklch(58% 0.16 60);
 
   /* Fonts */
-  --font-display: 'Fraunces', 'Cardo', ui-serif, Georgia, serif;
-  --font-body: 'Geist', ui-sans-serif, system-ui, sans-serif;
-  --font-outlier: 'Geist Mono', ui-monospace, monospace;
+  --font-display: "Fraunces", "Cardo", ui-serif, Georgia, serif;
+  --font-body: "Geist", ui-sans-serif, system-ui, sans-serif;
+  --font-outlier: "Geist Mono", ui-monospace, monospace;
 
   /* Spacing — Tailwind reads --spacing-* by default; we keep Hallmark's --space-* names alongside */
   --spacing-3xs: 0.25rem;

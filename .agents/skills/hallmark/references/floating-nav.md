@@ -50,34 +50,34 @@ Use `blur(0)` not `none` — `none` snaps, `blur(0)` transitions. `backdrop-filt
 ## The scroll handler
 
 ```js
-;(() => {
-  const nav = document.querySelector('.nav')
-  if (!nav) return
-  const THRESHOLD = 80 // ≥ 60 px to avoid micro-scroll twitches
-  let floating = false
-  let ticking = false
+(() => {
+  const nav = document.querySelector(".nav");
+  if (!nav) return;
+  const THRESHOLD = 80; // ≥ 60 px to avoid micro-scroll twitches
+  let floating = false;
+  let ticking = false;
   const update = () => {
-    const next = window.scrollY > THRESHOLD
+    const next = window.scrollY > THRESHOLD;
     if (next !== floating) {
       // boolean-flip guard — toggle once per state change
-      floating = next
-      nav.classList.toggle('is-floating', floating)
+      floating = next;
+      nav.classList.toggle("is-floating", floating);
     }
-  }
+  };
   window.addEventListener(
-    'scroll',
+    "scroll",
     () => {
-      if (ticking) return
-      ticking = true
+      if (ticking) return;
+      ticking = true;
       requestAnimationFrame(() => {
-        update()
-        ticking = false
-      })
+        update();
+        ticking = false;
+      });
     },
-    { passive: true }
-  ) // mobile scroll-perf — keep main thread free
-  update()
-})()
+    { passive: true },
+  ); // mobile scroll-perf — keep main thread free
+  update();
+})();
 ```
 
 Three discipline points:

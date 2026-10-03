@@ -159,7 +159,7 @@ A vertical glowing rod inside a rounded-rect cylindrical chamber, crossed by 3â€
   /* leader-line drawn as ::before pseudo */
 }
 .callout::before {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   height: 1px;
@@ -222,7 +222,7 @@ Classical Instrument Serif at `--text-display`, **all-lowercase, upright**, with
   white-space: nowrap;
 }
 .hero__title em::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0.05em;
   right: 0.05em;

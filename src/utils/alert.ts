@@ -1,8 +1,8 @@
 export function showAndHideAlert(alertElement: HTMLElement, timeout: number = 2000): void {
-  alertElement.classList.remove('hidden')
-  alertElement.classList.add('flex')
+  alertElement.classList.remove("hidden");
+  alertElement.classList.add("flex");
   setTimeout(() => {
-    alertElement.classList.remove('flex')
-    alertElement.classList.add('hidden')
-  }, timeout)
+    alertElement.classList.remove("flex");
+    alertElement.classList.add("hidden");
+  }, timeout);
 }

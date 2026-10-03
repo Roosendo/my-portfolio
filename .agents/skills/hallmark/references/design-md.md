@@ -74,9 +74,9 @@ to it. Amend intentionally — the file is the rule.
   --color-accent-ink: oklch(<L> <C> <H>);
   --color-focus: oklch(<L> <C> <H>);
 
-  --font-display: '<face>', ...;
-  --font-body: '<face>', ...;
-  --font-mono: '<face>', ...;
+  --font-display: "<face>", ...;
+  --font-body: "<face>", ...;
+  --font-mono: "<face>", ...;
 
   /* 4-pt spacing scale, named: --space-3xs … --space-4xl. See tokens.css.   */
   /* Type scale, 1.25 (major-third) ratio: --text-xs … --text-display.       */

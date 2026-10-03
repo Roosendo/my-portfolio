@@ -18,9 +18,9 @@ The pattern:
 
 ```css
 :root {
-  --font-display: 'Fraunces', ui-serif, Georgia, serif; /* headings, hero */
-  --font-body: 'Geist', ui-sans-serif, system-ui, sans; /* prose, UI */
-  --font-outlier: 'Geist Mono', ui-monospace, monospace; /* wordmark + hero stat ONLY */
+  --font-display: "Fraunces", ui-serif, Georgia, serif; /* headings, hero */
+  --font-body: "Geist", ui-sans-serif, system-ui, sans; /* prose, UI */
+  --font-outlier: "Geist Mono", ui-monospace, monospace; /* wordmark + hero stat ONLY */
 }
 ```
 
@@ -141,8 +141,8 @@ The wordmark in the navbar and footer **may use a different display face than th
 
 ```css
 :root {
-  --display: 'Geist', system-ui, sans-serif; /* body + display */
-  --font-wordmark: 'Fraunces', Georgia, serif; /* logo only */
+  --display: "Geist", system-ui, sans-serif; /* body + display */
+  --font-wordmark: "Fraunces", Georgia, serif; /* logo only */
 }
 .wordmark {
   font-family: var(--font-wordmark);

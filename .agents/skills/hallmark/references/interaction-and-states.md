@@ -48,7 +48,7 @@ Minimum 44×44 CSS px for any touch-reachable element. Use padding or an `::befo
   position: relative;
 }
 .icon-btn::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: -12px;
 }

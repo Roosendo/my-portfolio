@@ -163,7 +163,7 @@ _Avoid when:_ you don't have real footage. A clipped-edge video of a stock-foota
     display: none;
   }
   .hero__media {
-    background: url('/hero-poster.webp') center/cover;
+    background: url("/hero-poster.webp") center/cover;
   }
 }
 ```
@@ -289,7 +289,7 @@ _Avoid when:_ the theme already has a paper feel (Specimen, Atelier, Riso). Doub
   );
 }
 .hero__bg::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
   filter: url(#grain);
@@ -446,12 +446,12 @@ _Avoid when:_ the cursor would track over content (text, buttons) — pulls focu
 
 ```js
 // Scope to hero only — never page-wide.
-const hero = document.querySelector('.hero--spotlight')
-hero?.addEventListener('pointermove', (e) => {
-  const r = hero.getBoundingClientRect()
-  hero.style.setProperty('--mx', `${e.clientX - r.left}px`)
-  hero.style.setProperty('--my', `${e.clientY - r.top}px`)
-})
+const hero = document.querySelector(".hero--spotlight");
+hero?.addEventListener("pointermove", (e) => {
+  const r = hero.getBoundingClientRect();
+  hero.style.setProperty("--mx", `${e.clientX - r.left}px`);
+  hero.style.setProperty("--my", `${e.clientY - r.top}px`);
+});
 ```
 
 _Anti-pattern:_ tracking the cursor across the _whole page_ — nausea-inducing, focus-stealing. Scope to hero only. The reduced-motion fallback must pin the gradient to a sensible static position (50% / 30%), not just disable the effect (which would leave a flat surface).

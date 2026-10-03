@@ -18,7 +18,7 @@ _Don't confuse with:_ N4 ⌘K-only (which is a palette, not a visible bar).
   border-bottom: var(--rule-hair) solid var(--color-rule);
 }
 .nav-term__line {
-  font-family: var(--font-outlier, ui-monospace, 'JetBrains Mono', monospace);
+  font-family: var(--font-outlier, ui-monospace, "JetBrains Mono", monospace);
   font-size: var(--text-sm);
   margin: 0;
 }

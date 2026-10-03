@@ -39,7 +39,7 @@ The 2026 canon is set by Lynn Fisher (_A Single Div_), Diana Smith (_Pure CSS Fr
 
 ```css
 @property --rise {
-  syntax: '<length>';
+  syntax: "<length>";
   initial-value: 0px;
   inherits: false;
 }
@@ -126,7 +126,7 @@ That's a hand-built bakery centerpiece in about 25 lines, no asset, animated, ac
 
 ```css
 @property --bake {
-  syntax: '<percentage>';
+  syntax: "<percentage>";
   initial-value: 0%;
   inherits: false;
 }
@@ -203,7 +203,7 @@ The 2026 declarative animation canon. Use the platform first; reach for JS only 
 
 ```css
 @property --hue {
-  syntax: '<angle>';
+  syntax: "<angle>";
   initial-value: 0deg;
   inherits: false;
 }
@@ -262,11 +262,11 @@ Production-ready in 2026 (Baseline October 2025 for same-document; Chromium 126+
 function applyTheme(theme) {
   const apply = () => {
     /* mutate the DOM */
-  }
+  };
   if (!reduced && document.startViewTransition) {
-    document.startViewTransition(apply)
+    document.startViewTransition(apply);
   } else {
-    apply()
+    apply();
   }
 }
 ```
@@ -467,7 +467,7 @@ Three labelled boxes connected by curved arrows. Slight asymmetric rotation (-1�
 
 ```css
 @property --flow-dash {
-  syntax: '<length>';
+  syntax: "<length>";
   initial-value: 0px;
   inherits: false;
 }
@@ -660,7 +660,7 @@ Browser → API → Database, drawn at ~16/9 with three labelled boxes and anima
 
 ```css
 @property --flow-offset {
-  syntax: '<number>';
+  syntax: "<number>";
   initial-value: 0;
   inherits: false;
 }
