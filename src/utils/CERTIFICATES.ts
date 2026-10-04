@@ -1,6 +1,6 @@
 import type { ImageMetadata } from "astro";
 import { getI18N } from "@c/i18n";
-import ExampleCertImg from "@imgs/git.webp";
+import CSharp01 from "@imgs/certificates/Csharp01.webp";
 
 export interface Certificate {
   id: string;
@@ -19,14 +19,14 @@ export type LocalizedCertificate = Certificate & {
 
 export const CERTIFICATES: Certificate[] = [
   {
-    id: "example-cert",
-    title: "Git & GitHub Professional (Example)",
-    image: ExampleCertImg,
-    alt: "Placeholder certificate image for Git and GitHub course",
-    site: "Platzi",
-    topics: ["Git", "GitHub", "Version Control"],
-    url: "https://github.com/Roosendo",
-    date: "2025",
+    id: "qj5dtlcpnk",
+    title: "C#: Empieza tu camino en el lenguaje",
+    image: CSharp01,
+    alt: "C#: Empieza tu camino en el lenguaje en DevTalles",
+    site: "DevTalles",
+    topics: ["C#"],
+    url: "https://cursos.devtalles.com/certificates/qj5dtlcpnk",
+    date: "2026",
   },
 ];
 
