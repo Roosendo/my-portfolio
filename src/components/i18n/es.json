@@ -3,6 +3,7 @@
   "SEO_DESCRIPTION": "Explora un mundo de creatividad e innovación a través de mi diverso portafolio. Desde impresionantes diseños visuales hasta desarrollo web de vanguardia, observa la perfecta fusión de arte y tecnología. Eleva tu presencia digital con mi experiencia y deja que tus ideas cobren vida. Descubre la fusión perfecta de pasión y habilidad en mi portafolio, donde cada proyecto cuenta una historia única.",
   "HEADER": {
     "PROJECTS": "Proyectos",
+    "CERTIFICATES": "Certificados",
     "ABOUT_ME": "Sobre mí",
     "CONTACT": "Contacto",
     "SKIP": "Saltar al contenido principal",
@@ -55,6 +56,23 @@
   },
   "SKILLS": {
     "LABEL": "Habilidades"
+  },
+  "CERTIFICATES": {
+    "SEO_TITLE": "Certificados y Diplomas • Rosendo García",
+    "SEO_DESCRIPTION": "Explora mis certificaciones, diplomas y cursos completados en desarrollo de software, tecnologías web y campos afines.",
+    "LABEL": "Certificados y diplomas",
+    "DESCRIPTION": "Una colección de diplomas, certificados y cursos completados que demuestran el aprendizaje continuo y la adquisición de habilidades en diversas plataformas y tecnologías.",
+    "EMPTY": "Aún no hay certificados agregados. ¡Vuelve pronto!",
+    "BUTTONS": {
+      "VERIFY": "Verificar certificado",
+      "MAIN_LINK": "Certificados",
+      "BACK": "Regresar"
+    },
+    "ITEMS": {
+      "example-cert": {
+        "DESCRIPTION": "Curso completo que cubre los fundamentos de Git, estrategias de ramificación y flujos de trabajo colaborativos en GitHub."
+      }
+    }
   },
   "WORK_EXPERIENCE": {
     "LABEL": "Experiencia laboral",

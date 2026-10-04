@@ -3,6 +3,7 @@
   "SEO_DESCRIPTION": "Explore a world of creativity and innovation through my diverse portfolio. From stunning visual designs to cutting-edge web development, witness the seamless blend of art and technology. Elevate your digital presence with my expertise and let your ideas come to life. Discover the perfect fusion of passion and skill in my portfolio - where every project tells a unique story.",
   "HEADER": {
     "PROJECTS": "Projects",
+    "CERTIFICATES": "Certificates",
     "ABOUT_ME": "About Me",
     "CONTACT": "Contact",
     "SKIP": "Skip to main content",
@@ -55,6 +56,23 @@
   },
   "SKILLS": {
     "LABEL": "Skills"
+  },
+  "CERTIFICATES": {
+    "SEO_TITLE": "Certificates & Diplomas • Rosendo Garcia",
+    "SEO_DESCRIPTION": "Explore my certifications, diplomas, and completed courses in software development, web technologies, and related fields.",
+    "LABEL": "Certificates & diplomas",
+    "DESCRIPTION": "A collection of diplomas, certificates, and completed courses demonstrating continuous learning and skill acquisition across various platforms and technologies.",
+    "EMPTY": "No certificates added yet. Check back soon!",
+    "BUTTONS": {
+      "VERIFY": "Verify certificate",
+      "MAIN_LINK": "Certificates",
+      "BACK": "Go back"
+    },
+    "ITEMS": {
+      "example-cert": {
+        "DESCRIPTION": "A comprehensive course covering Git fundamentals, branching strategies, and collaboration workflows on GitHub."
+      }
+    }
   },
   "WORK_EXPERIENCE": {
     "LABEL": "Work experience",
