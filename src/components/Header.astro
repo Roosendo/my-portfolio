@@ -4,7 +4,7 @@ import { Toggle } from 'astro-theme-toggle'
 import LanguageSelector from './LanguageSelector.astro'
 
 const rawPath = Astro.url.pathname === '/es' ? '/es/' : Astro.url.pathname
-const currentLocale = rawPath === '/es/' ? 'es' : 'en'
+const currentLocale = rawPath.startsWith('/es/') ? 'es' : 'en'
 const homeHref = currentLocale === 'es' ? '/es/' : '/'
 const certsHref = currentLocale === 'es' ? '/es/certificates' : '/certificates'
 const isCertsPage = rawPath === certsHref

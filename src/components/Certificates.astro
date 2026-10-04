@@ -14,7 +14,7 @@ const certificates = getCertificates(currentLocale || '')
 <div class='flex flex-col gap-6'>
   <div class='text-ink-2 flex items-center gap-2'>
     <CertificateIcon class='size-4' />
-    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>
+    <h2 class='font-display text-accent text-lg font-semibold tracking-tight'>
       {i18n.CERTIFICATES.LABEL}
     </h2>
   </div>
@@ -39,7 +39,7 @@ const certificates = getCertificates(currentLocale || '')
               />
             </div>
             <div class='flex flex-1 flex-col p-5'>
-              <div class='text-ink-3 flex items-center justify-between text-xs tracking-wider uppercase'>
+              <div class='text-ink-2 flex items-center justify-between text-xs font-medium tracking-wider uppercase'>
                 <span>{cert.site}</span>
                 {cert.date && <time>{cert.date}</time>}
               </div>
