@@ -68,6 +68,7 @@ Reusable classes: `.surface-card` (rounded card with hover-lift), `.reveal` (scr
 ## Data flow
 
 - `@u/PROJECTS.ts` — static array merging `getI18N` translations with hardcoded links and image imports by index. Adding a project requires edits to `en.json`, `es.json`, `PROJECTS.ts`, and image files.
+- `@u/CERTIFICATES.ts` — static array of certificate configs with per-item descriptions keyed by `id` in `en.json`/`es.json`. Adding a certificate requires edits to `en.json`, `es.json`, `CERTIFICATES.ts`, and an image in `src/assets/imgs/certificates/`.
 - `@u/SKILLS.ts` — 16 skills as `{ name, icon, featured? }`. Featured skills get accent-colored border treatment.
 - Contact form sends `{ name, email, message }` POST to `https://money-minder-api.up.railway.app/api/emails/send-email`. Client-side feedback only.
 

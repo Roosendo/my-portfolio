@@ -42,7 +42,7 @@ pnpm lint           # prettier --write + eslint --fix
 
 ## Page structure
 
-`src/pages/index.astro` → `@c/pages/App.astro` → `Layout.astro` wrapping sections in order: PersonalInfo, LatestProjects, Skills, WorkExperience, About, Contact.
+`src/pages/index.astro` → `@c/pages/App.astro` → `Layout.astro` wrapping sections in order: PersonalInfo, LatestProjects, Skills, WorkExperience, About, Contact, Certificates (en + /es).
 
 ## Code style
 
