@@ -1,0 +1,16 @@
+---
+import CertificatesSection from '@c/Certificates.astro'
+import { getI18N } from '@c/i18n'
+import Layout from '@l/Layout.astro'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+---
+
+<Layout title={i18n.CERTIFICATES.SEO_TITLE} description={i18n.CERTIFICATES.SEO_DESCRIPTION}>
+  <div class='flex flex-col gap-16'>
+    <section class='reveal' style='--i: 0'>
+      <CertificatesSection />
+    </section>
+  </div>
+</Layout>

@@ -1,0 +1,75 @@
+---
+import { Image } from 'astro:assets'
+import { getI18N } from '@c/i18n'
+import CertificateIcon from '@icons/Certificate.astro'
+import ExternalLink from '@icons/ExternalLink.astro'
+import { getCertificates } from '@u/CERTIFICATES'
+import Pill from './Pill.astro'
+
+const { currentLocale } = Astro
+const i18n = getI18N({ currentLocale })
+const certificates = getCertificates(currentLocale || '')
+---
+
+<div class='flex flex-col gap-6'>
+  <div class='text-ink-2 flex items-center gap-2'>
+    <CertificateIcon class='size-4' />
+    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>
+      {i18n.CERTIFICATES.LABEL}
+    </h2>
+  </div>
+
+  <p class='text-ink-2 text-base leading-relaxed md:text-lg'>
+    {i18n.CERTIFICATES.DESCRIPTION}
+  </p>
+
+  {
+    certificates.length === 0 ? (
+      <p class='text-ink-3 text-sm italic'>{i18n.CERTIFICATES.EMPTY}</p>
+    ) : (
+      <div class='grid gap-6 sm:grid-cols-2'>
+        {certificates.map((cert) => (
+          <article class='surface-card flex flex-col overflow-hidden'>
+            <div class='border-rule bg-paper-2 overflow-hidden border-b'>
+              <Image
+                src={cert.image}
+                alt={cert.alt}
+                class='h-auto w-full object-cover transition-transform duration-300 hover:scale-105'
+                loading='lazy'
+              />
+            </div>
+            <div class='flex flex-1 flex-col p-5'>
+              <div class='text-ink-3 flex items-center justify-between text-xs tracking-wider uppercase'>
+                <span>{cert.site}</span>
+                {cert.date && <time>{cert.date}</time>}
+              </div>
+              <h3 class='font-display text-ink mt-1 text-lg font-bold tracking-tight'>
+                {cert.title}
+              </h3>
+              {cert.description && (
+                <p class='text-ink-2 mt-2 text-sm leading-relaxed'>{cert.description}</p>
+              )}
+              {cert.topics && cert.topics.length > 0 && (
+                <div class='mt-4 flex flex-wrap gap-1.5'>
+                  {cert.topics.map((topic) => (
+                    <span class='border-rule text-ink-2 rounded-full border px-2.5 py-0.5 text-xs'>
+                      {topic}
+                    </span>
+                  ))}
+                </div>
+              )}
+              {cert.url && (
+                <div class='mt-auto pt-4'>
+                  <Pill href={cert.url} class='text-xs'>
+                    <ExternalLink class='size-3.5' />
+                    <span>{i18n.CERTIFICATES.BUTTONS.VERIFY}</span>
+                  </Pill>
+                </div>
+              )}
+            </div>
+          </article>
+        ))}
+      </div>
+    )
+  }
+</div>
