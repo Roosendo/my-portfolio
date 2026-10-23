@@ -36,7 +36,7 @@ export const getProjects = (currentLocale: string): Project[] => {
       {
         link: "https://rosendo-pokedex.netlify.app/",
         github: "https://github.com/Roosendo/pokemon-api",
-        languages: ["HTML", "CSS", "TypeScript"],
+        languages: ["TypeScript"],
       },
       {
         link: "",
@@ -46,7 +46,7 @@ export const getProjects = (currentLocale: string): Project[] => {
       {
         link: "",
         github: "https://github.com/Roosendo/crud-php",
-        languages: ["PHP", "MySql", "HTML", "CSS"],
+        languages: ["PHP", "MySql"],
       },
     ];
 

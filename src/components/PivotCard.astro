@@ -1,6 +1,5 @@
 ---
 import { useI18N } from "@c/i18n";
-import Fire from "@icons/Fire.astro";
 import GitHub from "@icons/GitHub.astro";
 import { SKILLS } from "@u/SKILLS";
 import Carousel from "./Carousel";
@@ -49,7 +48,6 @@ const { i18n } = useI18N(Astro.currentLocale);
     <div class="mt-4 flex gap-3">
       {projectLink && (
         <Pill href={projectLink}>
-          <Fire class="size-4" />
           <span>{i18n.PROJECTS.BUTTONS.LIVE}</span>
         </Pill>
       )}
