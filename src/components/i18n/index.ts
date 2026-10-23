@@ -1,17 +1,15 @@
 import english from "./en.json";
 import spanish from "./es.json";
+import { getRelativeLocaleUrl } from "astro:i18n";
 
-const LANGUAGES = {
-  SPANISH: "es",
-  ENGLISH: "en",
-};
+const translations = { en: english, es: spanish };
 
-export const getI18N = ({ currentLocale = "en" }: { currentLocale: string | undefined }) => {
-  if (currentLocale === LANGUAGES.ENGLISH) {
-    return english;
-  }
-  if (currentLocale === LANGUAGES.SPANISH) {
-    return spanish;
-  }
-  return english;
-};
+const getI18N = ({ currentLocale = "en" }: { currentLocale?: string }) =>
+  translations[currentLocale as keyof typeof translations] ?? english;
+
+export const useI18N = (currentLocale: string = "en") => ({
+  currentLocale,
+  i18n: getI18N({ currentLocale }),
+  homeHref: getRelativeLocaleUrl(currentLocale, "/"),
+  localeUrl: (path: string) => getRelativeLocaleUrl(currentLocale, path),
+});

@@ -1,5 +1,5 @@
 import type { ImageMetadata } from "astro";
-import { getI18N } from "@c/i18n";
+import { useI18N } from "@c/i18n";
 import CSharp01 from "@imgs/certificates/Csharp01.webp";
 
 export interface Certificate {
@@ -31,7 +31,7 @@ export const CERTIFICATES: Certificate[] = [
 ];
 
 export const getCertificates = (currentLocale: string): LocalizedCertificate[] => {
-  const i18n = getI18N({ currentLocale });
+  const { i18n } = useI18N(currentLocale)
   const items = (i18n as Record<string, any>).CERTIFICATES?.ITEMS ?? {};
 
   return CERTIFICATES.map((cert) => ({

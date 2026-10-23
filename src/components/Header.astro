@@ -1,14 +1,13 @@
 ---
-import { getI18N } from '@c/i18n'
+import { getRelativeLocaleUrl } from 'astro:i18n'
+import { useI18N } from '@c/i18n'
 import { Toggle } from 'astro-theme-toggle'
 import LanguageSelector from './LanguageSelector.astro'
 
-const rawPath = Astro.url.pathname === '/es' ? '/es/' : Astro.url.pathname
-const currentLocale = rawPath.startsWith('/es/') ? 'es' : 'en'
-const homeHref = currentLocale === 'es' ? '/es/' : '/'
-const certsHref = currentLocale === 'es' ? '/es/certificates' : '/certificates'
-const isCertsPage = rawPath === certsHref
-const i18n = getI18N({ currentLocale })
+const strip = (p: string) => p.replace(/\/$/, "");
+const { currentLocale, homeHref, i18n } = useI18N(Astro.currentLocale)
+const certsHref = getRelativeLocaleUrl(currentLocale!, "certificates");
+const isCertsPage = strip(Astro.url.pathname) === strip(certsHref)
 ---
 
 <header class='border-rule bg-paper/80 sticky top-0 z-50 border-b backdrop-blur-sm'>
@@ -24,21 +23,21 @@ const i18n = getI18N({ currentLocale })
       !isCertsPage && (
         <>
           <a
-            href="#projects"
+            href=`${homeHref}#projects`
             class="text-ink-2 hover:text-accent py-1.5 whitespace-nowrap transition-colors sm:inline-block"
           >
             {i18n.HEADER.PROJECTS}
           </a>
 
           <a
-            href="#about-me"
+            href=`${homeHref}#about-me`
             class="text-ink-2 hover:text-accent hidden py-1.5 whitespace-nowrap transition-colors sm:inline-block"
           >
             {i18n.HEADER.ABOUT_ME}
           </a>
 
           <a
-            href="#contact"
+            href=`${homeHref}#contact`
             class="text-ink-2 hover:text-accent py-1.5 whitespace-nowrap transition-colors sm:inline-block"
           >
             {i18n.HEADER.CONTACT}

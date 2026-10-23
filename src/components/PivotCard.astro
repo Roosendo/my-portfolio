@@ -1,5 +1,5 @@
 ---
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import Fire from '@icons/Fire.astro'
 import GitHub from '@icons/GitHub.astro'
 import { SKILLS } from '@u/SKILLS'
@@ -17,8 +17,7 @@ interface Props {
 
 const { title, body, imgs, projectLink, githubUrl, languages } = Astro.props
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { i18n } = useI18N(Astro.currentLocale)
 ---
 
 <article class='surface-card overflow-hidden'>

@@ -72,7 +72,8 @@
       "example-cert": {
         "DESCRIPTION": "Curso completo que cubre los fundamentos de Git, estrategias de ramificación y flujos de trabajo colaborativos en GitHub."
       }
-    }
+    },
+    "CERTIFICATES_LINK": "Ver mis certificados →"
   },
   "WORK_EXPERIENCE": {
     "LABEL": "Experiencia laboral",

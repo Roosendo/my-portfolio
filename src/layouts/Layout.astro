@@ -5,7 +5,7 @@ import '@fontsource-variable/geist/wght.css'
 import '../styles/global.css'
 import Footer from '@c/Footer.astro'
 import Header from '@c/Header.astro'
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import Yo from '@imgs/yo.webp'
 import { ThemeScript } from 'astro-theme-toggle'
 
@@ -15,8 +15,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { currentLocale, i18n } = useI18N(Astro.currentLocale)
 
 const site = new URL(Astro.site ?? 'https://rosendo-garcia.vercel.app/')
 const path = Astro.url.pathname === '/es' ? '/es/' : Astro.url.pathname

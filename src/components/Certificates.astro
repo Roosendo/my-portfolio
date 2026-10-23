@@ -1,14 +1,13 @@
 ---
 import { Image } from 'astro:assets'
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import CertificateIcon from '@icons/Certificate.astro'
 import ExternalLink from '@icons/ExternalLink.astro'
 import { getCertificates } from '@u/CERTIFICATES'
 import Pill from './Pill.astro'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
-const certificates = getCertificates(currentLocale || '')
+const { currentLocale, i18n } = useI18N(Astro.currentLocale)
+const certificates = getCertificates(currentLocale)
 ---
 
 <div class='flex flex-col gap-6'>

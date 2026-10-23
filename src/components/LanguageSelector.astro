@@ -1,13 +1,12 @@
 ---
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import ChevronIcon from '../assets/icons/Chevron.astro'
 import SpainFlag from '../assets/icons/flags/SPAIN.astro'
 import UsaFlag from '../assets/icons/flags/USA.astro'
 
-const { currentLocale = 'en', url } = Astro
-const i18n = getI18N({ currentLocale })
+const { currentLocale, i18n } = useI18N(Astro.currentLocale)
 
-const pathname = url.pathname
+const pathname = Astro.url.pathname
 
 let restUrl: string
 
@@ -36,7 +35,7 @@ const LOCALES: Record<string, { code: string; name: string; href: string; flag: 
 
 const currentLocaleData = LOCALES[currentLocale]
 const otherLocales = Object.values(LOCALES).filter((locale) => locale.code !== currentLocale)
-const currentPath = url.pathname.replace(currentLocaleData!.href, '')
+const currentPath = Astro.url.pathname.replace(currentLocaleData!.href, '')
 ---
 
 <div class="relative">

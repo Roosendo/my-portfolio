@@ -1,6 +1,6 @@
 ---
 import { Image } from 'astro:assets'
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import At from '@icons/At.astro'
 import Copy from '@icons/Copy.astro'
 import CVIcon from '@icons/CV.astro'
@@ -11,9 +11,9 @@ import Yo from '@imgs/yo.webp'
 import { unescapeHTML } from 'astro/compiler-runtime'
 import AlertMessage from './AlertMessage.astro'
 import Pill from './Pill.astro'
+import CertificateIcon from '@icons/Certificate.astro'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { currentLocale, homeHref, i18n } = useI18N(Astro.currentLocale)
 
 let paragraph = i18n.PERSONAL_INFO.PARAGRAPH
 let phrases = i18n.PERSONAL_INFO.PHRASES
@@ -72,6 +72,10 @@ const CVfinal =
     <Pill href={CVfinal}>
       <CVIcon class='text-accent size-4' />
       <span class='text-sm'>CV</span>
+    </Pill>
+    <Pill href=`${homeHref}certificates`>
+      <CertificateIcon class="text-accent size-4" />
+      <span class="text-sm">{i18n.CERTIFICATES.BUTTONS.MAIN_LINK}</span>
     </Pill>
   </div>
 
