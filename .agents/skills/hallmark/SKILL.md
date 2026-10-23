@@ -67,7 +67,7 @@ Before entering the full Design flow, **check scope**. If any of these fire, run
 - The brief names a single UI element: _a button · an input · a card · a modal · a dropdown · a tooltip · a select · a checkbox · a switch · a tab strip · a chip · a badge · a banner · a snackbar · a popover · a slider · a date picker · an avatar_.
 - The brief is short (≤ 30 words) and refers to one element.
 - The target file is a single component (e.g., `./Button.tsx`, `./components/Input.css`, `app/components/Card.vue`).
-- The user explicitly says _"just the X"_, _"only the Y"_, _"this one element"_, _"a single \___"_.
+- The user explicitly says _"just the X"_, _"only the Y"_, _"this one element"_, _"a single \_\_\_"_.
 
 If two signals fire, route component. If only the page flow fires (multi-section brief, "build me a landing page"), stay in Design flow.
 
