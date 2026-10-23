@@ -17,23 +17,23 @@
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
-    "@astrojs/solid-js": "7.0.2",
-    "@astrojs/vercel": "^11.0.11",
+    "@astrojs/solid-js": "7.1.1",
+    "@astrojs/vercel": "11.0.16",
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/sora": "^5.3.0",
     "@tailwindcss/vite": "^4.1.18",
-    "astro": "7.3.5",
+    "astro": "7.4.2",
     "astro-theme-toggle": "^0.8.1",
     "react-feather": "^2.0.10",
-    "resend": "6.18.1",
-    "sharp": "^0.35.3",
+    "resend": "6.34.1",
+    "sharp": "^0.35.5",
     "solid-js": "^1.9.14",
     "tailwind-animations": "^1.0.2",
     "tailwindcss": "^4.3.3",
     "tailwindcss-animated": "2.1.0"
   },
   "devDependencies": {
-    "oxfmt": "^0.71.0",
+    "oxfmt": "^0.74.0",
     "oxlint": "^1.86.0",
     "typescript": "7.0.2"
   }
