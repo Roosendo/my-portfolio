@@ -16,6 +16,7 @@
     "fmt:check": "oxfmt --check"
   },
   "dependencies": {
+    "@astrojs/compiler-rs": "^0.5.2",
     "@astrojs/sitemap": "^3.7.4",
     "@astrojs/solid-js": "7.1.1",
     "@astrojs/vercel": "11.0.16",
@@ -35,6 +36,8 @@
   "devDependencies": {
     "oxfmt": "^0.74.0",
     "oxlint": "^1.86.0",
+    "prettier": "^3.9.10",
+    "prettier-plugin-astro": "^1.1.1",
     "typescript": "7.0.2"
   }
 }
