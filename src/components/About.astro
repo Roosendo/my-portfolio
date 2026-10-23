@@ -1,46 +1,46 @@
 ---
-import { useI18N } from '@c/i18n'
-import Fire from '@icons/Fire.astro'
+import { useI18N } from "@c/i18n";
+import Fire from "@icons/Fire.astro";
 
-const { i18n,homeHref } = useI18N(Astro.currentLocale)
+const { i18n, homeHref } = useI18N(Astro.currentLocale);
 
 const content = [
   { title: i18n.ABOUT_ME.TITLE_1, paragraph: i18n.ABOUT_ME.PARAGRAPH_1 },
-  { title: i18n.ABOUT_ME.TITLE_2, paragraph: i18n.ABOUT_ME.PARAGRAPH_2, link: {
-    href: "certificates",
-    label: i18n.CERTIFICATES.CERTIFICATES_LINK
-  } },
-  { title: i18n.ABOUT_ME.TITLE_3, paragraph: i18n.ABOUT_ME.PARAGRAPH_3 }
-]
+  {
+    title: i18n.ABOUT_ME.TITLE_2,
+    paragraph: i18n.ABOUT_ME.PARAGRAPH_2,
+    link: {
+      href: "certificates",
+      label: i18n.CERTIFICATES.CERTIFICATES_LINK,
+    },
+  },
+  { title: i18n.ABOUT_ME.TITLE_3, paragraph: i18n.ABOUT_ME.PARAGRAPH_3 },
+];
 ---
 
-<div class='flex flex-col gap-6'>
-  <div class='text-ink-2 flex items-center gap-2'>
-    <Fire class='size-4' />
-    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>
+<div class="flex flex-col gap-6">
+  <div class="text-ink-2 flex items-center gap-2">
+    <Fire class="size-4" />
+    <h2 class="font-display text-ink text-lg font-semibold tracking-tight">
       {i18n.ABOUT_ME.LABEL}
     </h2>
   </div>
-  <div class='flex flex-col gap-6 md:gap-8'>
-    {
-      content.map((item) => (
-        <div>
-          <h3 class='font-display text-accent text-xl font-bold tracking-tight md:text-2xl'>
-            {item.title}
-          </h3>
-          <p class='text-ink-2 mt-2 text-base leading-relaxed md:text-lg'>{item.paragraph}</p>
-          {
-            item.link && (
-              <a
-                href={`${homeHref + item.link.href}`}
-                class='text-accent mt-2 inline-block font-medium underline underline-offset-4 hover:opacity-80 focus-visible:outline-2'
-              >
-                {item.link.label}
-              </a>
-            )
-          }
-        </div>
-      ))
-    }
+  <div class="flex flex-col gap-6 md:gap-8">
+    {content.map((item) => (
+      <div>
+        <h3 class="font-display text-accent text-xl font-bold tracking-tight md:text-2xl">
+          {item.title}
+        </h3>
+        <p class="text-ink-2 mt-2 text-base leading-relaxed md:text-lg">{item.paragraph}</p>
+        {item.link && (
+          <a
+            href={`${homeHref + item.link.href}`}
+            class="text-accent mt-2 inline-block font-medium underline underline-offset-4 hover:opacity-80 focus-visible:outline-2"
+          >
+            {item.link.label}
+          </a>
+        )}
+      </div>
+    ))}
   </div>
 </div>

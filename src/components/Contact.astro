@@ -1,86 +1,95 @@
 ---
-import { useI18N } from '@c/i18n'
-import Mail from '@icons/Mail.astro'
-import AlertMessage from './AlertMessage.astro'
+import { useI18N } from "@c/i18n";
+import Mail from "@icons/Mail.astro";
+import AlertMessage from "./AlertMessage.astro";
 
-const { i18n } = useI18N(Astro.currentLocale)
+const { i18n } = useI18N(Astro.currentLocale);
 ---
 
-<div class='flex flex-col gap-6'>
-  <div class='text-ink-2 flex items-center gap-2'>
-    <Mail class='size-4' />
-    <h2 class='font-display text-ink text-lg font-semibold tracking-tight'>{i18n.CONTACT.LABEL}</h2>
+<div class="flex flex-col gap-6">
+  <div class="text-ink-2 flex items-center gap-2">
+    <Mail class="size-4" />
+    <h2 class="font-display text-ink text-lg font-semibold tracking-tight">{i18n.CONTACT.LABEL}</h2>
   </div>
-  <AlertMessage type='success' message={i18n.CONTACT.ALERTS.SUCCESS} divId='success' />
-  <AlertMessage type='error' message={i18n.CONTACT.ALERTS.ERROR} divId='not-success' />
-  <form class='flex flex-col gap-4' id='contactForm'>
+  <AlertMessage type="success" message={i18n.CONTACT.ALERTS.SUCCESS} divId="success" />
+  <AlertMessage type="error" message={i18n.CONTACT.ALERTS.ERROR} divId="not-success" />
+  <form class="flex flex-col gap-4" id="contactForm">
     <div>
-      <label for='floating_name' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER}</label>
+      <label for="floating_name" class="sr-only">
+        {i18n.CONTACT.INPUT_PLACEHOLDER}
+      </label>
       <input
-        type='text'
-        name='name'
-        autocomplete='name'
-        id='floating_name'
+        type="text"
+        name="name"
+        autocomplete="name"
+        id="floating_name"
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER}
-        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
+        class="border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1"
         required
       />
     </div>
     <div>
-      <label for='floating_name_email' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_4}</label>
+      <label for="floating_name_email" class="sr-only">
+        {i18n.CONTACT.INPUT_PLACEHOLDER_4}
+      </label>
       <input
-        type='email'
-        name='email'
-        autocomplete='email'
-        id='floating_name_email'
+        type="email"
+        name="email"
+        autocomplete="email"
+        id="floating_name_email"
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_4}
-        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
+        class="border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1"
         required
       />
     </div>
     <div>
-      <label for='floating_name_phone' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_5}</label>
+      <label for="floating_name_phone" class="sr-only">
+        {i18n.CONTACT.INPUT_PLACEHOLDER_5}
+      </label>
       <input
-        type='tel'
-        name='phone'
-        autocomplete='tel'
-        id='floating_name_phone'
+        type="tel"
+        name="phone"
+        autocomplete="tel"
+        id="floating_name_phone"
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_5}
-        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
+        class="border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1"
       />
     </div>
     <div>
-      <label for='message' class='sr-only'>{i18n.CONTACT.INPUT_PLACEHOLDER_3}</label>
+      <label for="message" class="sr-only">
+        {i18n.CONTACT.INPUT_PLACEHOLDER_3}
+      </label>
       <textarea
-        id='message'
-        name='message'
-        rows='4'
+        id="message"
+        name="message"
+        rows="4"
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_3}
-        class='border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full resize-none rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1'
+        class="border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full resize-none rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1"
       ></textarea>
     </div>
     <button
-      type='submit'
-      id='buttonF'
-      class='bg-accent text-paper focus:ring-accent w-fit rounded-xl px-6 py-2.5 text-sm font-medium transition-all hover:brightness-110 focus:ring-2 focus:ring-offset-2 focus:outline-none cursor-pointer'
-      >{i18n.CONTACT.BUTTON}</button
+      type="submit"
+      id="buttonF"
+      class="bg-accent text-paper focus:ring-accent w-fit rounded-xl px-6 py-2.5 text-sm font-medium transition-all hover:brightness-110 focus:ring-2 focus:ring-offset-2 focus:outline-none cursor-pointer"
     >
+      {i18n.CONTACT.BUTTON}
+    </button>
     <button
       disabled
-      type='button'
-      id='buttonL'
-      class='bg-accent text-paper hidden w-fit items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-medium'
+      type="button"
+      id="buttonL"
+      class="bg-accent text-paper hidden w-fit items-center gap-2 rounded-xl px-6 py-2.5 text-sm font-medium"
     >
       <svg
-        fill='none'
-        aria-hidden='true'
-        class='size-4 animate-spin'
-        role='status'
-        viewBox='0 0 100 101'
+        fill="none"
+        aria-hidden="true"
+        class="size-4 animate-spin"
+        role="status"
+        viewBox="0 0 100 101"
       >
         <path
-          fill='currentColor'
-          d='M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344s3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165'
+          fill="currentColor"
+          d="M93.968 39.04c2.425-.636 3.894-3.128 3.04-5.486A50 50 0 0 0 41.735 1.279c-2.474.414-3.922 2.919-3.285 5.344s3.12 3.849 5.6 3.484a40.916 40.916 0 0 1 44.131 25.769c.902 2.34 3.361 3.802 5.787 3.165"
         ></path>
       </svg>
       {i18n.CONTACT.BUTTONLOADING}
@@ -89,40 +98,40 @@ const { i18n } = useI18N(Astro.currentLocale)
 </div>
 
 <script>
-  import { showAndHideAlert } from '@u/alert'
-  import { sendEmail } from '@u/sendEmail'
+  import { showAndHideAlert } from "@u/alert";
+  import { sendEmail } from "@u/sendEmail";
 
-  document.addEventListener('astro:page-load', () => {
-    const form = document.querySelector<HTMLFormElement>('#contactForm')
-    const success = document.querySelector<HTMLElement>('#success')
-    const notSuccess = document.querySelector<HTMLElement>('#not-success')
-    const buttonPrimary = document.querySelector<HTMLElement>('#buttonF')
-    const buttonLoading = document.querySelector<HTMLElement>('#buttonL')
+  document.addEventListener("astro:page-load", () => {
+    const form = document.querySelector<HTMLFormElement>("#contactForm");
+    const success = document.querySelector<HTMLElement>("#success");
+    const notSuccess = document.querySelector<HTMLElement>("#not-success");
+    const buttonPrimary = document.querySelector<HTMLElement>("#buttonF");
+    const buttonLoading = document.querySelector<HTMLElement>("#buttonL");
 
-    if (!form || !success || !notSuccess || !buttonPrimary || !buttonLoading) return
+    if (!form || !success || !notSuccess || !buttonPrimary || !buttonLoading) return;
 
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault()
+    form.addEventListener("submit", async (event) => {
+      event.preventDefault();
 
-      const data = new FormData(form)
-      const phone = String(data.get('phone') ?? '').trim()
+      const data = new FormData(form);
+      const phone = String(data.get("phone") ?? "").trim();
       const message = {
-        name: String(data.get('name') ?? ''),
-        email: String(data.get('email') ?? ''),
-        message: String(data.get('message') ?? ''),
-        ...(phone !== '' && { phone })
-      }
+        name: String(data.get("name") ?? ""),
+        email: String(data.get("email") ?? ""),
+        message: String(data.get("message") ?? ""),
+        ...(phone !== "" && { phone }),
+      };
 
-      buttonPrimary.classList.add('hidden')
-      buttonLoading.classList.remove('hidden')
+      buttonPrimary.classList.add("hidden");
+      buttonLoading.classList.remove("hidden");
 
-      const result = await sendEmail(message)
+      const result = await sendEmail(message);
 
-      showAndHideAlert(result.ok ? success : notSuccess)
+      showAndHideAlert(result.ok ? success : notSuccess);
 
-      form.reset()
-      buttonLoading.classList.add('hidden')
-      buttonPrimary.classList.remove('hidden')
-    })
-  })
+      form.reset();
+      buttonLoading.classList.add("hidden");
+      buttonPrimary.classList.remove("hidden");
+    });
+  });
 </script>
