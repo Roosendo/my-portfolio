@@ -72,7 +72,8 @@
       "example-cert": {
         "DESCRIPTION": "A comprehensive course covering Git fundamentals, branching strategies, and collaboration workflows on GitHub."
       }
-    }
+    },
+    "CERTIFICATES_LINK": "See my certificates →"
   },
   "WORK_EXPERIENCE": {
     "LABEL": "Work experience",
