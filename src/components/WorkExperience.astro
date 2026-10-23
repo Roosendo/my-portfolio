@@ -1,9 +1,8 @@
 ---
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import Briefcase from '@icons/Briefcase.astro'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { i18n } = useI18N(Astro.currentLocale)
 ---
 
 <div class='flex flex-col gap-6'>

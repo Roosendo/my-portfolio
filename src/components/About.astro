@@ -1,13 +1,15 @@
 ---
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import Fire from '@icons/Fire.astro'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { i18n,homeHref } = useI18N(Astro.currentLocale)
 
 const content = [
   { title: i18n.ABOUT_ME.TITLE_1, paragraph: i18n.ABOUT_ME.PARAGRAPH_1 },
-  { title: i18n.ABOUT_ME.TITLE_2, paragraph: i18n.ABOUT_ME.PARAGRAPH_2 },
+  { title: i18n.ABOUT_ME.TITLE_2, paragraph: i18n.ABOUT_ME.PARAGRAPH_2, link: {
+    href: "certificates",
+    label: i18n.CERTIFICATES.CERTIFICATES_LINK
+  } },
   { title: i18n.ABOUT_ME.TITLE_3, paragraph: i18n.ABOUT_ME.PARAGRAPH_3 }
 ]
 ---
@@ -27,6 +29,16 @@ const content = [
             {item.title}
           </h3>
           <p class='text-ink-2 mt-2 text-base leading-relaxed md:text-lg'>{item.paragraph}</p>
+          {
+            item.link && (
+              <a
+                href={`${homeHref + item.link.href}`}
+                class='text-accent mt-2 inline-block font-medium underline underline-offset-4 hover:opacity-80 focus-visible:outline-2'
+              >
+                {item.link.label}
+              </a>
+            )
+          }
         </div>
       ))
     }

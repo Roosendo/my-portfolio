@@ -1,15 +1,14 @@
 ---
 import About from '@c/About.astro'
 import Contact from '@c/Contact.astro'
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import LatestProjects from '@c/LatestProjects.astro'
 import PersonalInfo from '@c/PersonalInfo.astro'
 import Skills from '@c/Skills.astro'
 import WorkExperience from '@c/WorkExperience.astro'
 import Layout from '@l/Layout.astro'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { i18n } = useI18N(Astro.currentLocale)
 ---
 
 <Layout title={i18n.SEO_TITLE} description={i18n.SEO_DESCRIPTION}>

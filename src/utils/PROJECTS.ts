@@ -1,4 +1,4 @@
-import { getI18N } from "@c/i18n";
+import { useI18N } from "@c/i18n";
 import Php2 from "@imgs/crud2.webp";
 import MMApiExample from "@imgs/money-minder/api-example.webp";
 import MMDashboard from "@imgs/money-minder/dashboard.webp";
@@ -19,7 +19,7 @@ export interface Project {
 }
 
 export const getProjects = (currentLocale: string): Project[] => {
-  const i18n = getI18N({ currentLocale });
+  const { i18n } = useI18N(currentLocale)
 
   return i18n.PROJECTS.PROJECTS.map((project, index) => {
     const projectLinks = [

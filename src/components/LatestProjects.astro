@@ -1,13 +1,12 @@
 ---
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import Code from '@icons/Code.astro'
 import { getProjects } from '@u/PROJECTS.ts'
 import PivotCard from './PivotCard.astro'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { i18n, currentLocale } = useI18N(Astro.currentLocale)
 
-const PROJECTS = getProjects(currentLocale || '')
+const PROJECTS = getProjects(currentLocale)
 ---
 
 <div class='flex flex-col gap-6'>

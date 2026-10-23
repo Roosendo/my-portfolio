@@ -1,10 +1,9 @@
 ---
-import { getI18N } from '@c/i18n'
+import { useI18N } from '@c/i18n'
 import Trophy from '@icons/Trophy.astro'
 import { SKILLS } from '../utils/SKILLS.ts'
 
-const { currentLocale } = Astro
-const i18n = getI18N({ currentLocale })
+const { i18n } = useI18N(Astro.currentLocale)
 ---
 
 <div class='flex flex-col gap-4'>
