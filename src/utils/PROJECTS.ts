@@ -19,7 +19,7 @@ export interface Project {
 }
 
 export const getProjects = (currentLocale: string): Project[] => {
-  const { i18n } = useI18N(currentLocale);
+  const { i18n } = useI18N(currentLocale)
 
   return i18n.PROJECTS.PROJECTS.map((project, index) => {
     const projectLinks = [

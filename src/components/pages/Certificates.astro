@@ -1,14 +1,14 @@
 ---
-import CertificatesSection from '@c/Certificates.astro'
-import { useI18N } from '@c/i18n'
-import Layout from '@l/Layout.astro'
+import CertificatesSection from "@c/Certificates.astro";
+import { useI18N } from "@c/i18n";
+import Layout from "@l/Layout.astro";
 
-const { i18n } = useI18N(Astro.currentLocale)
+const { i18n } = useI18N(Astro.currentLocale);
 ---
 
 <Layout title={i18n.CERTIFICATES.SEO_TITLE} description={i18n.CERTIFICATES.SEO_DESCRIPTION}>
-  <div class='flex flex-col gap-16'>
-    <section class='reveal' style='--i: 0'>
+  <div class="flex flex-col gap-16">
+    <section class="reveal" style="--i: 0">
       <CertificatesSection />
     </section>
   </div>

@@ -74,11 +74,13 @@ Add a file to `src/pages/` — the filename becomes the route:
 ```astro
 ---
 // src/pages/index.astro
-const title = 'Hello, Astro!'
+const title = "Hello, Astro!";
 ---
 
 <html>
-  <head><title>{title}</title></head>
+  <head>
+    <title>{title}</title>
+  </head>
   <body>
     <h1>{title}</h1>
   </body>
@@ -90,10 +92,10 @@ const title = 'Hello, Astro!'
 ```astro
 ---
 // src/components/Card.astro
-const { title, body } = Astro.props
+const { title, body } = Astro.props;
 ---
 
-<div class='card'>
+<div class="card">
   <h2>{title}</h2>
   <p>{body}</p>
 </div>

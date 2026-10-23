@@ -1,41 +1,41 @@
 ---
-import { useI18N } from '@c/i18n'
-import ChevronIcon from '../assets/icons/Chevron.astro'
-import SpainFlag from '../assets/icons/flags/SPAIN.astro'
-import UsaFlag from '../assets/icons/flags/USA.astro'
+import { useI18N } from "@c/i18n";
+import ChevronIcon from "../assets/icons/Chevron.astro";
+import SpainFlag from "../assets/icons/flags/SPAIN.astro";
+import UsaFlag from "../assets/icons/flags/USA.astro";
 
-const { currentLocale, i18n } = useI18N(Astro.currentLocale)
+const { currentLocale, i18n } = useI18N(Astro.currentLocale);
 
-const pathname = Astro.url.pathname
+const pathname = Astro.url.pathname;
 
-let restUrl: string
+let restUrl: string;
 
-if (pathname.startsWith('/es')) {
-  const segments = pathname.split('/').slice(2)
-  restUrl = `/${segments.join('/').replace(/\/+$/, '')}`
+if (pathname.startsWith("/es")) {
+  const segments = pathname.split("/").slice(2);
+  restUrl = `/${segments.join("/").replace(/\/+$/, "")}`;
 } else {
-  restUrl = pathname.replace(/\/+$/, '')
+  restUrl = pathname.replace(/\/+$/, "");
 }
 
 const LOCALES: Record<string, { code: string; name: string; href: string; flag: typeof UsaFlag }> =
   {
     es: {
-      code: 'es',
+      code: "es",
       href: `/es${restUrl}`,
-      name: 'Español',
-      flag: SpainFlag
+      name: "Español",
+      flag: SpainFlag,
     },
     en: {
-      code: 'en',
+      code: "en",
       href: restUrl,
-      name: 'English',
-      flag: UsaFlag
-    }
-  }
+      name: "English",
+      flag: UsaFlag,
+    },
+  };
 
-const currentLocaleData = LOCALES[currentLocale]
-const otherLocales = Object.values(LOCALES).filter((locale) => locale.code !== currentLocale)
-const currentPath = Astro.url.pathname.replace(currentLocaleData!.href, '')
+const currentLocaleData = LOCALES[currentLocale];
+const otherLocales = Object.values(LOCALES).filter((locale) => locale.code !== currentLocale);
+const currentPath = Astro.url.pathname.replace(currentLocaleData!.href, "");
 ---
 
 <div class="relative">
@@ -47,30 +47,22 @@ const currentPath = Astro.url.pathname.replace(currentLocaleData!.href, '')
     >
       {currentLocaleData?.flag && <currentLocaleData.flag class="size-4" />}
 
-      <ChevronIcon
-        class="size-3 duration-200 group-focus-within:rotate-180 group-hover:rotate-180"
-      />
+      <ChevronIcon class="size-3 duration-200 group-focus-within:rotate-180 group-hover:rotate-180" />
     </button>
 
-    <div
-      class="absolute top-full right-0 hidden pt-1 group-focus-within:block group-hover:block"
-    >
-      <ul
-        class="border-rule bg-surface w-max rounded-lg border p-1 shadow-sm"
-      >
-        {
-          otherLocales.map((locale) => (
-            <li>
-              <a
-                class="text-ink hover:bg-paper-2 inline-flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors"
-                href={`${locale.href}${currentPath}`}
-              >
-                <locale.flag class="size-4" />
-                {locale.name}
-              </a>
-            </li>
-          ))
-        }
+    <div class="absolute top-full right-0 hidden pt-1 group-focus-within:block group-hover:block">
+      <ul class="border-rule bg-surface w-max rounded-lg border p-1 shadow-sm">
+        {otherLocales.map((locale) => (
+          <li>
+            <a
+              class="text-ink hover:bg-paper-2 inline-flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors"
+              href={`${locale.href}${currentPath}`}
+            >
+              <locale.flag class="size-4" />
+              {locale.name}
+            </a>
+          </li>
+        ))}
       </ul>
     </div>
   </div>
