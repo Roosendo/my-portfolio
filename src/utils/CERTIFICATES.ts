@@ -31,7 +31,7 @@ export const CERTIFICATES: Certificate[] = [
 ];
 
 export const getCertificates = (currentLocale: string): LocalizedCertificate[] => {
-  const { i18n } = useI18N(currentLocale)
+  const { i18n } = useI18N(currentLocale);
   const items = (i18n as Record<string, any>).CERTIFICATES?.ITEMS ?? {};
 
   return CERTIFICATES.map((cert) => ({
