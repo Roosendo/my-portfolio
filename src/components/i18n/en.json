@@ -15,15 +15,17 @@
     "PILL_MESSAGE": "Currently working and studying",
     "PARAGRAPH": "Software Developer focused on backend solutions using Node.js and C#. I currently work in customer support for a U.S.-based digital platform, providing support entirely in English and assisting with basic technical issues. My passion for technology and clear communication allows me to adapt to both software development and digital support roles. I am committed to continuous professional growth by combining my technical expertise with hands-on customer support experience.",
     "PHRASES": {
-      "Software Developer": "dark:text-emerald-400 text-emerald-600",
-      "Node.js and C#": "dark:text-yellow-200 text-yellow-500",
-      "I am committed to continuous professional growth": "dark:text-[#eea5ee] text-[#cc00cc]"
+      "Software Developer": "text-emerald-700 dark:text-emerald-400 font-medium",
+      "Node.js and C#": "text-amber-800 dark:text-amber-300 font-medium",
+      "I am committed to continuous professional growth": "text-sky-700 dark:text-sky-300 font-medium"
     },
     "ALERTS": {
       "SUCCESS": "Copied successfully!",
       "ERROR": "Error copying to clipboard!"
     },
-    "EMAIL": "Email"
+    "EMAIL": "Email",
+    "SEND_EMAIL": "Send email",
+    "COPY_EMAIL": "Copy email to clipboard"
   },
   "PROJECTS": {
     "LABEL": "Latest projects",

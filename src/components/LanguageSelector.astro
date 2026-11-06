@@ -42,20 +42,21 @@ const currentPath = Astro.url.pathname.replace(currentLocaleData!.href, "");
   <div class="group">
     <button
       type="button"
-      class="text-ink-2 hover:text-accent inline-flex items-center gap-1 p-1 text-sm transition-colors"
+      class="text-ink-2 hover:text-accent inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center gap-1.5 rounded-lg p-2 text-sm transition-colors focus-visible:outline-2"
       aria-label={i18n.HEADER.LANGUAGE}
+      aria-haspopup="true"
     >
       {currentLocaleData?.flag && <currentLocaleData.flag class="size-4" />}
 
       <ChevronIcon class="size-3 duration-200 group-focus-within:rotate-180 group-hover:rotate-180" />
     </button>
 
-    <div class="absolute top-full right-0 hidden pt-1 group-focus-within:block group-hover:block">
+    <div class="absolute top-full right-0 z-50 hidden pt-1 group-focus-within:block group-hover:block">
       <ul class="border-rule bg-surface w-max rounded-lg border p-1 shadow-sm">
         {otherLocales.map((locale) => (
           <li>
             <a
-              class="text-ink hover:bg-paper-2 inline-flex items-center gap-2 rounded-md px-2 py-1.5 text-sm transition-colors"
+              class="text-ink hover:bg-paper-2 inline-flex min-h-10 items-center gap-2 rounded-md px-3 py-2 text-sm transition-colors"
               href={`${locale.href}${currentPath}`}
             >
               <locale.flag class="size-4" />

@@ -2,7 +2,7 @@
 import { useI18N } from "@c/i18n";
 import Fire from "@icons/Fire.astro";
 
-const { i18n, homeHref } = useI18N(Astro.currentLocale);
+const { i18n, localeUrl } = useI18N(Astro.currentLocale);
 
 const content = [
   { title: i18n.ABOUT_ME.TITLE_1, paragraph: i18n.ABOUT_ME.PARAGRAPH_1 },
@@ -34,7 +34,7 @@ const content = [
         <p class="text-ink-2 mt-2 text-base leading-relaxed md:text-lg">{item.paragraph}</p>
         {item.link && (
           <a
-            href={`${homeHref + item.link.href}`}
+            href={localeUrl(item.link.href)}
             class="text-accent mt-2 inline-block font-medium underline underline-offset-4 hover:opacity-80 focus-visible:outline-2"
           >
             {item.link.label}

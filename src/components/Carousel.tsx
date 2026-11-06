@@ -67,7 +67,7 @@ export default function Carousel(props: CarouselProps) {
       onFocusOut={() => setIsPaused(false)}
     >
       <div
-        class="flex transition-transform duration-500 ease-out"
+        class="flex transition-transform duration-500 ease-out motion-reduce:transition-none"
         style={{
           width: `${slides.length * 100}%`,
           transform: `translateX(-${curr() * (100 / slides.length)}%)`,
@@ -77,6 +77,9 @@ export default function Carousel(props: CarouselProps) {
           <img
             src={img}
             alt={getAlt(i)}
+            role="group"
+            aria-roledescription="slide"
+            aria-label={`Slide ${i + 1} of ${slides.length}`}
             class="aspect-video w-full shrink-0 object-cover"
             style={{ width: `${100 / slides.length}%` }}
             decoding="async"
@@ -86,12 +89,12 @@ export default function Carousel(props: CarouselProps) {
       </div>
 
       {slides.length !== 1 ? (
-        <div class="absolute inset-0 flex items-center justify-between p-2">
+        <div class="absolute inset-0 flex items-center justify-between p-2 pointer-events-none">
           <button
             type="button"
             onClick={prev}
             aria-label="Previous slide"
-            class="bg-surface/80 text-ink hover:bg-surface rounded-full p-1.5 shadow-sm transition-colors"
+            class="pointer-events-auto bg-surface/85 text-ink hover:bg-surface inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full p-2.5 shadow-sm transition-colors focus-visible:outline-2"
           >
             <svg
               width="20"
@@ -111,7 +114,7 @@ export default function Carousel(props: CarouselProps) {
             type="button"
             onClick={next}
             aria-label="Next slide"
-            class="bg-surface/80 text-ink hover:bg-surface rounded-full p-1.5 shadow-sm transition-colors"
+            class="pointer-events-auto bg-surface/85 text-ink hover:bg-surface inline-flex min-h-11 min-w-11 cursor-pointer items-center justify-center rounded-full p-2.5 shadow-sm transition-colors focus-visible:outline-2"
           >
             <svg
               width="20"
@@ -131,18 +134,22 @@ export default function Carousel(props: CarouselProps) {
       ) : null}
 
       {slides.length !== 1 ? (
-        <div class="absolute right-0 bottom-3 left-0">
-          <div class="flex items-center justify-center gap-1.5">
+        <div class="absolute right-0 bottom-2 left-0">
+          <div class="flex items-center justify-center gap-1">
             {slides.map((_src, i) => (
               <button
                 type="button"
                 onClick={() => setCurr(i)}
                 aria-label={`Go to slide ${i + 1}`}
                 aria-current={curr() === i}
-                class={`rounded-full transition-all ${
-                  curr() === i ? "bg-accent h-2 w-4" : "bg-ink-3/50 hover:bg-ink-3 h-2 w-2"
-                }`}
-              />
+                class="relative inline-flex min-h-9 min-w-9 cursor-pointer items-center justify-center p-1.5 focus-visible:outline-2"
+              >
+                <span
+                  class={`block rounded-full transition-all ${
+                    curr() === i ? "bg-accent h-2 w-4" : "bg-ink-3/60 hover:bg-ink-2 h-2 w-2"
+                  }`}
+                />
+              </button>
             ))}
           </div>
         </div>

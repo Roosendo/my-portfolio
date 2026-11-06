@@ -1,18 +1,42 @@
 ---
-const WrapperTag = Astro.props.href ? "a" : "p";
+interface Props {
+  href?: string;
+  class?: string;
+  target?: string;
+  rel?: string;
+}
+
+const { href, class: className = "", target: propTarget, rel: propRel } = Astro.props;
+const isLink = Boolean(href);
+const isExternal =
+  isLink && (href!.startsWith("http://") || href!.startsWith("https://") || href!.startsWith("//"));
+const target = propTarget ?? (isExternal ? "_blank" : undefined);
+const rel = propRel ?? (isExternal ? "noopener noreferrer" : undefined);
 ---
 
-<WrapperTag
-  class={`
-    inline-flex items-center gap-2 rounded-full border border-rule
-    px-3 py-1.5 text-sm text-ink-2
-    transition-all
-    hover:border-accent hover:text-accent hover:bg-paper-2
-    ${Astro.props.class ?? ""}
-  `}
-  href={Astro.props.href}
-  target="_blank"
-  rel="noopener noreferrer"
->
-  <slot />
-</WrapperTag>
+{isLink ? (
+  <a
+    class={`
+        inline-flex items-center gap-2 rounded-full border border-rule
+        px-3 py-1.5 text-sm text-ink-2
+        transition-all
+        hover:border-accent hover:text-accent hover:bg-paper-2
+        ${className}
+      `}
+    href={href}
+    target={target}
+    rel={rel}
+  >
+    <slot />
+  </a>
+) : (
+  <span
+    class={`
+        inline-flex items-center gap-2 rounded-full border border-rule
+        px-3 py-1.5 text-sm text-ink-2
+        ${className}
+      `}
+  >
+    <slot />
+  </span>
+)}

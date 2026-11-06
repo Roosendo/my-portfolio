@@ -15,15 +15,17 @@
     "PILL_MESSAGE": "Trabajando y estudiando",
     "PARAGRAPH": "Desarrollador de Software orientado a soluciones backend utilizando Node y C#. Actualmente trabajo en atención al cliente para una plataforma digital estadounidense, brindando soporte 100% en Inglés y asistiendo problemas técnicos básicos. Mi pasión por la tecnología y comunicación clara me permite adaptarme a ambos entornos de desarrollo y roles digitales de soporte. Me entusiasma seguir creciendo profesionalmente combinando mis habilidades técnicas con experiencia en atención al cliente",
     "PHRASES": {
-      "Desarrollador de Software": "dark:text-emerald-400 text-emerald-600",
-      "Node y C#": "dark:text-yellow-200 text-yellow-500",
-      "Me entusiasma seguir creciendo profesionalmente": "dark:text-[#eea5ee] text-[#cc00cc]"
+      "Desarrollador de Software": "text-emerald-700 dark:text-emerald-400 font-medium",
+      "Node y C#": "text-amber-800 dark:text-amber-300 font-medium",
+      "Me entusiasma seguir creciendo profesionalmente": "text-sky-700 dark:text-sky-300 font-medium"
     },
     "ALERTS": {
       "SUCCESS": "¡Copiado exitosamente!",
       "ERROR": "Error al copiar al portapapeles."
     },
-    "EMAIL": "Correo electrónico"
+    "EMAIL": "Correo electrónico",
+    "SEND_EMAIL": "Enviar correo electrónico",
+    "COPY_EMAIL": "Copiar correo electrónico al portapapeles"
   },
   "PROJECTS": {
     "LABEL": "Últimos proyectos",
