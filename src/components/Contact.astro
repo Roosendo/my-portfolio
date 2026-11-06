@@ -65,6 +65,7 @@ const { i18n } = useI18N(Astro.currentLocale);
         rows="4"
         placeholder={i18n.CONTACT.INPUT_PLACEHOLDER_3}
         class="border-rule bg-surface text-ink placeholder:text-ink-3 focus:border-accent focus:ring-accent w-full resize-none rounded-xl border px-4 py-3 text-sm transition-colors outline-none focus:ring-1"
+        required
       ></textarea>
     </div>
     <button
@@ -129,7 +130,9 @@ const { i18n } = useI18N(Astro.currentLocale);
 
       showAndHideAlert(result.ok ? success : notSuccess);
 
-      form.reset();
+      if (result.ok) {
+        form.reset();
+      }
       buttonLoading.classList.add("hidden");
       buttonPrimary.classList.remove("hidden");
     });

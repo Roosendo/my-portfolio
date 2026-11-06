@@ -13,7 +13,7 @@ import AlertMessage from "./AlertMessage.astro";
 import Pill from "./Pill.astro";
 import CertificateIcon from "@icons/Certificate.astro";
 
-const { currentLocale, homeHref, i18n } = useI18N(Astro.currentLocale);
+const { currentLocale, localeUrl, i18n } = useI18N(Astro.currentLocale);
 
 let paragraph = i18n.PERSONAL_INFO.PARAGRAPH;
 let phrases = i18n.PERSONAL_INFO.PHRASES;
@@ -73,7 +73,7 @@ const CVfinal =
       <CVIcon class="text-accent size-4" />
       <span class="text-sm">CV</span>
     </Pill>
-    <Pill href=`${homeHref}certificates`>
+    <Pill href={localeUrl("certificates")}>
       <CertificateIcon class="text-accent size-4" />
       <span class="text-sm">{i18n.CERTIFICATES.BUTTONS.MAIN_LINK}</span>
     </Pill>
@@ -87,6 +87,7 @@ const CVfinal =
     <span>rosendo.garcia73@outlook.com</span>
     <a
       href="mailto:rosendo.garcia73@outlook.com"
+      aria-label={i18n.PERSONAL_INFO.SEND_EMAIL}
       class="border-rule text-accent hover:bg-paper-2 ml-auto rounded-lg border px-3 py-1.5 text-sm transition-colors"
     >
       <Send class="inline size-4" />
@@ -94,7 +95,7 @@ const CVfinal =
     <button
       type="button"
       id="to-copy"
-      aria-label="Copy email"
+      aria-label={i18n.PERSONAL_INFO.COPY_EMAIL}
       class="border-rule text-ink-2 hover:bg-paper-2 cursor-pointer rounded-lg border px-3 py-1.5 text-sm transition-colors"
     >
       <Copy class="size-4" />
@@ -103,23 +104,25 @@ const CVfinal =
 </div>
 
 <script>
-  import { showAndHideAlert } from "@u/alert";
-  import { copyToClipboard } from "@u/clipboard";
+  document.addEventListener("astro:page-load", () => {
+    const container = document.querySelector<HTMLElement>("#to-copy");
+    if (!container) return;
 
-  const container = document.querySelector("#to-copy") as HTMLButtonElement;
-
-  if (container) {
     container.addEventListener("click", async () => {
       const email = "rosendo.garcia73@outlook.com";
-      const successfull = await copyToClipboard(email);
 
-      const alertElement = successfull
-        ? (document.querySelector("#alert-ok") as HTMLDivElement)
-        : (document.querySelector("#alert-no") as HTMLDivElement);
+      const [{ copyToClipboard }, { showAndHideAlert }] = await Promise.all([
+        import("@u/clipboard"),
+        import("@u/alert"),
+      ]);
 
-      if (alertElement) {
-        showAndHideAlert(alertElement);
-      }
+      const succesful = await copyToClipboard(email);
+
+      const alertElement = document.querySelector<HTMLDivElement>(
+        succesful ? "#alert-ok" : "#alert-no",
+      );
+
+      if (alertElement) showAndHideAlert(alertElement);
     });
-  }
+  });
 </script>

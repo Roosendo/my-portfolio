@@ -57,43 +57,32 @@ body {
   color: var(--color-paper);
 }
 
-@keyframes reveal {
-  from {
-    opacity: 0;
-    transform: translateY(12px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes reveal-reduced {
-  to {
-    opacity: 1;
-  }
-}
-
 .reveal {
   opacity: 0;
-  animation: reveal var(--dur-long) var(--ease-out) forwards;
+  transform: translateY(14px);
+  transition:
+    opacity var(--dur-long) var(--ease-out),
+    transform var(--dur-long) var(--ease-out);
 }
 
 .reveal.is-visible {
   opacity: 1;
-  animation: none;
+  transform: translateY(0);
 }
 
 @media (prefers-reduced-motion: reduce) {
   .reveal {
-    animation: reveal-reduced 150ms linear forwards;
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 }
 
 @media (scripting: none) {
   .reveal {
     opacity: 1;
-    animation: none;
+    transform: none;
+    transition: none;
   }
 }
 
