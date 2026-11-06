@@ -2,7 +2,7 @@
 
 ## Overview
 
-Single-page static portfolio for Rosendo Garcia, built with Astro 5. Uses the **Hum** design theme (playful genre, warm cream + pear-green accent + sky-cyan secondary). Font: Satoshi (display) + Geist (body) — loaded via Fontsource variables.
+Single-page static portfolio for Rosendo Garcia, built with Astro 5. Uses the **Hum** design theme (playful genre, warm cream + pear-green accent + sky-cyan secondary). Font: Sora (display) + Geist (body) — loaded via Fontsource variables.
 
 ## Component tree
 
@@ -45,7 +45,7 @@ Reusable classes: `.surface-card` (rounded card with hover-lift), `.reveal` (scr
 
 - Tailwind CSS v4 via `@tailwindcss/vite` Vite plugin. No PostCSS config, no `tailwind.config.*` — all config is CSS-first using `@import "tailwindcss"` in `global.css`.
 - Dark mode: `@custom-variant dark (&:where(.dark, .dark *))`. Dark tokens override `:root` custom properties when `.dark` is present on `<html>`.
-- Fonts: Satoshi (display) + Geist (body). Fontsource variable packages. Previously used Onest.
+- Fonts: Sora (display) + Geist (body). Fontsource variable packages. Previously used Onest.
 - Prettier sorts Tailwind classes with `prettier-plugin-tailwindcss`.
 
 ## Key interaction patterns
